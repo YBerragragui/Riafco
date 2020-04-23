@@ -1,0 +1,75 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Authorization.ViewData.UserViewData
+
+@{
+    ViewBag.Title = "RIAFCO | Gérer les utilisateurs.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+    <script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/users.js"></script>
+    <script src="~/Scripts/rules.js"></script>
+}
+
+@section Styles {
+    <link href="~/Content/rules.css" rel="stylesheet" />
+}
+
+<div class="header_container">
+    <div class="titre_header">gérer les utilisateurs :</div>
+    <span id="add_user_btn" class="btn_ajouter">
+        <input type="image" src="/Images/add.png" class="icon_ajouter" />
+        <span class="valeur_btn">Ajouter</span>
+    </span>
+</div>
+
+<div id="users_container" class="content_container">
+    @Html.Partial("Partials/_UsersList", Model)
+</div>
+
+<div id="add_user_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>nouvaeu utilisateur : </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_user_input"></div>
+    </div>
+</div>
+
+<div id="update_user_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier utilisateur : </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_user_input"></div>
+    </div>
+</div>
+
+<div id="delete_user_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container cd-popup-container-confirm">
+        <p>Est ce que vous êtes sur de cette opération ?</p>
+        <ul class="cd-buttons">
+            <li><a id="yes">Oui</a></li>
+            <li><a id="no">Non</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="user_rules_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>Les droits : </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="user_rules_input"></div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Newsletters.ViewData.SubscribersViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+        <tr>
+            <th class="text-center">EMAIL</th>
+            <th class="text-center hidden-xs">NOM</th>
+            <th class="text-center">OPERATIONS</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Subscribers)
+        {
+            <tr>
+                <td>
+                    <div class="text-center">@item.SubscriberEmail</div>
+                </td>
+                <td class="hidden-xs">
+                    <div class="text-center">@item.SubscriberLastName @item.SubscriberFirstName</div>
+                </td>
+                <td>
+                    <input type="image" id="update_subscriber_btn" data="@item.SubscriberId" class="icon_crud" src="~/Images/edit.png" />
+                    <input type="image" id="delete_subscriber_btn" data="@item.SubscriberId" class="icon_crud" src="~/Images/delete.png" />
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

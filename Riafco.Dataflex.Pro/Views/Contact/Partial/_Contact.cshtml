@@ -1,0 +1,54 @@
+﻿@model Riafco.Dataflex.Pro.Models.Contact.FormData.ContactFormData
+@using Riafco.Dataflex.Pro.GlobalResources.Contact;
+
+<script src="~/Scripts/jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/jquery/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm("SendMessage", "Contact", FormMethod.Post, new { id = "SendMessageForm", @class = "form-horizontal contact-form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="ligne_input">
+        <h5>
+            @Html.LabelFor(d => d.ContactMessageFullName)
+            <span class="obgligatoire">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(d => d.ContactMessageFullName)</span>
+        </h5>
+        @Html.TextBoxFor(d => d.ContactMessageFullName, new { @class = "champ" })
+    </div>
+
+    <div class="ligne_input">
+        <h5>
+            @Html.LabelFor(d => d.ContactMessageMail)
+            <span class="obgligatoire">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(d => d.ContactMessageMail)</span>
+        </h5>
+        @Html.TextBoxFor(d => d.ContactMessageMail, new { @class = "champ" })
+    </div>
+
+    <div class="ligne_input">
+        <h5>
+            @Html.LabelFor(d => d.ContactMessageSubject)
+            <span class="obgligatoire">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(d => d.ContactMessageSubject)</span>
+        </h5>
+        @Html.TextBoxFor(d => d.ContactMessageSubject, new { @class = "champ" })
+    </div>
+
+    <div class="ligne_input">
+        <h5>
+            @Html.LabelFor(d => d.ContactMessageText)
+            <span class="obgligatoire">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(d => d.ContactMessageText)</span>
+        </h5>
+        @Html.TextBoxFor(d => d.ContactMessageText, new { @class = "champ" })
+    </div>
+
+    <hr class="ligne_separ" />
+
+    <div class="ligne_input">
+        <span class="obgligatoire">(*): @ContactResources.RequiredFields</span>
+        <input type="submit" class="btn-submit" value="@ContactResources.ValidateBtn" />
+    </div>
+}

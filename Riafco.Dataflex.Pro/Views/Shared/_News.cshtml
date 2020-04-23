@@ -1,0 +1,6 @@
+﻿@model Riafco.Dataflex.Pro.Models.News.ViewData.NewsViewDatas
+
+@foreach (var news in Model.NewsViewDataList)
+{
+    <a href="/News/Details/@news.News.NewsId"> - @news.TranslationsList.First().NewsTitle</a>
+}

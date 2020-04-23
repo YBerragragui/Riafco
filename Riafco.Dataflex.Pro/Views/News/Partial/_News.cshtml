@@ -1,0 +1,38 @@
+﻿@model Riafco.Dataflex.Pro.Models.News.ViewData.NewsViewDatas
+@using Riafco.Dataflex.Pro.GlobalResources.News;
+
+@{
+    Layout = null;
+}
+
+<ul id="news_items" class="homenews-container">
+    @foreach (var news in Model.NewsViewDataList)
+    {
+        var imgSrc = Constant.ImagesUrl + @"Images\News\" + news.News.NewsId + @"\" + news.News.NewsImage;
+        var translation = news.TranslationsList.First();
+
+        <li class="news-bloc">
+            <div class="news-bloc-img">
+                <img src="@imgSrc" class="img-responsive" alt="">
+                <div class="news-img-overlay">
+                    <img class="img-responsive" src="~/Images/voir.png" alt="" />
+                    <a href="@Url.Action("Details", "News", new { id = news.News.NewsId})">@NewsResources.PlusBtn</a>
+                </div>
+            </div>
+            <h3> @translation.NewsTitle</h3>
+            <p>@Html.Raw(translation.NewsSummary)</p>
+            <div class="news-bloc-details">
+                <h6>@news.News.NewsDate.ToShortDateString()</h6>
+                <a href="@Url.Action("Details", "News", new { id = news.News.NewsId})"><i class="fa fa-caret-right"></i>@NewsResources.PlusBtn</a>
+            </div>
+        </li>
+    }
+</ul>
+
+<div class="text-center items-pagination">
+    <span class="items-pager" id="first"><i class="fa fa-step-backward" aria-hidden="true"></i></span>
+    <span class="items-pager" id="previous"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+    <span class="items-pager pagination" id="holder"></span>
+    <span class="items-pager" id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+    <span class="items-pager" id="last"><i class="fa fa-step-forward" aria-hidden="true"></i></span>
+</div>

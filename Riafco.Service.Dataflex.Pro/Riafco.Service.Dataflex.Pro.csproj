@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AD0C6A0-5F3C-453C-85D9-4250ED039F9F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Riafco.Service.Dataflex.Pro</RootNamespace>
+    <AssemblyName>Riafco.Service.Dataflex.Pro</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About\Assembler\SectionFileAssembler.cs" />
+    <Compile Include="About\Assembler\StepAssembler.cs" />
+    <Compile Include="About\Assembler\StepParagraphAssembler.cs" />
+    <Compile Include="About\Assembler\StepParagraphTranslationAssembler.cs" />
+    <Compile Include="About\Data\Enum\FindStepParagraphPivot.cs" />
+    <Compile Include="About\Data\Enum\FindStepParagraphTranslationPivot.cs" />
+    <Compile Include="About\Data\Enum\FindStepPivot.cs" />
+    <Compile Include="About\Data\SectionFilePivot.cs" />
+    <Compile Include="About\Data\StepParagraphPivot.cs" />
+    <Compile Include="About\Data\StepParagraphTranslationPivot.cs" />
+    <Compile Include="About\Data\StepPivot.cs" />
+    <Compile Include="About\Interface\IServiceStep.cs" />
+    <Compile Include="About\Interface\IServiceStepParagraph.cs" />
+    <Compile Include="About\Interface\IServiceStepParagraphTranslation.cs" />
+    <Compile Include="About\Request\SectionFileRequestPivot.cs" />
+    <Compile Include="About\Request\StepParagraphRequestPivot.cs" />
+    <Compile Include="About\Request\StepParagraphTranslationRequestPivot.cs" />
+    <Compile Include="About\Request\StepRequestPivot.cs" />
+    <Compile Include="About\Response\SectionFileResponsePivot.cs" />
+    <Compile Include="About\Assembler\SectionFileTranslationAssembler.cs" />
+    <Compile Include="About\Data\SectionFileTranslationPivot.cs" />
+    <Compile Include="About\Request\SectionFileTranslationRequestPivot.cs" />
+    <Compile Include="About\Response\SectionFileTranslationResponsePivot.cs" />
+    <Compile Include="About\Assembler\SectionParagraphAssembler.cs" />
+    <Compile Include="About\Assembler\SectionParagraphTraslationAssembler.cs" />
+    <Compile Include="About\Assembler\SectionAssembler.cs" />
+    <Compile Include="About\Assembler\SectionTranslationAssembler.cs" />
+    <Compile Include="About\Data\SectionParagraphPivot.cs" />
+    <Compile Include="About\Data\SectionParagraphTranslationPivot.cs" />
+    <Compile Include="About\Data\Enum\FindSectionPivot.cs" />
+    <Compile Include="About\Data\Enum\FindSectionTranslationPivot.cs" />
+    <Compile Include="About\Data\Enum\FindSectionParagraphPivot.cs" />
+    <Compile Include="About\Data\Enum\FindSectionParagraphTranslationPivot.cs" />
+    <Compile Include="About\Data\SectionPivot.cs" />
+    <Compile Include="About\Data\SectionTranslationPivot.cs" />
+    <Compile Include="About\Data\Enum\FindSectionFilePivot.cs" />
+    <Compile Include="About\Data\Enum\FindSectionFileTranslationPivot.cs" />
+    <Compile Include="About\Interface\IServiceActivityParagraph.cs" />
+    <Compile Include="About\Interface\IServiceActivityParagraphTranslation.cs" />
+    <Compile Include="About\Interface\IServiceSection.cs" />
+    <Compile Include="About\Interface\IServiceSectionTranslation.cs" />
+    <Compile Include="About\Interface\IServiceSectionFile.cs" />
+    <Compile Include="About\Interface\IServiceSectionFileTranslation.cs" />
+    <Compile Include="About\Request\SectionParagraphRequestPivot.cs" />
+    <Compile Include="About\Request\SectionParagraphTranslationRequestPivot.cs" />
+    <Compile Include="About\Request\SectionRequestPivot.cs" />
+    <Compile Include="About\Request\SectionTranslationRequestPivot.cs" />
+    <Compile Include="About\Response\SectionParagraphResponsePivot.cs" />
+    <Compile Include="About\Response\SectionParagraphTranslationResponsePivot.cs" />
+    <Compile Include="About\Response\SectionResponsePivot.cs" />
+    <Compile Include="About\Response\SectionTranslationResponsePivot.cs" />
+    <Compile Include="About\Response\StepParagraphResponsePivot.cs" />
+    <Compile Include="About\Response\StepParagraphTranslationResponsePivot.cs" />
+    <Compile Include="About\Response\StepResponsePivot.cs" />
+    <Compile Include="About\ServiceSectionFile.cs" />
+    <Compile Include="About\ServiceSectionFileTranslation.cs" />
+    <Compile Include="About\ServiceSectionParagraph.cs" />
+    <Compile Include="About\ServiceSectionParagraphTranslation.cs" />
+    <Compile Include="About\ServiceSection.cs" />
+    <Compile Include="About\ServiceSectionTranslation.cs" />
+    <Compile Include="About\ServiceStep.cs" />
+    <Compile Include="About\ServiceStepParagraph.cs" />
+    <Compile Include="About\ServiceStepParagraphTranslation.cs" />
+    <Compile Include="Activites\Assembler\ActivityAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityFileAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityFileTranslationAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityParagraphAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityParagraphTraslationAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityTranslationAssembler.cs" />
+    <Compile Include="Activites\Data\ActivityFilePivot.cs" />
+    <Compile Include="Activites\Data\ActivityFileTranslationPivot.cs" />
+    <Compile Include="Activites\Data\ActivityParagraphPivot.cs" />
+    <Compile Include="Activites\Data\ActivityParagraphTranslationPivot.cs" />
+    <Compile Include="Activites\Data\ActivityPivot.cs" />
+    <Compile Include="Activites\Data\ActivityTranslationPivot.cs" />
+    <Compile Include="Activites\Data\Enum\FindActivityFilePivot.cs" />
+    <Compile Include="Activites\Data\Enum\FindActivityFileTranslationPivot.cs" />
+    <Compile Include="Activites\Data\Enum\FindActivityParagraphPivot.cs" />
+    <Compile Include="Activites\Data\Enum\FindActivityParagraphTranslationPivot.cs" />
+    <Compile Include="Activites\Data\Enum\FindActivityPivot.cs" />
+    <Compile Include="Activites\Data\Enum\FindActivityTranslationPivot.cs" />
+    <Compile Include="Activites\Interface\IServiceActivity.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityFile.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityFileTranslation.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityParagraph.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityParagraphTranslation.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityTranslation.cs" />
+    <Compile Include="Activites\Request\ActivityFileRequestPivot.cs" />
+    <Compile Include="Activites\Request\ActivityFileTranslationRequestPivot.cs" />
+    <Compile Include="Activites\Request\ActivityParagraphRequestPivot.cs" />
+    <Compile Include="Activites\Request\ActivityParagraphTranslationRequestPivot.cs" />
+    <Compile Include="Activites\Request\ActivityRequestPivot.cs" />
+    <Compile Include="Activites\Request\ActivityTranslationRequestPivot.cs" />
+    <Compile Include="Activites\Response\ActivityFileResponsePivot.cs" />
+    <Compile Include="Activites\Response\ActivityFileTranslationResponsePivot.cs" />
+    <Compile Include="Activites\Response\ActivityParagraphResponsePivot.cs" />
+    <Compile Include="Activites\Response\ActivityParagraphTranslationResponsePivot.cs" />
+    <Compile Include="Activites\Response\ActivityResponsePivot.cs" />
+    <Compile Include="Activites\Response\ActivityTranslationResponsePivot.cs" />
+    <Compile Include="Activites\ServiceActivity.cs" />
+    <Compile Include="Activites\ServiceActivityFile.cs" />
+    <Compile Include="Activites\ServiceActivityFileTranslation.cs" />
+    <Compile Include="Activites\ServiceActivityParagraph.cs" />
+    <Compile Include="Activites\ServiceActivityParagraphTranslation.cs" />
+    <Compile Include="Activites\ServiceActivityTranslation.cs" />
+    <Compile Include="Authorizarion\Assembler\RuleAssembler.cs" />
+    <Compile Include="Authorizarion\Assembler\UserAssembler.cs" />
+    <Compile Include="Authorizarion\Assembler\UserRuleAssembler.cs" />
+    <Compile Include="Authorizarion\Data\Enum\FindRulePivot.cs" />
+    <Compile Include="Authorizarion\Data\Enum\FindUserPivot.cs" />
+    <Compile Include="Authorizarion\Data\Enum\FindUserRulePivot.cs" />
+    <Compile Include="Authorizarion\Data\RulePivot.cs" />
+    <Compile Include="Authorizarion\Data\UserPivot.cs" />
+    <Compile Include="Authorizarion\Data\UserRulePivot.cs" />
+    <Compile Include="Authorizarion\Interface\IServiceRule.cs" />
+    <Compile Include="Authorizarion\Interface\IServiceUser.cs" />
+    <Compile Include="Authorizarion\Interface\IServiceUserRule.cs" />
+    <Compile Include="Authorizarion\Request\RuleRequestPivot.cs" />
+    <Compile Include="Authorizarion\Request\UserRequestPivot.cs" />
+    <Compile Include="Authorizarion\Request\UserRuleRequestPivot.cs" />
+    <Compile Include="Authorizarion\Response\RuleResponsePivot.cs" />
+    <Compile Include="Authorizarion\Response\UserResponsePivot.cs" />
+    <Compile Include="Authorizarion\Response\UserRuleResponsePivot.cs" />
+    <Compile Include="Authorizarion\ServiceRule.cs" />
+    <Compile Include="Authorizarion\ServiceUser.cs" />
+    <Compile Include="Authorizarion\ServiceUserRule.cs" />
+    <Compile Include="Contact\Assembler\ContactMessageAssembler.cs" />
+    <Compile Include="Contact\Data\ContactMessagePivot.cs" />
+    <Compile Include="Contact\Data\Enum\FindContactMessagePivot.cs" />
+    <Compile Include="Contact\Interface\IServiceContactMessage.cs" />
+    <Compile Include="Contact\Request\ContactMessageRequestPivot.cs" />
+    <Compile Include="Contact\Response\ContactMessageResponsePivot.cs" />
+    <Compile Include="Contact\ServiceContactMessage.cs" />
+    <Compile Include="Languages\Assembler\LanguageAssembler.cs" />
+    <Compile Include="Languages\Data\Enum\FindLanguagePivot.cs" />
+    <Compile Include="Languages\Data\LanguagePivot.cs" />
+    <Compile Include="Languages\Interface\IServiceLanguage.cs" />
+    <Compile Include="Languages\Request\LanguageRequestPivot.cs" />
+    <Compile Include="Languages\Response\LanguageResponsePivot.cs" />
+    <Compile Include="Languages\ServiceLanguage.cs" />
+    <Compile Include="Newsletters\Assembler\NewsletterMailAssembler.cs" />
+    <Compile Include="Newsletters\Assembler\NewsletterMailTranslationAssembler.cs" />
+    <Compile Include="Newsletters\Assembler\SubscriberAssembler.cs" />
+    <Compile Include="Newsletters\Data\Enum\FindNewsletterMailPivot.cs" />
+    <Compile Include="Newsletters\Data\Enum\FindNewsletterMailTranslationPivot.cs" />
+    <Compile Include="Newsletters\Data\Enum\FindSubscriberPivot.cs" />
+    <Compile Include="Newsletters\Data\NewsletterMailPivot.cs" />
+    <Compile Include="Newsletters\Data\NewsletterMailTranslationPivot.cs" />
+    <Compile Include="Newsletters\Data\SubscriberPivot.cs" />
+    <Compile Include="Newsletters\Interface\IServiceNewsletterMail.cs" />
+    <Compile Include="Newsletters\Interface\IServiceNewsletterMailTranslation.cs" />
+    <Compile Include="Newsletters\Interface\IServiceSubscriber.cs" />
+    <Compile Include="Newsletters\Request\NewsletterMailRequestPivot.cs" />
+    <Compile Include="Newsletters\Request\NewsletterMailTranslationRequestPivot.cs" />
+    <Compile Include="Newsletters\Request\SubscriberRequestPivot.cs" />
+    <Compile Include="Newsletters\Response\NewsletterMailResponsePivot.cs" />
+    <Compile Include="Newsletters\Response\NewsletterMailTranslationResponsePivot.cs" />
+    <Compile Include="Newsletters\Response\SubscriberResponsePivot.cs" />
+    <Compile Include="Newsletters\ServiceNewsletterMail.cs" />
+    <Compile Include="Newsletters\ServiceNewsletterMailTranslation.cs" />
+    <Compile Include="Newsletters\ServiceSubscriber.cs" />
+    <Compile Include="News\Assembler\NewsAssembler.cs" />
+    <Compile Include="News\Assembler\NewsTranslationAssembler.cs" />
+    <Compile Include="News\Data\Enum\FindNewsPivot.cs" />
+    <Compile Include="News\Data\Enum\FindNewsTranslationPivot.cs" />
+    <Compile Include="News\Data\NewsPivot.cs" />
+    <Compile Include="News\Data\NewsTranslationPivot.cs" />
+    <Compile Include="News\Interface\IServiceNews.cs" />
+    <Compile Include="News\Interface\IServiceNewsTranslation.cs" />
+    <Compile Include="News\Request\NewsRequestPivot.cs" />
+    <Compile Include="News\Request\NewsTranslationRequestPivot.cs" />
+    <Compile Include="News\Response\NewsResponsePivot.cs" />
+    <Compile Include="News\Response\NewsTranslationResponsePivot.cs" />
+    <Compile Include="News\ServiceNews.cs" />
+    <Compile Include="News\ServiceNewsTranslation.cs" />
+    <Compile Include="Occurrences\Assembler\OccurrenceAssembler.cs" />
+    <Compile Include="Occurrences\Assembler\OccurrenceTranslationAssembler.cs" />
+    <Compile Include="Occurrences\Data\Enum\FindOccurrencePivot.cs" />
+    <Compile Include="Occurrences\Data\Enum\FindOccurrenceTranslationPivot.cs" />
+    <Compile Include="Occurrences\Data\OccurrencePivot.cs" />
+    <Compile Include="Occurrences\Data\OccurrenceTranslationPivot.cs" />
+    <Compile Include="Occurrences\Interface\IServiceOccurrence.cs" />
+    <Compile Include="Occurrences\Interface\IServiceOccurrenceTranslation.cs" />
+    <Compile Include="Occurrences\Request\OccurrenceRequestPivot.cs" />
+    <Compile Include="Occurrences\Request\OccurrenceTranslationRequestPivot.cs" />
+    <Compile Include="Occurrences\Response\OccurrenceResponsePivot.cs" />
+    <Compile Include="Occurrences\Response\OccurrenceTranslationResponsePivot.cs" />
+    <Compile Include="Occurrences\ServiceOccurrence.cs" />
+    <Compile Include="Occurrences\ServiceOccurrenceTranslation.cs" />
+    <Compile Include="Offices\Assembler\CountryAssembler.cs" />
+    <Compile Include="Offices\Assembler\CountryTranslationAssembler.cs" />
+    <Compile Include="Offices\Assembler\SheetAssembler.cs" />
+    <Compile Include="Offices\Assembler\SheetTranslationAssembler.cs" />
+    <Compile Include="Offices\Data\CountryPivot.cs" />
+    <Compile Include="Offices\Data\CountryTranslationPivot.cs" />
+    <Compile Include="Offices\Data\Enum\FindCountryPivot.cs" />
+    <Compile Include="Offices\Data\Enum\FindCountryTranslationPivot.cs" />
+    <Compile Include="Offices\Data\Enum\FindSheetPivot.cs" />
+    <Compile Include="Offices\Data\Enum\FindSheetTranslationPivot.cs" />
+    <Compile Include="Offices\Data\SheetPivot.cs" />
+    <Compile Include="Offices\Data\SheetTranslationPivot.cs" />
+    <Compile Include="Offices\Interface\IServiceCountry.cs" />
+    <Compile Include="Offices\Interface\IServiceCountryTranslation.cs" />
+    <Compile Include="Offices\Interface\IServiceSheet.cs" />
+    <Compile Include="Offices\Interface\IServiceSheetTranslation.cs" />
+    <Compile Include="Offices\Request\CountryRequestPivot.cs" />
+    <Compile Include="Offices\Request\CountryTranslationRequestPivot.cs" />
+    <Compile Include="Offices\Request\SheetRequestPivot.cs" />
+    <Compile Include="Offices\Request\SheetTranslationRequestPivot.cs" />
+    <Compile Include="Offices\Response\CountryResponsePivot.cs" />
+    <Compile Include="Offices\Response\CountryTranslationResponsePivot.cs" />
+    <Compile Include="Offices\Response\SheetResponsePivot.cs" />
+    <Compile Include="Offices\Response\SheetTranslationResponsePivot.cs" />
+    <Compile Include="Offices\ServiceCountry.cs" />
+    <Compile Include="Offices\ServiceCountryTranslation.cs" />
+    <Compile Include="Offices\ServiceSheet.cs" />
+    <Compile Include="Offices\ServiceSheetTranslation.cs" />
+    <Compile Include="Partners\Assembler\PartnerAssembler.cs" />
+    <Compile Include="Partners\Data\Enum\FindPartnerPivot.cs" />
+    <Compile Include="Partners\Data\PartnerPivot.cs" />
+    <Compile Include="Partners\Interface\IServicePartner.cs" />
+    <Compile Include="Partners\Request\PartnerRequestPivot.cs" />
+    <Compile Include="Partners\Response\PartnerResponsePivot.cs" />
+    <Compile Include="Partners\ServicePartner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ressources\Assembler\AreaAssembler.cs" />
+    <Compile Include="Ressources\Assembler\AreaTranslationAssembler.cs" />
+    <Compile Include="Ressources\Assembler\AuthorAssembler.cs" />
+    <Compile Include="Ressources\Assembler\PublicationAssembler.cs" />
+    <Compile Include="Ressources\Assembler\PublicationThemeAssembler.cs" />
+    <Compile Include="Ressources\Assembler\PublicationTranslationAssembler.cs" />
+    <Compile Include="Ressources\Assembler\ThemeAssembler.cs" />
+    <Compile Include="Ressources\Assembler\ThemeTranslationAssembler.cs" />
+    <Compile Include="Ressources\Data\AreaPivot.cs" />
+    <Compile Include="Ressources\Data\AreaTranslationPivot.cs" />
+    <Compile Include="Ressources\Data\AuthorPivot.cs" />
+    <Compile Include="Ressources\Data\Enum\FindAreaPivot.cs" />
+    <Compile Include="Ressources\Data\Enum\FindAreaTranslationPivot.cs" />
+    <Compile Include="Ressources\Data\Enum\FindAuthorPivot.cs" />
+    <Compile Include="Ressources\Data\Enum\FindPublicationPivot.cs" />
+    <Compile Include="Ressources\Data\Enum\FindPublicationThemePivot.cs" />
+    <Compile Include="Ressources\Data\Enum\FindPublicationTranslationPivot.cs" />
+    <Compile Include="Ressources\Data\Enum\FindThemePivot.cs" />
+    <Compile Include="Ressources\Data\Enum\FindThemeTranslationPivot.cs" />
+    <Compile Include="Ressources\Data\PublicationPivot.cs" />
+    <Compile Include="Ressources\Data\PublicationThemePivot.cs" />
+    <Compile Include="Ressources\Data\PublicationTranslationPivot.cs" />
+    <Compile Include="Ressources\Data\ThemePivot.cs" />
+    <Compile Include="Ressources\Data\ThemeTranslationPivot.cs" />
+    <Compile Include="Ressources\Interface\IServiceArea.cs" />
+    <Compile Include="Ressources\Interface\IServiceAreaTranslation.cs" />
+    <Compile Include="Ressources\Interface\IServiceAuthor.cs" />
+    <Compile Include="Ressources\Interface\IServicePublication.cs" />
+    <Compile Include="Ressources\Interface\IServicePublicationTheme.cs" />
+    <Compile Include="Ressources\Interface\IServicePublicationTranslation.cs" />
+    <Compile Include="Ressources\Interface\IServiceTheme.cs" />
+    <Compile Include="Ressources\Interface\IServiceThemeTranslation.cs" />
+    <Compile Include="Ressources\Request\AreaRequestPivot.cs" />
+    <Compile Include="Ressources\Request\AreaTranslationRequestPivot.cs" />
+    <Compile Include="Ressources\Request\AuthorRequestPivot.cs" />
+    <Compile Include="Ressources\Request\PublicationRequestPivot.cs" />
+    <Compile Include="Ressources\Request\PublicationThemeRequestPivot.cs" />
+    <Compile Include="Ressources\Request\PublicationTranslationRequestPivot.cs" />
+    <Compile Include="Ressources\Request\ThemeRequestPivot.cs" />
+    <Compile Include="Ressources\Request\ThemeTranslationRequestPivot.cs" />
+    <Compile Include="Ressources\Response\AreaResponsePivot.cs" />
+    <Compile Include="Ressources\Response\AreaTranslationResponsePivot.cs" />
+    <Compile Include="Ressources\Response\AuthorResponsePivot.cs" />
+    <Compile Include="Ressources\Response\PublicationResponsePivot.cs" />
+    <Compile Include="Ressources\Response\PublicationThemeResponsePivot.cs" />
+    <Compile Include="Ressources\Response\PublicationTranslationResponsePivot.cs" />
+    <Compile Include="Ressources\Response\ThemeResponsePivot.cs" />
+    <Compile Include="Ressources\Response\ThemeTranslationResponsePivot.cs" />
+    <Compile Include="Ressources\ServiceArea.cs" />
+    <Compile Include="Ressources\ServiceAreaTranslation.cs" />
+    <Compile Include="Ressources\ServiceAuthor.cs" />
+    <Compile Include="Ressources\ServicePublication.cs" />
+    <Compile Include="Ressources\ServicePublicationTheme.cs" />
+    <Compile Include="Ressources\ServicePublicationTranslation.cs" />
+    <Compile Include="Ressources\ServiceTheme.cs" />
+    <Compile Include="Ressources\ServiceThemeTranslation.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Riafco.Dal.Dataflex.Pro\Riafco.Dal.Dataflex.Pro.csproj">
+      <Project>{0d110d29-d897-4d5d-bdaf-4b80dc97a3ea}</Project>
+      <Name>Riafco.Dal.Dataflex.Pro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Riafco.Entity.Dataflex.Pro\Riafco.Entity.Dataflex.Pro.csproj">
+      <Project>{69b957ba-fd8a-494d-bd6d-e39b058b83dd}</Project>
+      <Name>Riafco.Entity.Dataflex.Pro</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,51 @@
+﻿@model Riafco.Dataflex.Pro.Models.IfclModel
+
+@{
+    ViewBag.Title = "Riafco | " + Model.CountryViewData.TranslationsList.First().CountryTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var imgSrc = Constant.ImagesUrl + @"Images/Countries/" + Model.CountryViewData.Country.CountryId + @"/" + Model.CountryViewData.Country.CountryImage;
+}
+
+@section Styles {
+    <link href="~/Content/ifcl.css" rel="stylesheet" />
+}
+
+@section Scripts {
+
+}
+
+<div class="container ifcl-container">
+    <div class="row ifcl-row">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ifcl-col-1">
+            <div class="country-img-container">
+                <h3>@Model.CountryViewData.TranslationsList.First().CountryName</h3>
+                <img src="@imgSrc" class="img-responsive country-img" />
+            </div>
+            <table class="ifcl-table">
+                <tbody>
+                    @foreach (var sheet in Model.SheetsViewData.Sheets)
+                    {
+                        <tr>
+                            <td>@sheet.TranslationsList.First().SheetTitle</td>
+                            <td>@Html.Raw(sheet.TranslationsList.First().SheetValue)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 ifcl-col-2">
+            <p>@Model.CountryViewData.TranslationsList.First().CountryTitle</p>
+            <p>@Html.Raw(Model.CountryViewData.TranslationsList.First().CountrySummary)</p>
+            <p>@Html.Raw(Model.CountryViewData.TranslationsList.First().CountryDescription)</p>
+        </div>
+    </div>
+</div>
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}

@@ -1,0 +1,75 @@
+﻿@using Riafco.Dataflex.Pro.GlobalResources.About
+@model Riafco.Dataflex.Pro.Models.HistoryModel
+
+@{
+    ViewBag.Title = "RIAFCO | " + AboutResources.HistoryTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.About = "active";
+}
+
+@section Styles {
+    <link href="~/Content/historique.css" rel="stylesheet" />
+}
+
+@section Scripts{
+    
+}
+
+<div class="container">
+    <div class="row main-row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <div class="historique-title">
+                <div class="orange-line"></div>
+                <img src="~/Images/title-icon-left.png" class="left-gray" alt="" />
+                <h3>@AboutResources.HistoryTitle</h3>
+                <img src="~/Images/title-icon-right.png" class="right-gray" alt="" />
+            </div>
+            <div class="historique-container">
+                @{
+                    bool isFirst = true;
+                    string cssClass = "historique-sec-1";
+                    foreach (var step in Model.StepsViewData.Steps)
+                    {
+                        <div class="@cssClass">
+                            @if (isFirst == false)
+                            {
+                                <div class="vertical-top-orange"></div>
+
+                            }
+                            <div class="historique-date">
+                                <a>@step.Step.StepDate.ToString("dd/MM/yyyy")</a>
+                            </div>
+                            <div class="vertical-bottom-orange"></div>
+                            <div class="historique-desc-container">
+                                @foreach (var stepParagraphItemData in step.ParagraphsItemData)
+                                {
+                                    <div class="historique-desc">
+                                        <span class="description-icon"><i class="fa fa-circle"></i></span>
+                                        <h5 class="description-title">@stepParagraphItemData.TranslationItemDataList.First().ParagraphTitle</h5>
+                                        <p>@stepParagraphItemData.TranslationItemDataList.First().ParagraphDescription</p>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                        isFirst = false;
+                        cssClass = cssClass == "historique-sec-1" ? "historique-sec-2" : "historique-sec-1";
+                    }
+                }
+                <div class="horizontal-bottom-orange"></div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 tweet-col">
+            @Html.Partial("_Twitter")
+            @Html.Partial("_Newsletter", Model.SubscriberFormData)
+        </div>
+    </div>
+</div>
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}

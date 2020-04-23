@@ -1,0 +1,143 @@
+﻿@using Admin.Riafco.Dataflex.Pro.Models.Authorization.ItemData
+@{
+    UserItemData user = (UserItemData)Session["ConnectedUser"];
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Jquery/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/Jquery/jquery-ui.structure.css" rel="stylesheet" />
+    <link href="~/Content/Jquery/jquery-ui.theme.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/DataTable/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/DataTable/css/dataTables.semanticui.css" rel="stylesheet" />
+    <link href="~/Content/DataTable/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/DataTable/css/datatables.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/jcrop/cropper.css" rel="stylesheet" />
+    <link href="~/Content/Jquery/jquery.m.toast.css" rel="stylesheet" />
+    <link href="~/Content/shared.css" rel="stylesheet" />
+    <link href="~/Content/model.css" rel="stylesheet" />
+
+    <!--FROLA EDITEUR-->
+    <link href="~/Content/Editeur/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/froala_editor.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/froala_style.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/char_counter.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/code_view.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/colors.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/draggable.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/emoticons.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/file.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/fullscreen.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/help.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/image.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/image_manager.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/line_breaker.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/quick_insert.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/special_characters.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/table.css" rel="stylesheet" />
+    <link href="~/Content/Editeur/Plugins/video.css" rel="stylesheet" />
+    @RenderSection("Styles", false)
+
+    <script src="~/Scripts/Jquery/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/Jquery/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/Bootstrap/bootstrap.js"></script>
+    <script src="~/Scripts/DataTable/datatables.js"></script>
+    <script src="~/Scripts/Toast/jquery.m.toast.js"></script>
+    <script src="~/Scripts/jcrop/cropper.js"></script>
+    <script src="~/Scripts/Jquery/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/shared.js"></script>
+
+    <!--FROLA EDITEUR-->
+    <script src="~/Scripts/Editeur/froala_editor.min.js"></script>
+    <script src="~/Scripts/Editeur/Plugins/align.min.js"></script>
+    <script src="~/Scripts/Editeur/Plugins/char_counter.min.js"></script>
+    <script src="~/Scripts/Editeur/Plugins/code_beautifier.min.js"></script>
+    <script src="~/Scripts/Editeur/Plugins/colors.min.js"></script>
+    <script src="~/Scripts/Editeur/Plugins/fullscreen.min.js"></script>
+    <script src="~/Scripts/Editeur/Plugins/inline_style.min.js"></script>
+    <script src="~/Scripts/Editeur/Plugins/link.min.js"></script>
+    <script src="~/Scripts/Editeur/Plugins/lists.min.js"></script>
+    @RenderSection("Scripts", false)
+</head>
+<body>
+    <nav class="navbar-default visible-xs">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <a href="/Users" class="menu_item @ViewBag.Users" style="background-image: url(/Images/users_icon.png);">Utilisateurs</a>
+                <a href="/Settings" class="menu_item @ViewBag.Settings" style="background-image: url(/Images/settings.png);">Configurations</a>
+                <a href="/Activities" class="menu_item @ViewBag.Activities" style="background-image: url(/Images/activities.png);">Activités</a>
+                <a href="/About" class="menu_item @ViewBag.About" style="background-image: url(/Images/about.png);">A Propos</a>
+                <a href="/News" class="menu_item @ViewBag.News" style="background-image: url(/Images/news.png);">Actualités</a>
+                <a href="/Occurrences" class="menu_item @ViewBag.Occurrences" style="background-image: url(/Images/event.png);">Agenda</a>
+                <a href="/Offices" class="menu_item @ViewBag.Offices" style="background-image: url(/Images/africa.png);">Pays et Membres</a>
+                <a href="/Ressources" class="menu_item @ViewBag.Ressources" style="background-image: url(/Images/book.png);">Ressources</a>
+                <a href="/Partners" class="menu_item @ViewBag.Partners" style="background-image: url(/Images/partners.png);">Partenaires</a>
+                <a href="/Home/Logout" class="menu_item" style="background-image: url(/Images/deconnexion.png);">Déconnexion</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="mini_side_menu hidden-xs">
+            <ul class="list_menu_items">
+                <li class="mini_menu_items @ViewBag.Users"><a href="/Users"><i class="icon_menu" style="background-image: url(/Images/users_icon.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Utilisateurs</span></a></li>
+                <li class="mini_menu_items @ViewBag.Settings"><a href="/Settings"><i class="icon_menu" style="background-image: url(/Images/settings.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Configurations</span></a></li>
+                <li class="mini_menu_items @ViewBag.Activities"><a href="/Activities"><i class="icon_menu" style="background-image: url(/Images/activities.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Activités</span></a></li>
+                <li class="mini_menu_items @ViewBag.About"><a href="/About"><i class="icon_menu" style="background-image: url(/Images/about.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">A Propos</span></a></li>
+                <li class="mini_menu_items @ViewBag.News"><a href="/News"><i class="icon_menu" style="background-image: url(/Images/news.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Actualités</span></a></li>
+                <li class="mini_menu_items @ViewBag.Occurrences"><a href="/Occurrences"><i class="icon_menu" style="background-image: url(/Images/event.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Agenda</span></a></li>
+                <li class="mini_menu_items @ViewBag.Ressources"><a href="/Ressources"><i class="icon_menu" style="background-image: url(/Images/book.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Ressources</span></a></li>
+                <li class="mini_menu_items @ViewBag.Offices"><a href="/Offices"><i class="icon_menu" style="background-image: url(/Images/africa.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Pays et Membres</span></a></li>
+                <li class="mini_menu_items @ViewBag.Partners"><a href="/Partners"><i class="icon_menu" style="background-image: url(/Images/partners.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Partenaires</span></a></li>
+                <li class="mini_menu_items @ViewBag.Newsletters"><a href="/Newsletters"><i class="icon_menu" style="background-image: url(/Images/mail.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Newsletters</span></a></li>
+                <li class="mini_menu_items"><a href="/Home/Logout"><i class="icon_menu" style="background-image: url(/Images/deconnexion.png);"></i><span class="dir_tootip"></span><span class="menu_tooltip">Déconnexion</span></a></li>
+            </ul>
+        </div>
+
+        <div class="layout_container">
+            <div class="profile_container">
+                <div class="info_profile_container">
+                    <div class="name_profile">@user.UserName</div>
+                    <div class="name_profile">@user.UserMail</div>
+                </div>
+                @{
+                    <a href="/Profile" class="profile_image" style="background-image:url('/Images/Users/@user.UserPicture')">
+                        <img alt="" src="~/Images/square.png" class="img-responsive" />
+                    </a>
+                }
+            </div>
+            @RenderBody()
+        </div>
+
+        <div id="crop_pop_up" class="cd-popup" role="alert">
+            <div class="cd-popup-container">
+                <div class="modal-header">
+                    <h4>
+                        <span>Couper l'image : </span>
+                        <a class="cd-popup-close img-replace"></a>
+                    </h4>
+                </div>
+                <div id="crop_input"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

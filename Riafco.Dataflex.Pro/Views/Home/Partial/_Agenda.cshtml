@@ -1,0 +1,37 @@
+﻿@model Riafco.Dataflex.Pro.Models.Occurrences.ViewData.OccurrencesViewData
+@using System.Threading
+@using System.Globalization
+@using Riafco.Dataflex.Pro.GlobalResources.Occurrences
+
+@{
+    CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+}
+
+<div class="container-fluid main-agenda">
+    <div class="container agenda-container">
+        <div class="agenda-title">
+            <div class="gray-line"></div>
+            <img src="~/Images/title-icon-left-gray.png" class="left-gray" alt="" />
+            <h3>@OccurrenceResources.Title</h3>
+            <img src="~/Images/title-icon-right-gray.png" class="right-gray" alt="" />
+        </div>
+        <div class="owl-carousel owl-carousel2 owl-theme">
+            @foreach (var item in Model.Occurrences)
+            {
+                foreach (var traslationOccurence in item.TranslationsList)
+                {
+                    <div class="item agenda-item">
+                        <div class="agenda-title"><h4>@traslationOccurence.OccurrenceTitle</h4></div>
+                        <div class="agenda-desc">
+                            <div class="agenda-date">
+                                <h5>@cultureInfo.DateTimeFormat.GetDayName(item.Occurrence.OccurrenceStratDate.DayOfWeek)</h5>
+                                <h4><span>|</span><span>@item.Occurrence.OccurrenceStratDate.ToString("MM/dd/yyyy")</span></h4>
+                            </div>
+                            <p>@Html.Raw(traslationOccurence.OccurrenceDescription)</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

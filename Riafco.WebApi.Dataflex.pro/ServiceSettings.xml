@@ -1,0 +1,217 @@
+﻿<serviceSettings>
+  <services>
+    <service serviceAssembly="Riafco.Service.Dataflex.Pro" entityAssembly="Riafco.Entity.Dataflex.Pro">
+
+      <dependencies>
+
+        <!-- authorization -->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Authorizarion.User" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Authorizarion.Rule" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Authorizarion.UserRule" />
+
+        <!-- langue -->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Languages.Language" />
+
+        <!-- activites -->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Activites.Activity" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Activites.ActivityTranslation" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Activites.ActivityParagraph" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Activites.ActivityParagraphTranslation" />
+
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Activites.ActivityFile" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Activites.ActivityFileTranslation" />
+
+        <!--news-->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.News.News" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.News.NewsTranslation" />
+
+        <!--occurrences-->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Occurrences.Occurrence" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Occurrences.OccurrenceTranslation" />
+
+        <!--sections-->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.Section" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.SectionTranslation" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.SectionParagraph" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.SectionParagraphTranslation" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.SectionFile" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.SectionFileTranslation" />
+
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.Step" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.StepParagraph" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.StepParagraphTranslation" />
+
+        <!--countries-->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Offices.Country" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Offices.CountryTranslation" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Offices.Sheet" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Offices.SheetTranslation" />
+
+
+        <!--ressources-->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Ressources.Author" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Ressources.Theme" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Ressources.ThemeTranslation" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Ressources.Area" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Ressources.AreaTranslation" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Ressources.Publication" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Ressources.PublicationTranslation" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Ressources.PublicationTheme" />
+
+        <!--newsletters-->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Newsletters.Subscriber" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Newsletters.NewsletterMail" />
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Newsletters.NewsletterMailTranslation" />
+
+        <!--partners-->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Partners.Partner" />
+
+        <!--Contact-->
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.Contact.ContactMessage" />
+
+      </dependencies>
+
+      <adapters>
+        <adapter assemblyType="Service" assembly="Riafco.Service.Dataflex.Pro">
+          <types>
+            <type classLibrary="Riafco.Service.Dataflex.Pro.UnitOfWork.UnitOfWork" interface="Riafco.Service.Dataflex.Pro.UnitOfWork.IUnitOfWork" />
+
+            <!-- authorization -->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Authorizarion.ServiceRule" interface="Riafco.Service.Dataflex.Pro.Authorizarion.Interface.IServiceRule" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Authorizarion.ServiceUser" interface="Riafco.Service.Dataflex.Pro.Authorizarion.Interface.IServiceUser" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Authorizarion.ServiceUserRule" interface="Riafco.Service.Dataflex.Pro.Authorizarion.Interface.IServiceUserRule" />
+
+            <!-- langue -->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Languages.ServiceLanguage" interface="Riafco.Service.Dataflex.Pro.Languages.Interface.IServiceLanguage" />
+
+            <!-- activities -->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Activites.ServiceActivity" interface="Riafco.Service.Dataflex.Pro.Activites.Interface.IServiceActivity" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Activites.ServiceActivityTranslation" interface="Riafco.Service.Dataflex.Pro.Activites.Interface.IServiceActivityTranslation" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Activites.ServiceActivityParagraph" interface="Riafco.Service.Dataflex.Pro.Activites.Interface.IServiceActivityParagraph" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Activites.ServiceActivityParagraphTranslation" interface="Riafco.Service.Dataflex.Pro.Activites.Interface.IServiceActivityParagraphTranslation" />
+
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Activites.ServiceActivityFile" interface="Riafco.Service.Dataflex.Pro.Activites.Interface.IServiceActivityFile" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Activites.ServiceActivityFileTranslation" interface="Riafco.Service.Dataflex.Pro.Activites.Interface.IServiceActivityFileTranslation" />
+
+            <!--News-->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.News.ServiceNews" interface="Riafco.Service.Dataflex.Pro.News.Interface.IServiceNews" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.News.ServiceNewsTranslation" interface="Riafco.Service.Dataflex.Pro.News.Interface.IServiceNewsTranslation" />
+
+            <!--Occurrences-->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Occurrences.ServiceOccurrence" interface="Riafco.Service.Dataflex.Pro.Occurrences.Interface.IServiceOccurrence" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Occurrences.ServiceOccurrenceTranslation" interface="Riafco.Service.Dataflex.Pro.Occurrences.Interface.IServiceOccurrenceTranslation" />
+
+            <!--Sections-->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceSection" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceSection" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceSectionTranslation" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceSectionTranslation" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceSectionParagraph" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceSectionParagraph" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceSectionParagraphTranslation" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceSectionParagraphTranslation" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceSectionFile" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceSectionFile" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceSectionFileTranslation" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceSectionFileTranslation" />
+
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceStep" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceStep" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceStepParagraph" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceStepParagraph" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceStepParagraphTranslation" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceStepParagraphTranslation" />
+
+            <!--Countries-->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Offices.ServiceCountry" interface="Riafco.Service.Dataflex.Pro.Offices.Interface.IServiceCountry" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Offices.ServiceCountryTranslation" interface="Riafco.Service.Dataflex.Pro.Offices.Interface.IServiceCountryTranslation" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Offices.ServiceSheet" interface="Riafco.Service.Dataflex.Pro.Offices.Interface.IServiceSheet"/>
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Offices.ServiceSheetTranslation" interface="Riafco.Service.Dataflex.Pro.Offices.Interface.IServiceSheetTranslation" />
+
+            <!--Ressources-->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Ressources.ServiceAuthor" interface="Riafco.Service.Dataflex.Pro.Ressources.Interface.IServiceAuthor" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Ressources.ServiceTheme" interface="Riafco.Service.Dataflex.Pro.Ressources.Interface.IServiceTheme" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Ressources.ServiceThemeTranslation" interface="Riafco.Service.Dataflex.Pro.Ressources.Interface.IServiceThemeTranslation" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Ressources.ServiceArea" interface="Riafco.Service.Dataflex.Pro.Ressources.Interface.IServiceArea" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Ressources.ServiceAreaTranslation" interface="Riafco.Service.Dataflex.Pro.Ressources.Interface.IServiceAreaTranslation" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Ressources.ServicePublication" interface="Riafco.Service.Dataflex.Pro.Ressources.Interface.IServicePublication" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Ressources.ServicePublicationTranslation" interface="Riafco.Service.Dataflex.Pro.Ressources.Interface.IServicePublicationTranslation" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Ressources.ServicePublicationTheme" interface="Riafco.Service.Dataflex.Pro.Ressources.Interface.IServicePublicationTheme" />
+
+            <!--Newsletters-->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Newsletters.ServiceSubscriber" interface="Riafco.Service.Dataflex.Pro.Newsletters.Interface.IServiceSubscriber" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Newsletters.ServiceNewsletterMail" interface="Riafco.Service.Dataflex.Pro.Newsletters.Interface.IServiceNewsletterMail" />
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Newsletters.ServiceNewsletterMailTranslation" interface="Riafco.Service.Dataflex.Pro.Newsletters.Interface.IServiceNewsletterMailTranslation" />
+
+            <!--Partners-->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Partners.ServicePartner" interface="Riafco.Service.Dataflex.Pro.Partners.Interface.IServicePartner" />
+
+            <!--Contact-->
+            <type classLibrary="Riafco.Service.Dataflex.Pro.Contact.ServiceContactMessage" interface="Riafco.Service.Dataflex.Pro.Contact.Interface.IServiceContactMessage" />
+
+          </types>
+        </adapter>
+        <adapter assemblyType="WebApiService" assembly="Riafco.WebApi.Service.Dataflex.pro">
+          <types>
+
+            <!-- authorization -->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Authorizarion.ServiceUserClient" interface="Riafco.WebApi.Service.Dataflex.pro.Authorizarion.Interface.IServiceUserClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Authorizarion.ServiceRuleClient" interface="Riafco.WebApi.Service.Dataflex.pro.Authorizarion.Interface.IServiceRuleClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Authorizarion.ServiceUserRuleClient" interface="Riafco.WebApi.Service.Dataflex.pro.Authorizarion.Interface.IServiceUserRuleClient" />
+
+            <!-- langue -->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Languages.ServiceLanguageClient" interface="Riafco.WebApi.Service.Dataflex.pro.Languages.Interface.IServiceLanguageClient" />
+
+            <!-- activite -->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Activites.ServiceActivityClient" interface="Riafco.WebApi.Service.Dataflex.pro.Activites.Interface.IServiceActivityClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Activites.ServiceActivityTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Activites.Interface.IServiceActivityTranslationClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Activites.ServiceActivityParagraphClient" interface="Riafco.WebApi.Service.Dataflex.pro.Activites.Interface.IServiceActivityParagraphClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Activites.ServiceActivityParagraphTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Activites.Interface.IServiceActivityParagraphTranslationClient" />
+
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Activites.ServiceActivityFileClient" interface="Riafco.WebApi.Service.Dataflex.pro.Activites.Interface.IServiceActivityFileClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Activites.ServiceActivityFileTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Activites.Interface.IServiceActivityFileTranslationClient" />
+
+            <!--news-->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.News.ServiceNewsClient" interface="Riafco.WebApi.Service.Dataflex.pro.News.Interface.IServiceNewsClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.News.ServiceNewsTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.News.Interface.IServiceNewsTranslationClient" />
+
+            <!--occurrences-->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Occurrences.ServiceOccurrenceClient" interface="Riafco.WebApi.Service.Dataflex.pro.Occurrences.Interface.IServiceOccurrenceClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Occurrences.ServiceOccurrenceTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Occurrences.Interface.IServiceOccurrenceTranslationClient" />
+
+            <!--Sections-->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceSectionClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceSectionClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceSectionTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceSectionTranslationClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceSectionParagraphClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceSectionParagraphClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceSectionParagraphTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceSectionParagraphTranslationClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceSectionFileClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceSectionFileClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceSectionFileTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceSectionFileTranslationClient" />
+
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceStepClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceStepClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceStepParagraphClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceStepParagraphClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceStepParagraphTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceStepParagraphTranslationClient" />
+
+            <!--Countries-->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Offices.ServiceCountryClient" interface="Riafco.WebApi.Service.Dataflex.pro.Offices.Interface.IServiceCountryClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Offices.ServiceCountryTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Offices.Interface.IServiceCountryTranslationClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Offices.ServiceSheetClient" interface="Riafco.WebApi.Service.Dataflex.pro.Offices.Interface.IServiceSheetClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Offices.ServiceSheetTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Offices.Interface.IServiceSheetTranslationClient" />
+
+            <!--ressources-->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Ressources.ServiceAuthorClient" interface="Riafco.WebApi.Service.Dataflex.pro.Ressources.Interface.IServiceAuthorClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Ressources.ServiceThemeClient" interface="Riafco.WebApi.Service.Dataflex.pro.Ressources.Interface.IServiceThemeClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Ressources.ServiceThemeTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Ressources.Interface.IServiceThemeTranslationClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Ressources.ServiceAreaClient" interface="Riafco.WebApi.Service.Dataflex.pro.Ressources.Interface.IServiceAreaClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Ressources.ServiceAreaTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Ressources.Interface.IServiceAreaTranslationClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Ressources.ServicePublicationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Ressources.Interface.IServicePublicationClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Ressources.ServicePublicationTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Ressources.Interface.IServicePublicationTranslationClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Ressources.ServicePublicationThemeClient" interface="Riafco.WebApi.Service.Dataflex.pro.Ressources.Interface.IServicePublicationThemeClient" />
+
+            <!--Newsletters-->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Newsletters.ServiceSubscriberClient" interface="Riafco.WebApi.Service.Dataflex.pro.Newsletters.Interface.IServiceSubscriberClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Newsletters.ServiceNewsletterMailClient" interface="Riafco.WebApi.Service.Dataflex.pro.Newsletters.Interface.IServiceNewsletterMailClient" />
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Newsletters.ServiceNewsletterMailTranslationClient" interface="Riafco.WebApi.Service.Dataflex.pro.Newsletters.Interface.IServiceNewsletterMailTranslationClient" />
+
+            <!--Partners-->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Partners.ServicePartnerClient" interface="Riafco.WebApi.Service.Dataflex.pro.Partners.Interface.IServicePartnerClient" />
+
+            <!--Contact-->
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.Contact.ServiceContactMessageClient" interface="Riafco.WebApi.Service.Dataflex.pro.Contact.Interface.IServiceContactMessageClient" />
+
+          </types>
+        </adapter>
+      </adapters>
+    </service>
+  </services>
+</serviceSettings>

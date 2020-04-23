@@ -1,0 +1,34 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.FormData.PublicationThemeFormData
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+
+@{
+    string action = ViewBag.Action;
+    string formId = action + "Form";
+}
+
+@using (Html.BeginForm(action, "Ressources", FormMethod.Post, new { id = formId, enctype = "multipart/form-data", @class = "modal-body" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(d => d.PublicationThemeId)
+    @Html.HiddenFor(d => d.PublicationId)
+
+    <div class="row ligne_input">
+        @Html.LabelFor(d => d.ThemeId)
+        <span class="erreur">@Html.ValidationMessageFor(d => d.ThemeId)</span>
+        @Html.DropDownListFor(d => d.ThemeId, (List<SelectListItem>)ViewBag.Themes, new { @class = "champ" })
+    </div>
+
+    <hr class="ligne_separ" />
+
+    <div class="ligne_input">
+        <div class="text_obligatoire">
+            <span class="obgligatoire">(*): champ obligatoire.</span>
+        </div>
+        <div class="btn_container">
+            <input type="submit" class="btn_valider" value="VALIDER" />
+        </div>
+    </div>
+}

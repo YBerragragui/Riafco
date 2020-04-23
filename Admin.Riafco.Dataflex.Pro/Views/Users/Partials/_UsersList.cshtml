@@ -1,0 +1,33 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Authorization.ViewData.UserViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+        <tr>
+            <th class="text-center">IMAGE</th>
+            <th class="text-center">NOM</th>
+            <th class="text-center">E-MAIL</th>
+            <th class="text-center">OPERATIONS</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td class="text-center">
+                    <img alt="image de user" width="35" src="~/Images/Users/@user.UserPicture" class="img-responsive" />
+                </td>
+                <td class="text-center">@user.UserName</td>
+                <td class="text-center">@user.UserMail</td>
+                <td>
+                    <input type="image" id="user_rules_btn" data="@user.UserId" class="icon_crud" src="~/Images/list.png" />
+                    <input type="image" id="update_user_btn" data="@user.UserId" class="icon_crud" src="~/Images/edit.png" />
+                    <input type="image" id="delete_user_btn" data="@user.UserId" class="icon_crud" src="~/Images/delete.png" />
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

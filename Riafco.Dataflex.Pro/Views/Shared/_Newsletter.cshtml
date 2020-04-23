@@ -1,0 +1,34 @@
+﻿@model Riafco.Dataflex.Pro.Models.Newsletters.FormData.SubscriberFormData
+@using Riafco.Dataflex.Pro.GlobalResources.Shared.newsletter
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm("CreateSubscribe", "Home", FormMethod.Post, new { id = "CreateSubscribeForm" }))
+{
+    <div class="tweeter-title">
+        <div class="gray-line"></div>
+        <img src="~/Images/title-icon-left-gray.png" class="left-gray" alt="" />
+        <h3>@NewsletterResources.NewsLetterTitle</h3>
+        <img src="~/Images/title-icon-right-gray.png" class="right-gray" alt="" />
+    </div>
+    <div class="newsletter-container">
+        <div class="newsletter">
+            <h4>@Html.Raw(NewsletterResources.NewsLetterDescription)</h4>
+            <div class="input-ligne-newletter">
+                @Html.TextBoxFor(d => d.SubscriberFirstName, new { placeholder = NewsletterResources.FirstName })
+                <span class="alert-erreur">@Html.ValidationMessageFor(d => d.SubscriberFirstName)</span>
+            </div>
+            <div class="input-ligne-newletter">
+                @Html.TextBoxFor(d => d.SubscriberLastName, new { placeholder = NewsletterResources.LastName })
+                <span class="alert-erreur">@Html.ValidationMessageFor(d => d.SubscriberLastName)</span>
+            </div>
+            <div class="input-ligne-newletter">
+                @Html.TextBoxFor(d => d.SubscriberEmail, new { placeholder = NewsletterResources.Email })
+                <span class="alert-erreur">@Html.ValidationMessageFor(d => d.SubscriberEmail)</span>
+            </div>
+            <input type="submit" id="add_subscriber_btn" value="@NewsletterResources.NewsLetterBtn" />
+        </div>
+    </div>
+}

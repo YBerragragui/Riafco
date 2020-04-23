@@ -1,0 +1,181 @@
+﻿.container-afric-map {
+    position: relative;
+    bottom: 215px;
+    width: 27%;
+    left: 12%;
+}
+
+.desc-inside-header {
+    border-left: 3px solid #f99f3b;
+    margin-bottom: 15px;
+    padding-left: 11px;
+    font-size: large;
+    font-weight: 600;
+    height: 35px;
+    padding-top: 4px;
+}
+
+.Description-country {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 10px;
+    height: auto;
+}
+
+.contezr {
+}
+
+    .contezr h4 {
+        font-weight: 600;
+        font-size: 15px;
+        width: 95%;
+    }
+
+    .contezr p {
+        font-size: 14px;
+    }
+
+.oth {
+    float: right;
+    display: inline-grid;
+}
+
+.aspacemembre {
+    text-align: right;
+}
+
+.btn {
+    font-family: MyFont;
+    border-radius: 0;
+}
+
+.ifcl {
+    background: #f99f3b;
+    color: #ffffff;
+}
+
+i.fa.fa-times.float-right.close-div {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 1px solid #000;
+    padding: 2px 1px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media (max-width:941px) {
+    .aspacemembre {
+        position: relative;
+        bottom: -40px;
+    }
+    .Description-country {
+        width: 44%;
+        background-color: #fff;
+        border: 1px solid black;
+        display: grid;
+        padding: 6px 8px 35px 21px;
+        height: 104px;
+    }
+    .contezr h4 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .contezr p {
+        font-size: 13px;
+    }
+    .ifcl {
+        background: #f99f3b;
+        border: 1px solid #f99f3b;
+        color: #ffffff;
+        font-size: 12px;
+    }
+    .desc-inside-header {
+        border-left: 3px solid #f99f3b;
+        margin-bottom: 10px;
+        padding-left: 11px;
+        font-size: 17px;
+        font-weight: 600;
+        height: 31px;
+        padding-top: 3px;
+    }
+
+}
+
+
+@media (max-width:1024px) {
+    .ifcl {
+        background: #f99f3b;
+        border: 1px solid #f99f3b;
+        color: #ffffff;
+        font-size: 13px;
+    }
+    .contezr h4 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .Description-country {
+        width: 44%;
+        background-color: #fff;
+        border: 1px solid black;
+        display: grid;
+        padding: 8px 8px 35px 21px;
+        height: 116px;
+    }
+    .aspacemembre {
+        position: relative;
+        bottom: -53px;
+    }
+    .container-fluid.main-map {
+        background: #e7e7e7;
+        height: 410px;
+    }
+}
+
+@media (max-width:767px) {
+    .Description-country {
+        width: 44%;
+        background-color: #fff;
+        border: 1px solid black;
+        display: grid;
+        padding: 8px 8px 35px 21px;
+        height: 116px;
+    }
+}
+
+@media (max-width:616px) {
+    .container-fluid.main-map {
+        background: #e7e7e7;
+        height: 566px !important;
+          
+    }
+
+    .container-afric-map {
+        display: block;
+        bottom: 6px;
+    }
+      .Description-country {
+        width:100%;
+      
+    }
+    
+}
+@media (max-width:320px) {
+    .Description-country {
+        width:100%;
+        background-color: #fff;
+        border: 1px solid black;
+        display: grid; 
+        padding: 8px 8px 35px 21px;
+        height: 116px;
+    }
+    .container-fluid.main-map {
+        background: #e7e7e7;
+        height: 566px !important;
+          
+    }
+
+}

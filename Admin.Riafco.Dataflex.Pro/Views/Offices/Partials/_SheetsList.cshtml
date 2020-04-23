@@ -1,0 +1,26 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Offices.ViewData.SheetsViewData
+
+<div class="row line_header">
+    <div class="col-sm-4 col-xs-6">Critéres</div>
+    <div class="col-sm-4 hidden-xs">Informations</div>
+    <div class="col-sm-4 col-xs-6">M/S</div>
+</div>
+@foreach (var sheet in Model.Sheets)
+{
+    string key = "";
+    string value = "";
+
+    if (sheet.TranslationsList.Any())
+    {
+        key = sheet.TranslationsList.First().SheetTitle;
+        value = sheet.TranslationsList.First().SheetValue;
+    }
+    <div class="row line_container">
+        <div class="col-sm-4 col-xs-6">@key</div>
+        <div class="col-sm-4 hidden-xs">@value</div>
+        <div class="col-sm-4 col-xs-6">
+            <input type="image" id="update_sheet_btn" data="@sheet.Sheet.SheetId" class="icon_crud" src="~/Images/edit.png" />
+            <input type="image" id="delete_sheet_btn" data="@sheet.Sheet.SheetId" data-section="@sheet.Sheet.CountryId" class="icon_crud" src="~/Images/delete.png" />
+        </div>
+    </div>
+}

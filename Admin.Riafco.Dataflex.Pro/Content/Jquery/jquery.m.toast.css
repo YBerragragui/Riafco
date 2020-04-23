@@ -1,0 +1,50 @@
+@font-face {
+    font-family: Light;
+    src: url("../fonts/Roboto-Light.ttf");
+}
+
+.toast {
+    font-family: 'Light';
+    list-style: none;
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    padding: 0;
+    bottom: 0;
+}
+
+    .toast .icon_msg {
+        width: 25px;
+    }
+    .toast li {
+        display: block;
+        text-align: center;
+    }
+
+    .toast span {
+        font-size: 16px;
+        display: inline-block;
+        margin: 5px 0 0 0;
+        text-align: center;
+        background-color:#005eaa ;
+        color: #FFF;
+        padding: 10px 10px;
+    }
+
+    .toast li.danger span {
+        color: #b94a48;
+        background-color: #f2dede;
+        border-color: #eed3d7;
+    }
+
+    .toast li.info span {
+        color: #3a87ad;
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+    }
+
+    .toast li.success span {
+        color: #468847;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }

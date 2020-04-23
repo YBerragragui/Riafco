@@ -1,0 +1,76 @@
+﻿@model Generator.Dataflex.Pro.Models.BackModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GENERATOR CODE.</title>
+
+    <link href="~/Content/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Toast/jquery.m.toast.css" rel="stylesheet" />
+    <link href="~/Content/master.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Jquery/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/Validation/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Validation/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/Validation/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/Toast/jquery.m.toast.js"></script>
+    <script src="~/Scripts/projects.js"></script>
+</head>
+<body>
+<div class="container form-container">
+    @using (Html.BeginForm("Generate", "BackGenerator", FormMethod.Post, new { id = "generate_code_form", enctype = "multipart/form-data", @class = "modal-body" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="ligne_input">
+            @Html.LabelFor(mm => mm.NomAssembly)
+            <span class="obg">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(mm => mm.NomAssembly)</span>
+            @Html.TextBoxFor(mm => mm.NomAssembly, new { @class = "champ" })
+        </div>
+
+        <div class="ligne_input">
+            @Html.LabelFor(mm => mm.FolderName)
+            <span class="obg">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(mm => mm.FolderName)</span>
+            @Html.TextBoxFor(mm => mm.FolderName, new { @class = "champ" })
+        </div>
+
+        <div class="ligne_input">
+            @Html.LabelFor(mm => mm.NomClass)
+            <span class="obg">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(mm => mm.NomClass)</span>
+            @Html.TextBoxFor(mm => mm.NomClass, new { @class = "champ" })
+        </div>
+        <div class="ligne_input">
+            @Html.LabelFor(mm => mm.ControllerName)
+            <span class="obg">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(mm => mm.ControllerName)</span>
+            @Html.TextBoxFor(mm => mm.ControllerName, new { @class = "champ" })
+        </div>
+        <div class="ligne_input">
+            @Html.LabelFor(mm => mm.PerfixName)
+            <span class="obg">*</span>
+            <span class="erreur">@Html.ValidationMessageFor(mm => mm.PerfixName)</span>
+            @Html.TextBoxFor(mm => mm.PerfixName, new { @class = "champ" })
+        </div>
+        <div class="ligne_input droit">
+            <hr />
+        </div>
+        <div class="row ligne_input">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <span class="obg">(*): champ obligatoire.</span>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <input type="submit" class="btn_submit" value="VALIDER" />
+            </div>
+        </div>
+    }
+</div>
+</body>
+</html>

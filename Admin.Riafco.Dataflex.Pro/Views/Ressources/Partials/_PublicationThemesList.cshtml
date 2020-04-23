@@ -1,0 +1,11 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.PublicationsThemeViewData
+
+@foreach (var publicationTheme in Model.PublicationThemes)
+{
+    <div class="line_container">
+        <div class="paragraph_title">@publicationTheme.PublicationTheme.ThemeTranslation.ThemeName</div>
+        <div class="operation">
+            <input type="image" id="delete_publication_theme_btn" publication-data="@publicationTheme.PublicationTheme.PublicationId" data="@publicationTheme.PublicationTheme.PublicationThemeId" class="icon_crud" src="~/Images/delete.png" />
+        </div>
+    </div>
+}

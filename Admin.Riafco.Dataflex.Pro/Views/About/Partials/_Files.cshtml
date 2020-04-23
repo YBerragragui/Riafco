@@ -1,0 +1,12 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.About.ViewData.FilesViewData
+
+<div class="header_container">
+    <span id="add_file_btn" class="btn_ajouter" data="@Model.SectionId">
+        <input type="image" src="/Images/add.png" class="icon_ajouter" />
+        <span class="valeur_btn">Ajouter</span>
+    </span>
+</div>
+
+<div id="content_files" class="content_container">
+    @Html.Partial("Partials/_FilesList", Model)
+</div>

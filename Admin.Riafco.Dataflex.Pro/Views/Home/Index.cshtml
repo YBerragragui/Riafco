@@ -1,0 +1,65 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Authorization.FormData.ConnectionFormData
+
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>RIAFCO | Connexion.</title>
+
+        <link href="~/Content/Bootstrap/bootstrap-theme.css" rel="stylesheet" />
+        <link href="~/Content/Bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/connexion.css" rel="stylesheet" />
+        <script src="~/Scripts/Jquery/jquery-3.1.1.js"></script>
+        <script src="~/Scripts/Bootstrap/bootstrap.js"></script>
+        <script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+        <script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            @using (Html.BeginForm("Connection", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="row espace"></div>
+                        <div class="row espace"></div>
+                        <div class="row">
+                            <img alt="logo" class="img-responsive logo" src="~/Images/logo.png" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="row espace"></div>
+                        <div class="row ligne_connexion">
+                            @Html.LabelFor(model => model.Username)
+                            <span class="error">@Html.ValidationMessageFor(model => model.Username)</span>
+                            @Html.TextBoxFor(model => model.Username, new { @class = "champ" })
+                        </div>
+                        <div class="row ligne_connexion">
+                            @Html.LabelFor(m => m.Password)
+                            <span class="error">@Html.ValidationMessageFor(m => m.Password)</span>
+                            @Html.PasswordFor(m => m.Password, new { @class = "champ" })
+                        </div>
+                        <div class="row ligne_connexion">
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <span class="cor_incorrect">@ViewBag.Errors</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="row">
+                                    <input type="submit" class="btn_submit" value="connexion" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </body>
+</html>

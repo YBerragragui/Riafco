@@ -1,0 +1,59 @@
+﻿@model Riafco.Dataflex.Pro.Models.ActivitiesModel
+@using Riafco.Dataflex.Pro.GlobalResources.Activities
+
+@{
+    ViewBag.Title = "RIAFCO | NOS ACTIVITES.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Activities = "active";
+}
+
+@section Styles {
+    <link href="~/Content/activite.css" rel="stylesheet" />
+}
+
+@section Scripts {
+
+}
+
+<div class="container main-container">
+    <div class="row main-row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <div class="activité-title">
+                <div class="orange-line"></div>
+                <img src="~/Images/title-icon-left.png" class="left-orange" />
+                <h3>@ActivityResources.PageTitle</h3>
+                <img src="~/Images/title-icon-right.png" class="right-orange" />
+            </div>
+            <div class="activité-container">
+                @for (int i = 0; i < Model.ActivitiesViewData.Activities.Count; i++)
+                {
+                    var imgSrc = Constant.ImagesUrl + @"Images/Activities/" + Model.ActivitiesViewData.Activities[i].Activity.ActivityId + @"/" + Model.ActivitiesViewData.Activities[i].Activity.ActivityIcon;
+                    var translation = Model.ActivitiesViewData.Activities[i].TranslationsList.First();
+
+                    <div class="activité-bloc-1">
+                        <div class="activité-bloc-img-1">
+                            <img src="@imgSrc" class="img-responsive" />
+                        </div>
+                        <div class="activité-bloc-details-1">
+                            <h3>@translation.ActivityTitle</h3>
+                            <p>@Html.Raw(translation.ActivityIntroduction)</p>
+                        </div>
+                        <a href="@Url.Action("Details", "Activities", new { id = Model.ActivitiesViewData.Activities[i].Activity.ActivityId})"><i class="fa fa-caret-right"></i>@ActivityResources.ReadMoreBtn</a>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 tweet-col">
+            @Html.Partial("_Twitter")
+            @Html.Partial("_Newsletter", Model.SubscriberFormData)
+        </div>
+    </div>
+</div>
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}

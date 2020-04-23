@@ -1,0 +1,21 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Settings.ViewData.RuleViewData
+
+<div class="line_header">
+    <div class="image_langue">Préfix</div>
+    <div class="prefix_langue">Nom</div>
+    <div class="operation">M/S</div>
+</div>
+
+@foreach (var rule in Model.Rules.ToList())
+{
+    <div class="line_container">
+        <div class="image_langue">
+            <div class="prefix_langue">@rule.RulePrefix</div>
+        </div>
+        <div class="prefix_langue">@rule.RuleName</div>
+        <div class="operation">
+            <input id="update_rule_btn" type="image" data="@rule.RuleId" class="icon_crud" src="~/Images/edit.png" />
+            <input id="delete_rule_btn" type="image" data="@rule.RuleId" class="icon_crud" src="~/Images/delete.png" />
+        </div>
+    </div>
+}

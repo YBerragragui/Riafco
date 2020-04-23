@@ -1,0 +1,81 @@
+﻿@model Riafco.Dataflex.Pro.Models.RessourcesModel
+@using Riafco.Dataflex.Pro.GlobalResources.Publications;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "RIAFCO | NOS RESSOURCES.";
+    ViewBag.Ressources = "active";
+}
+
+@section Styles {
+    <link href="~/Content/resources.css" rel="stylesheet" />
+}
+
+@section Scripts {
+    <script src="~/Scripts/pagination/jPages.min.js"></script>
+    <script src="~/Scripts/Ressources.js"></script>
+}
+<div class="container main-container">
+    <div class="row main-row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <div class="resources-title">
+                <div class="orange-line"></div>
+                <img src="~/Images/title-icon-left.png" class="left-orange" alt="" />
+                <h3>@PublicationResources.PageTitle</h3>
+                <img src="~/Images/title-icon-right.png" class="right-orange" alt="" />
+            </div>
+            <div class="resources-intro">
+                <p>@PublicationResources.PageDescription</p>
+            </div>
+            <div class="white-line-resources"></div>
+            <div id="pulications-list">
+                @Html.Partial("Partial/_Publication", Model.PublicationsViewData)
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+            <div class="resources-title">
+                <div class="gray-line"></div>
+                <img src="~/Images/title-icon-left-gray.png" class="left-gray" alt="" />
+                <h3>@PublicationResources.FiltreTitle</h3>
+                <img src="~/Images/title-icon-right-gray.png" class="right-gray" alt="" />
+            </div>
+            @Html.Partial("Partial/_Filter", Model.FilterFormData)
+
+            @*<div class="resources-title">
+                    <div class="gray-line"></div>
+                    <img src="~/Images/title-icon-left-gray.png" class="left-gray" alt="" />
+                    <h3>@Title_language.Links</h3>
+                    <img src="~/Images/title-icon-right-gray.png" class="right-gray" alt="" />
+                </div>*@
+
+            @*<div class="resources-liens">
+                    <div>
+                        <i class="fa fa-link"></i>
+                        <a>Lien 1</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-link"></i>
+                        <a>Lien 2</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-link"></i>
+                        <a>Lien 3</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-link"></i>
+                        <a>Lien 4</a>
+                    </div>
+                </div>*@
+
+        </div>
+    </div>
+</div>
+@Html.Partial("Partial/_Agenda", Model.OccurrencesViewData)
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}

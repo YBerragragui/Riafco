@@ -1,0 +1,61 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.News.ViewData.NewsViewDatas
+
+@{
+    ViewBag.Title = "RIAFCO | Gérer les actualités";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section Scripts {
+    <script src="~/Scripts/news.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@section Styles {
+
+}
+
+<div class="page_container">
+    <div class="header_container">
+        <div class="titre_header">Gérer les actualités : </div>
+        <span id="add_news_btn" class="btn_ajouter">
+            <input type="image" src="/Images/add.png" class="icon_ajouter" />
+            <span class="valeur_btn">Ajouter</span>
+        </span>
+    </div>
+
+    <div id="content_news" class="content_container">
+        @Html.Partial("Partials/_NewsList", Model)
+    </div>
+</div>
+
+<div id="add_news_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter une actualité: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_news_input"></div>
+    </div>
+</div>
+
+<div id="update_news_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier une actualité: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_news_input"></div>
+    </div>
+</div>
+
+<div id="delete_news_pop_up" class="cd-popup" role="alert">
+    <div id="delete_news_input" class="cd-popup-container cd-popup-container-confirm">
+    </div>
+</div>
+

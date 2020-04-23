@@ -1,0 +1,45 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Activities.ViewData.ActivitiesViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center hidden-xs">ICON</th>
+                <th class="text-center hidden-xs">IMAGE</th>
+                <th class="text-center">TITRE</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var activity in Model.Activities)
+            {
+                var imgSrc = @"\Images\Activities\" + activity.Activity.ActivityId + @"\" + activity.Activity.ActivityImage;
+                var iconSrc = @"\Images\Activities\" + activity.Activity.ActivityId + @"\" + activity.Activity.ActivityIcon;
+
+                <tr>
+                    <td class="hidden-xs">
+                        <div class="text-center">
+                            <img alt="image de l'activité" src="@iconSrc" class="img-responsive image_item" />
+                        </div>
+                    </td>
+                    <td class="hidden-xs">
+                        <div class="text-center">
+                            <img alt="image de l'activité" src="@imgSrc" class="img-responsive image_item" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">@activity.TranslationsList.First().ActivityTitle</div>
+                    </td>
+                    <td>
+                        <input type="image" id="paragraph_activity_btn" data="@activity.Activity.ActivityId" class="icon_crud" src="~/Images/paragrapg_icon.png" />
+                        <input type="image" id="file_activity_btn" data="@activity.Activity.ActivityId" class="icon_crud" src="~/Images/file_icon.png" />
+                        <input type="image" id="update_activity_btn" data="@activity.Activity.ActivityId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_activity_btn" data="@activity.Activity.ActivityId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

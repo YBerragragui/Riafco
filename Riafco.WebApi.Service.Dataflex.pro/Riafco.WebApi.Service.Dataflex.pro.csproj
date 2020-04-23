@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1866CDA3-C61A-422E-A712-CB3A9F952155}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Riafco.WebApi.Service.Dataflex.pro</RootNamespace>
+    <AssemblyName>Riafco.WebApi.Service.Dataflex.pro</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About\Assembler\SectionFileAssembler.cs" />
+    <Compile Include="About\Assembler\StepAssembler.cs" />
+    <Compile Include="About\Assembler\StepParagraphAssembler.cs" />
+    <Compile Include="About\Assembler\StepParagraphTranslationAssembler.cs" />
+    <Compile Include="About\Dto\Enum\FindStepDto.cs" />
+    <Compile Include="About\Dto\Enum\FindStepParagraphDto.cs" />
+    <Compile Include="About\Dto\Enum\FindStepParagraphTranslationDto.cs" />
+    <Compile Include="About\Dto\SectionFileDto.cs" />
+    <Compile Include="About\Dto\StepDto.cs" />
+    <Compile Include="About\Dto\StepParagraphDto.cs" />
+    <Compile Include="About\Dto\StepParagraphTranslationDto.cs" />
+    <Compile Include="About\Interface\IServiceStepClient.cs" />
+    <Compile Include="About\Interface\IServiceStepParagraphClient.cs" />
+    <Compile Include="About\Interface\IServiceStepParagraphTranslationClient.cs" />
+    <Compile Include="About\Message\SectionFileMessage.cs" />
+    <Compile Include="About\Message\StepMessage.cs" />
+    <Compile Include="About\Message\StepParagraphMessage.cs" />
+    <Compile Include="About\Message\StepParagraphTranslationMessage.cs" />
+    <Compile Include="About\Request\SectionFileRequest.cs" />
+    <Compile Include="About\Assembler\SectionFileTranslationAssembler.cs" />
+    <Compile Include="About\Dto\SectionFileTranslationDto.cs" />
+    <Compile Include="About\Message\SectionFileTranslationMessage.cs" />
+    <Compile Include="About\Request\SectionFileTranslationRequest.cs" />
+    <Compile Include="About\Assembler\SectionParagraphAssembler.cs" />
+    <Compile Include="About\Assembler\SectionParagraphTraslationAssembler.cs" />
+    <Compile Include="About\Assembler\SectionAssembler.cs" />
+    <Compile Include="About\Assembler\SectionTranslationAssembler.cs" />
+    <Compile Include="About\Dto\SectionParagraphDto.cs" />
+    <Compile Include="About\Dto\SectionParagraphTranslationDto.cs" />
+    <Compile Include="About\Dto\Enum\FindSectionParagraphDto.cs" />
+    <Compile Include="About\Dto\Enum\FindSectionParagraphTranslationDto.cs" />
+    <Compile Include="About\Dto\Enum\FindSectionDto.cs" />
+    <Compile Include="About\Dto\Enum\FindSectionTranslationDto.cs" />
+    <Compile Include="About\Dto\SectionDto.cs" />
+    <Compile Include="About\Dto\SectionTranslationDto.cs" />
+    <Compile Include="About\Request\StepParagraphRequest.cs" />
+    <Compile Include="About\Request\StepParagraphTranslationRequest.cs" />
+    <Compile Include="About\Request\StepRequest.cs" />
+    <Compile Include="About\Ressource\FileMessageResource.Designer.cs">
+      <DependentUpon>FileMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="About\Dto\Enum\FindSectionFileDto.cs" />
+    <Compile Include="About\Dto\Enum\FindSectionFileTranslationDto.cs" />
+    <Compile Include="About\Interface\IServiceSectionParagraphClient.cs" />
+    <Compile Include="About\Interface\IServiceSectionParagraphTranslationClient.cs" />
+    <Compile Include="About\Interface\IServiceSectionClient.cs" />
+    <Compile Include="About\Interface\IServiceSectionTranslationClient.cs" />
+    <Compile Include="About\Interface\IServiceSectionFileClient.cs" />
+    <Compile Include="About\Interface\IServiceSectionFileTranslationClient.cs" />
+    <Compile Include="About\Message\SectionParagraphMessage.cs" />
+    <Compile Include="About\Message\SectionParagraphTranslationMessage.cs" />
+    <Compile Include="About\Message\SectionMessage.cs" />
+    <Compile Include="About\Message\SectionTranslationMessage.cs" />
+    <Compile Include="About\Request\SectionParagraphRequest.cs" />
+    <Compile Include="About\Request\SectionParagraphTranslationRequest.cs" />
+    <Compile Include="About\Request\SectionRequest.cs" />
+    <Compile Include="About\Request\SectionTranslationRequest.cs" />
+    <Compile Include="About\Ressource\ParagraphMessageResource.Designer.cs">
+      <DependentUpon>ParagraphMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="About\Ressource\SectionMessageResource.Designer.cs">
+      <DependentUpon>SectionMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="About\Ressource\StepMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StepMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="About\ServiceSectionFileClient.cs" />
+    <Compile Include="About\ServiceSectionFileTranslationClient.cs" />
+    <Compile Include="About\ServiceSectionParagraphClient.cs" />
+    <Compile Include="About\ServiceSectionParagraphTranslationClient.cs" />
+    <Compile Include="About\ServiceSectionClient.cs" />
+    <Compile Include="About\ServiceSectionTranslationClient.cs" />
+    <Compile Include="About\ServiceStepClient.cs" />
+    <Compile Include="About\ServiceStepParagraphClient.cs" />
+    <Compile Include="About\ServiceStepParagraphTranslationClient.cs" />
+    <Compile Include="Activites\Assembler\ActivityAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityFileAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityFileTranslationAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityParagraphAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityParagraphTraslationAssembler.cs" />
+    <Compile Include="Activites\Assembler\ActivityTranslationAssembler.cs" />
+    <Compile Include="Activites\Dto\ActivityDto.cs" />
+    <Compile Include="Activites\Dto\ActivityFileDto.cs" />
+    <Compile Include="Activites\Dto\ActivityFileTranslationDto.cs" />
+    <Compile Include="Activites\Dto\ActivityParagraphDto.cs" />
+    <Compile Include="Activites\Dto\ActivityParagraphTranslationDto.cs" />
+    <Compile Include="Activites\Dto\ActivityTranslationDto.cs" />
+    <Compile Include="Activites\Dto\Enum\FindActivityDto.cs" />
+    <Compile Include="Activites\Dto\Enum\FindActivityFileDto.cs" />
+    <Compile Include="Activites\Dto\Enum\FindActivityFileTranslationDto.cs" />
+    <Compile Include="Activites\Dto\Enum\FindActivityParagraphDto.cs" />
+    <Compile Include="Activites\Dto\Enum\FindActivityParagraphTranslationDto.cs" />
+    <Compile Include="Activites\Dto\Enum\FindActivityTranslationDto.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityClient.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityFileClient.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityFileTranslationClient.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityParagraphClient.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityParagraphTranslationClient.cs" />
+    <Compile Include="Activites\Interface\IServiceActivityTranslationClient.cs" />
+    <Compile Include="Activites\Message\ActivityFileMessage.cs" />
+    <Compile Include="Activites\Message\ActivityFileTranslationMessage.cs" />
+    <Compile Include="Activites\Message\ActivityMessage.cs" />
+    <Compile Include="Activites\Message\ActivityParagraphMessage.cs" />
+    <Compile Include="Activites\Message\ActivityParagraphTranslationMessage.cs" />
+    <Compile Include="Activites\Message\ActivityTranslationMessage.cs" />
+    <Compile Include="Activites\Request\ActivityFileRequest.cs" />
+    <Compile Include="Activites\Request\ActivityFileTranslationRequest.cs" />
+    <Compile Include="Activites\Request\ActivityParagraphRequest.cs" />
+    <Compile Include="Activites\Request\ActivityParagraphTranslationRequest.cs" />
+    <Compile Include="Activites\Request\ActivityRequest.cs" />
+    <Compile Include="Activites\Request\ActivityTranslationRequest.cs" />
+    <Compile Include="Activites\Ressource\ActivityMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActivityMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\Assembler\ContactMessageAssembler.cs" />
+    <Compile Include="Contact\Dto\ContactMessageDto.cs" />
+    <Compile Include="Contact\Dto\Enum\FindContactMessageDto.cs" />
+    <Compile Include="Contact\Interface\IServiceContactMessageClient.cs" />
+    <Compile Include="Contact\Message\ContactMessageMessage.cs" />
+    <Compile Include="Contact\Request\ContactMessageRequest.cs" />
+    <Compile Include="Contact\Ressource\ContactMessageResource.Designer.cs">
+      <DependentUpon>ContactMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Contact\ServiceContactMessageClient.cs" />
+    <Compile Include="Ressources\Assembler\AreaAssembler.cs" />
+    <Compile Include="Ressources\Assembler\AreaTranslationAssembler.cs" />
+    <Compile Include="Ressources\Assembler\PublicationAssembler.cs" />
+    <Compile Include="Ressources\Assembler\PublicationThemeAssembler.cs" />
+    <Compile Include="Ressources\Assembler\PublicationTranslationAssembler.cs" />
+    <Compile Include="Ressources\Assembler\ThemeAssembler.cs" />
+    <Compile Include="Ressources\Assembler\ThemeTranslationAssembler.cs" />
+    <Compile Include="Ressources\Dto\AreaDto.cs" />
+    <Compile Include="Ressources\Dto\AreaTranslationDto.cs" />
+    <Compile Include="Ressources\Dto\Enum\FindAreaDto.cs" />
+    <Compile Include="Ressources\Dto\Enum\FindAreaTranslationDto.cs" />
+    <Compile Include="Ressources\Dto\Enum\FindPublicationDto.cs" />
+    <Compile Include="Ressources\Dto\Enum\FindPublicationThemeDto.cs" />
+    <Compile Include="Ressources\Dto\Enum\FindPublicationTranslationDto.cs" />
+    <Compile Include="Ressources\Dto\Enum\FindThemeDto.cs" />
+    <Compile Include="Ressources\Dto\Enum\FindThemeTranslationDto.cs" />
+    <Compile Include="Ressources\Dto\PublicationDto.cs" />
+    <Compile Include="Ressources\Dto\PublicationThemeDto.cs" />
+    <Compile Include="Ressources\Dto\PublicationTranslationDto.cs" />
+    <Compile Include="Ressources\Dto\ThemeDto.cs" />
+    <Compile Include="Ressources\Dto\ThemeTranslationDto.cs" />
+    <Compile Include="Ressources\Interface\IServiceAreaClient.cs" />
+    <Compile Include="Ressources\Interface\IServiceAreaTranslationClient.cs" />
+    <Compile Include="Ressources\Interface\IServicePublicationClient.cs" />
+    <Compile Include="Ressources\Interface\IServicePublicationThemeClient.cs" />
+    <Compile Include="Ressources\Interface\IServicePublicationTranslationClient.cs" />
+    <Compile Include="Ressources\Interface\IServiceThemeClient.cs" />
+    <Compile Include="Ressources\Interface\IServiceThemeTranslationClient.cs" />
+    <Compile Include="Ressources\Message\AreaMessage.cs" />
+    <Compile Include="Ressources\Message\AreaTranslationMessage.cs" />
+    <Compile Include="Ressources\Message\PublicationMessage.cs" />
+    <Compile Include="Ressources\Message\PublicationThemeMessage.cs" />
+    <Compile Include="Ressources\Message\PublicationTranslationMessage.cs" />
+    <Compile Include="Ressources\Message\ThemeMessage.cs" />
+    <Compile Include="Ressources\Message\ThemeTranslationMessage.cs" />
+    <Compile Include="Ressources\Request\AreaRequest.cs" />
+    <Compile Include="Ressources\Request\AreaTranslationRequest.cs" />
+    <Compile Include="Ressources\Request\PublicationRequest.cs" />
+    <Compile Include="Ressources\Request\PublicationThemeRequest.cs" />
+    <Compile Include="Ressources\Request\PublicationTranslationRequest.cs" />
+    <Compile Include="Ressources\Request\ThemeRequest.cs" />
+    <Compile Include="Ressources\Request\ThemeTranslationRequest.cs" />
+    <Compile Include="Ressources\Ressource\AuthorMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Activites\Ressource\FileMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Activites\Ressource\ParagraphMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParagraphMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Activites\ServiceActivityClient.cs" />
+    <Compile Include="Activites\ServiceActivityFileClient.cs" />
+    <Compile Include="Activites\ServiceActivityFileTranslationClient.cs" />
+    <Compile Include="Activites\ServiceActivityParagraphClient.cs" />
+    <Compile Include="Activites\ServiceActivityParagraphTranslationClient.cs" />
+    <Compile Include="Activites\ServiceActivityTranslationClient.cs" />
+    <Compile Include="Authorizarion\Assembler\RuleAssembler.cs" />
+    <Compile Include="Authorizarion\Assembler\UserAssembler.cs" />
+    <Compile Include="Authorizarion\Assembler\UserRuleAssembler.cs" />
+    <Compile Include="Authorizarion\Dto\Enum\FindRuleDto.cs" />
+    <Compile Include="Authorizarion\Dto\Enum\FindUserDto.cs" />
+    <Compile Include="Authorizarion\Dto\Enum\FindUserRuleDto.cs" />
+    <Compile Include="Authorizarion\Dto\RuleDto.cs" />
+    <Compile Include="Authorizarion\Dto\UserDto.cs" />
+    <Compile Include="Authorizarion\Dto\UserRuleDto.cs" />
+    <Compile Include="Authorizarion\Interface\IServiceRuleClient.cs" />
+    <Compile Include="Authorizarion\Interface\IServiceUserClient.cs" />
+    <Compile Include="Authorizarion\Interface\IServiceUserRuleClient.cs" />
+    <Compile Include="Authorizarion\Message\RuleMessage.cs" />
+    <Compile Include="Authorizarion\Message\UserMessage.cs" />
+    <Compile Include="Authorizarion\Message\UserRuleMessage.cs" />
+    <Compile Include="Authorizarion\Request\RuleRequest.cs" />
+    <Compile Include="Authorizarion\Request\UserRequest.cs" />
+    <Compile Include="Authorizarion\Request\UserRuleRequest.cs" />
+    <Compile Include="Authorizarion\Ressource\RuleMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RuleMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Authorizarion\Ressource\UserMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Authorizarion\Ressource\UserRuleMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserRuleMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Authorizarion\ServiceRuleClient.cs" />
+    <Compile Include="Authorizarion\ServiceUserClient.cs" />
+    <Compile Include="Authorizarion\ServiceUserRuleClient.cs" />
+    <Compile Include="Languages\Assembler\LanguageAssembler.cs" />
+    <Compile Include="Languages\Dto\Enum\FindLanguageDto.cs" />
+    <Compile Include="Languages\Dto\LanguageDto.cs" />
+    <Compile Include="Languages\Interface\IServiceLanguageClient.cs" />
+    <Compile Include="Languages\Message\LanguageMessage.cs" />
+    <Compile Include="Languages\Request\LanguageRequest.cs" />
+    <Compile Include="Languages\Ressource\LanguageMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\ServiceLanguageClient.cs" />
+    <Compile Include="Newsletters\Assembler\NewsletterMailAssembler.cs" />
+    <Compile Include="Newsletters\Assembler\NewsletterMailTranslationAssembler.cs" />
+    <Compile Include="Newsletters\Assembler\SubscriberAssembler.cs" />
+    <Compile Include="Newsletters\Dto\Enum\FindNewsletterMailDto.cs" />
+    <Compile Include="Newsletters\Dto\Enum\FindNewsletterMailTranslationDto.cs" />
+    <Compile Include="Newsletters\Dto\Enum\FindSubscriberDto.cs" />
+    <Compile Include="Newsletters\Dto\NewsletterMailDto.cs" />
+    <Compile Include="Newsletters\Dto\NewsletterMailTranslationDto.cs" />
+    <Compile Include="Newsletters\Dto\SubscriberDto.cs" />
+    <Compile Include="Newsletters\Interface\IServiceNewsletterMailClient.cs" />
+    <Compile Include="Newsletters\Interface\IServiceNewsletterMailTranslationClient.cs" />
+    <Compile Include="Newsletters\Interface\IServiceSubscriberClient.cs" />
+    <Compile Include="Newsletters\Message\NewsletterMailMessage.cs" />
+    <Compile Include="Newsletters\Message\NewsletterMailTranslationMessage.cs" />
+    <Compile Include="Newsletters\Message\SubscriberMessage.cs" />
+    <Compile Include="Newsletters\Request\NewsletterMailRequest.cs" />
+    <Compile Include="Newsletters\Request\NewsletterMailTranslationRequest.cs" />
+    <Compile Include="Newsletters\Request\SubscriberRequest.cs" />
+    <Compile Include="Newsletters\Ressource\NewsletterMailMessageResource.Designer.cs">
+      <DependentUpon>NewsletterMailMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Newsletters\Ressource\SubscriberMessageResource.Designer.cs">
+      <DependentUpon>SubscriberMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Newsletters\ServiceNewsletterMailClient.cs" />
+    <Compile Include="Newsletters\ServiceNewsletterMailTranslationClient.cs" />
+    <Compile Include="Newsletters\ServiceSubscriberClient.cs" />
+    <Compile Include="News\Assembler\NewsAssembler.cs" />
+    <Compile Include="News\Assembler\NewsTranslationAssembler.cs" />
+    <Compile Include="News\Dto\Enum\FindNewsDto.cs" />
+    <Compile Include="News\Dto\Enum\FindNewsTranslationDto.cs" />
+    <Compile Include="News\Dto\NewsDto.cs" />
+    <Compile Include="News\Dto\NewsTranslationDto.cs" />
+    <Compile Include="News\Interface\IServiceNewsClient.cs" />
+    <Compile Include="News\Interface\IServiceNewsTranslationClient.cs" />
+    <Compile Include="News\Message\NewsMessage.cs" />
+    <Compile Include="News\Message\NewsTranslationMessage.cs" />
+    <Compile Include="News\Request\NewsRequest.cs" />
+    <Compile Include="News\Request\NewsTranslationRequest.cs" />
+    <Compile Include="News\Ressource\NewsMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewsMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="News\ServiceNewsClient.cs" />
+    <Compile Include="News\ServiceNewsTranslationClient.cs" />
+    <Compile Include="Occurrences\Assembler\OccurrenceAssembler.cs" />
+    <Compile Include="Occurrences\Assembler\OccurrenceTranslationAssembler.cs" />
+    <Compile Include="Occurrences\Dto\Enum\FindOccurrenceDto.cs" />
+    <Compile Include="Occurrences\Dto\Enum\FindOccurrenceTranslationDto.cs" />
+    <Compile Include="Occurrences\Dto\OccurrenceDto.cs" />
+    <Compile Include="Occurrences\Dto\OccurrenceTranslationDto.cs" />
+    <Compile Include="Occurrences\Interface\IServiceOccurrenceClient.cs" />
+    <Compile Include="Occurrences\Interface\IServiceOccurrenceTranslationClient.cs" />
+    <Compile Include="Occurrences\Message\OccurrenceMessage.cs" />
+    <Compile Include="Occurrences\Message\OccurrenceTranslationMessage.cs" />
+    <Compile Include="Occurrences\Request\OccurrenceRequest.cs" />
+    <Compile Include="Occurrences\Request\OccurrenceTranslationRequest.cs" />
+    <Compile Include="Occurrences\Ressource\OccurrenceMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OccurrenceMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Occurrences\ServiceOccurrenceClient.cs" />
+    <Compile Include="Occurrences\ServiceOccurrenceTranslationClient.cs" />
+    <Compile Include="Offices\Assembler\CountryAssembler.cs" />
+    <Compile Include="Offices\Assembler\CountryTranslationAssembler.cs" />
+    <Compile Include="Offices\Assembler\SheetAssembler.cs" />
+    <Compile Include="Offices\Assembler\SheetTranslationAssembler.cs" />
+    <Compile Include="Offices\Dto\CountryDto.cs" />
+    <Compile Include="Offices\Dto\CountryTranslationDto.cs" />
+    <Compile Include="Offices\Dto\Enum\FindCountryDto.cs" />
+    <Compile Include="Offices\Dto\Enum\FindCountryTranslationDto.cs" />
+    <Compile Include="Offices\Dto\Enum\FindSheetDto.cs" />
+    <Compile Include="Offices\Dto\Enum\FindSheetTranslationDto.cs" />
+    <Compile Include="Offices\Dto\SheetDto.cs" />
+    <Compile Include="Offices\Dto\SheetTranslationDto.cs" />
+    <Compile Include="Offices\Interface\IServiceCountryClient.cs" />
+    <Compile Include="Offices\Interface\IServiceCountryTranslationClient.cs" />
+    <Compile Include="Offices\Interface\IServiceSheetClient.cs" />
+    <Compile Include="Offices\Interface\IServiceSheetTranslationClient.cs" />
+    <Compile Include="Offices\Message\CountryMessage.cs" />
+    <Compile Include="Offices\Message\CountryTranslationMessage.cs" />
+    <Compile Include="Offices\Message\SheetMessage.cs" />
+    <Compile Include="Offices\Message\SheetTranslationMessage.cs" />
+    <Compile Include="Offices\Request\CountryRequest.cs" />
+    <Compile Include="Offices\Request\CountryTranslationRequest.cs" />
+    <Compile Include="Offices\Request\SheetRequest.cs" />
+    <Compile Include="Offices\Request\SheetTranslationRequest.cs" />
+    <Compile Include="Offices\Ressource\CountryMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Offices\ServiceCountryClient.cs" />
+    <Compile Include="Offices\ServiceCountryTranslationClient.cs" />
+    <Compile Include="Offices\ServiceSheetClient.cs" />
+    <Compile Include="Offices\ServiceSheetTranslationClient.cs" />
+    <Compile Include="Partners\Assembler\PartnerAssembler.cs" />
+    <Compile Include="Partners\Dto\Enum\FindPartnerDto.cs" />
+    <Compile Include="Partners\Dto\PartnerDto.cs" />
+    <Compile Include="Partners\Interface\IServicePartnerClient.cs" />
+    <Compile Include="Partners\Message\PartnerMessage.cs" />
+    <Compile Include="Partners\Request\PartnerRequest.cs" />
+    <Compile Include="Partners\Ressource\PartnerMessageResource.Designer.cs">
+      <DependentUpon>PartnerMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Partners\ServicePartnerClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ressources\Assembler\AuthorAssembler.cs" />
+    <Compile Include="Ressources\Dto\AuthorDto.cs" />
+    <Compile Include="Ressources\Dto\Enum\FindAuthorDto.cs" />
+    <Compile Include="Ressources\Interface\IServiceAuthorClient.cs" />
+    <Compile Include="Ressources\Message\AuthorMessage.cs" />
+    <Compile Include="Ressources\Request\AuthorRequest.cs" />
+    <Compile Include="Ressources\Ressource\AreaMessageResource.Designer.cs">
+      <DependentUpon>AreaMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Ressources\Ressource\PublicationThemeMessageResource.Designer.cs">
+      <DependentUpon>PublicationThemeMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Ressources\Ressource\PublicationMessageResource.Designer.cs">
+      <DependentUpon>PublicationMessageResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Ressources\Ressource\ThemeMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThemeMessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\ServiceAreaClient.cs" />
+    <Compile Include="Ressources\ServiceAreaTranslationClient.cs" />
+    <Compile Include="Ressources\ServiceAuthorClient.cs" />
+    <Compile Include="Ressources\ServicePublicationClient.cs" />
+    <Compile Include="Ressources\ServicePublicationThemeClient.cs" />
+    <Compile Include="Ressources\ServicePublicationTranslationClient.cs" />
+    <Compile Include="Ressources\ServiceThemeClient.cs" />
+    <Compile Include="Ressources\ServiceThemeTranslationClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Riafco.Framework.Dataflex.pro\Riafco.Framework.Dataflex.pro.csproj">
+      <Project>{2d70a3b5-76e9-4df8-bf28-ca80d7f95dee}</Project>
+      <Name>Riafco.Framework.Dataflex.pro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Riafco.Service.Dataflex.Pro\Riafco.Service.Dataflex.Pro.csproj">
+      <Project>{5ad0c6a0-5f3c-453c-85d9-4250ed039f9f}</Project>
+      <Name>Riafco.Service.Dataflex.Pro</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About\Ressource\FileMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FileMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About\Ressource\ParagraphMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ParagraphMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About\Ressource\SectionMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SectionMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About\Ressource\StepMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StepMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activites\Ressource\ActivityMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ActivityMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\Ressource\ContactMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\Ressource\AuthorMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AuthorMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activites\Ressource\FileMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FileMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activites\Ressource\ParagraphMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ParagraphMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorizarion\Ressource\RuleMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RuleMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorizarion\Ressource\UserMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorizarion\Ressource\UserRuleMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserRuleMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Ressource\LanguageMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Newsletters\Ressource\NewsletterMailMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NewsletterMailMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Newsletters\Ressource\SubscriberMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SubscriberMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="News\Ressource\NewsMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NewsMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Occurrences\Ressource\OccurrenceMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OccurrenceMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\Ressource\AreaMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AreaMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\Ressource\PublicationThemeMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PublicationThemeMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\Ressource\PublicationMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PublicationMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\Ressource\ThemeMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ThemeMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Offices\Ressource\CountryMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partners\Ressource\PartnerMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PartnerMessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,47 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.AreasViewData
+
+<div class="header_container">
+    <div class="titre_header">les zones geographique  : </div>
+    <span id="add_area_btn" class="btn_ajouter">
+        <input type="image" src="/Images/add.png" class="icon_ajouter" />
+        <span class="valeur_btn">Ajouter</span>
+    </span>
+</div>
+
+<div id="content_areas" class="content_container">
+    @Html.Partial("Partials/_AreasList", Model)
+</div>
+
+<div id="add_area_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter une zone geographique: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_area_input"></div>
+    </div>
+</div>
+
+<div id="update_area_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier une zone geographique: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_area_input"></div>
+    </div>
+</div>
+
+<div id="delete_area_pop_up" class="cd-popup" role="alert">
+    <div id="delete_area_input" class="cd-popup-container cd-popup-container-confirm">
+        <p>Est ce que vous êtes sur de cette opération ?</p>
+        <ul class="cd-buttons">
+            <li><a id="yes">Oui</a></li>
+            <li><a id="no">Non</a></li>
+        </ul>
+    </div>
+</div>

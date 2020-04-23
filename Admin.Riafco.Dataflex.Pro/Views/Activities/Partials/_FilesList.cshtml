@@ -1,0 +1,33 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Activities.ViewData.FilesViewData
+
+<div class="line_header">
+    <div class="image_langue">FICHIER</div>
+    <div class="prefix_langue">TITRE</div>
+    <div class="operation">M/S</div>
+</div>
+
+@foreach (var file in Model.Files)
+{
+    if (file?.TranslationsList != null)
+    {
+        <div class="line_container">
+            <div class="image_langue">
+                <div class="prefix_langue">
+                    @foreach (var translation in file.TranslationsList)
+                    {
+                        var filepath = @"\Images\Activities\Files\" + translation.ActivityFileId + @"\" + translation.ActivityFileSource;
+                        if (translation.ActivityFileSource != null)
+                        {
+                            <a class="btn btn-info icon_crud" target="_blanc" href="@filepath">@translation.Language.LanguagePrefix.Substring(0, 2)</a>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="prefix_langue">@file.TranslationsList.First().ActivityFileText</div>
+            <div class="operation">
+                <input id="update_file_btn" type="image" data="@file.File.ActivityFileId" class="icon_crud" src="~/Images/edit.png" />
+                <input id="delete_file_btn" type="image" data="@file.File.ActivityFileId" data-section="@file.File.ActivityId" class="icon_crud" src="~/Images/delete.png" />
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,83 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.About.ViewData.StepsViewData
+
+<div class="page_container">
+    <div class="header_container">
+        <div class="titre_header">Page historique : </div>
+        <span id="add_step_btn" class="btn_ajouter">
+            <input type="image" src="/Images/add.png" class="icon_ajouter" />
+            <span class="valeur_btn">Ajouter</span>
+        </span>
+    </div>
+
+    <div id="content_steps" class="content_container">
+        @Html.Partial("Partials/_StepList", Model)
+    </div>
+</div>
+
+<div id="add_step_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter une étape: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_step_input"></div>
+    </div>
+</div>
+
+<div id="update_step_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier l'étape: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_step_input"></div>
+    </div>
+</div>
+
+<div id="delete_step_pop_up" class="cd-popup" role="alert">
+    <div id="delete_step_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>
+
+<div id="paragraph_step_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>les paragraphes de l'étape: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="paragraph_step_input"></div>
+    </div>
+</div>
+
+<div id="add_paragraph_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un paragraphe: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_paragraph_input"></div>
+    </div>
+</div>
+
+<div id="update_paragraph_step_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un paragraphe: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_paragraph_step_input"></div>
+    </div>
+</div>
+
+<div id="delete_step_paragraph_pop_up" class="cd-popup" role="alert">
+    <div id="delete_step_paragraph_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>

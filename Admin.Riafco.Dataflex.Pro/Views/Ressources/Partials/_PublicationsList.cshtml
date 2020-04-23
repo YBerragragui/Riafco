@@ -1,0 +1,41 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.PublicationsViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center">IMAGE</th>
+                <th class="text-center">DATE</th>
+                <th class="text-center">AUTEUR</th>
+                <th class="text-center">TITRE</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var publication in Model.Publications)
+            {
+
+
+                var imgSrc = @"\Images\Ressources\Pulication\" + publication.Publication.PublicationId + @"\" + publication.Publication.PublicationImage; 
+
+                <tr>
+                    <td class="text-center">
+                        <div class="image_langue">
+                            <img alt="image de publication" src="@imgSrc" class="img-responsive image_item" />
+                        </div>
+                    </td>
+                    <td class="text-center">@publication.Publication.PublicationDate.ToString("dd/MM/yyyy")</td>
+                    <td class="text-center">@publication.Publication.Author.AuthorFirstName @publication.Publication.Author.AuthorLastName</td>
+                    <td class="text-center">@publication.TranslationsList.First().PublicationTitle</td>
+                    <td>
+                        <input type="image" id="publication_themes_btn" data="@publication.Publication.PublicationId" class="icon_crud" src="~/Images/paragrapg_icon.png"/>
+                        <input type="image" id="update_publication_btn" data="@publication.Publication.PublicationId" class="icon_crud" src="~/Images/edit.png"/>
+                        <input type="image" id="delete_publication_btn" data="@publication.Publication.PublicationId" class="icon_crud" src="~/Images/delete.png"/>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

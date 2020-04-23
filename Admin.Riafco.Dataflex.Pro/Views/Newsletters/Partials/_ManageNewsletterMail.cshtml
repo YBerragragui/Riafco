@@ -1,0 +1,84 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Newsletters.FormData.NewsletterMailFormData
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/Editeur/editor.js"></script>
+
+@{
+    string action = ViewBag.Action;
+    string formId = action + "Form";
+}
+
+@using (Html.BeginForm(action, "Newsletters", FormMethod.Post, new { id = formId, enctype = "multipart/form-data", @class = "modal-body" }))
+{
+    @Html.HiddenFor(d => d.NewsletterMailId)
+    @Html.AntiForgeryToken()
+
+    string activeTab = "active in";
+    string activeLink = "active";
+
+    <ul id="filelinks" class="nav nav-tabs nav-justified">
+        @for (var i = 0; i < Model.TranslationsList.Count; i++)
+        {
+            <li class="@activeLink" data-navigation="@i"><a>@Model.TranslationsList[i].LanguagePrefix</a></li>
+            activeLink = "";
+        }
+    </ul>
+
+    <div id="filepanels" class="tab-content">
+        @for (var i = 0; i < Model.TranslationsList.Count; i++)
+        {
+            var prevTab = 0;
+            if (i != 0) { prevTab = i - 1; }
+
+            var nextTab = i + 1;
+            var tab = i;
+
+            <div class="tab-pane fade @activeTab" data-navigation="@tab">
+                @Html.HiddenFor(d => d.TranslationsList[i].TranslationId, new { @class = "champ", id = "Translation_" + tab })
+                @Html.HiddenFor(d => d.TranslationsList[i].LanguageId, new { @class = "champ", id = "Language_" + tab })
+
+                <div class="table_header">
+                    <span>Les informations en "@Model.TranslationsList[i].LanguagePrefix"</span>
+                </div>
+
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].NewsletterMailSource)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].NewsletterMailSource)</span>
+                    @Html.TextBoxFor(d => d.TranslationsList[i].NewsletterMailSource, new { @class = "champ", type = "file", id = "Source_" + tab })
+                </div>
+
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].NewsletterMailSubject)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].NewsletterMailSubject)</span>
+                    @Html.TextBoxFor(d => d.TranslationsList[i].NewsletterMailSubject, new { @class = "champ", id = "Subject_" + tab })
+                </div>
+
+                <hr class="ligne_separ" />
+
+                <div class="ligne_input">
+                    <div class="text_obligatoire">
+                        <span class="obgligatoire">(*): champ obligatoire.</span>
+                    </div>
+                    <div class="btn_container">
+                        @if (i == Model.TranslationsList.Count - 1)
+                        {
+                            <input type="submit" class="btn_valider" value="VALIDER" />
+                        }
+                        else
+                        {
+                            <span class="btn_valider next" data-navigation="@nextTab">SUIVANT</span>
+                        }
+                        @if (i != 0)
+                        {
+                            <span class="btn_valider prev" data-navigation="@prevTab">PRÉCÉDENT</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            activeTab = "";
+        }
+    </div>
+}

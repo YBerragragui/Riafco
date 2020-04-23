@@ -1,0 +1,42 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Newsletters.ViewData.NewsletterMailsViewData
+
+<div class="header_container">
+    <div class="titre_header">Gérer les mails : </div>
+    <span id="add_newsletter_mail_btn" class="btn_ajouter">
+        <input type="image" src="/Images/add.png" class="icon_ajouter" />
+        <span class="valeur_btn">Ajouter</span>
+    </span>
+</div>
+
+<div id="content_newsletter_mails" class="content_container">
+    @Html.Partial("Partials/_NewsletterMailsList", Model)
+</div>
+
+<div id="add_newsletter_mail_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un Mail: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_newsletter_mail_input"></div>
+    </div>
+</div>
+
+<div id="update_newsletter_mail_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un Mail: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_newsletter_mail_input"></div>
+    </div>
+</div>
+
+<div id="delete_newsletter_mail_pop_up" class="cd-popup" role="alert">
+    <div id="delete_newsletter_mail_input" class="cd-popup-container cd-popup-container-confirm">
+    </div>
+</div>

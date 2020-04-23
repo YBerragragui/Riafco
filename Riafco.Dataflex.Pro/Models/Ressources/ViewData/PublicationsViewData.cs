@@ -1,0 +1,15 @@
+﻿using System.Collections.Generic;
+
+namespace Riafco.Dataflex.Pro.Models.Ressources.ViewData
+{
+    /// <summary>
+    /// The PublicationsViewData class.
+    /// </summary>
+    public class PublicationsViewData
+    {
+        /// <summary>
+        /// Gets or sets Publications.
+        /// </summary>
+        public List<PublicationViewData> Publications { get; set; }
+    }
+}

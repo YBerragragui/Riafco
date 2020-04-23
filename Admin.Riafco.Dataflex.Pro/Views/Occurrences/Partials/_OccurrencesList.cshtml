@@ -1,0 +1,31 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Occurrences.ViewData.OccurrencesViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center">DATE DEBUT</th>
+                <th class="text-center">DATE FIN</th>
+                <th class="text-center">TITRE</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var occurrence in Model.Occurrences)
+            {
+                <tr>
+                    <td><div class="text-center">@occurrence.Occurrence.OccurrenceStartDate.ToString("dd/MM/yyyy")</div></td>
+                    <td><div class="text-center">@occurrence.Occurrence.OccurrenceEndDate.ToString("dd/MM/yyyy")</div></td>
+                    <td><div class="text-center">@occurrence.TranslationsList.First().OccurrenceTitle</div></td>
+                    <td>
+                        <input type="image" id="update_occurrence_btn" data="@occurrence.Occurrence.OccurrenceId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_occurrence_btn" data="@occurrence.Occurrence.OccurrenceId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

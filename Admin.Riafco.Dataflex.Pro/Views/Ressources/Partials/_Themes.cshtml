@@ -1,0 +1,47 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.ThemesViewData
+
+<div class="header_container">
+    <div class="titre_header">les themes : </div>
+    <span id="add_theme_btn" class="btn_ajouter">
+        <input type="image" src="/Images/add.png" class="icon_ajouter" />
+        <span class="valeur_btn">Ajouter</span>
+    </span>
+</div>
+
+<div id="content_themes" class="content_container">
+    @Html.Partial("Partials/_ThemesList", Model)
+</div>
+
+<div id="add_theme_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un theme: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_theme_input"></div>
+    </div>
+</div>
+
+<div id="update_theme_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un theme: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_theme_input"></div>
+    </div>
+</div>
+
+<div id="delete_theme_pop_up" class="cd-popup" role="alert">
+    <div id="delete_theme_input" class="cd-popup-container cd-popup-container-confirm">
+        <p>Est ce que vous êtes sur de cette opération ?</p>
+        <ul class="cd-buttons">
+            <li><a id="yes">Oui</a></li>
+            <li><a id="no">Non</a></li>
+        </ul>
+    </div>
+</div>

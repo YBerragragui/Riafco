@@ -1,0 +1,49 @@
+﻿.rule-item {
+    background-color: #2B414E;
+    color: #fff;
+}
+
+.rule_container {
+    width: calc(25% - 10px);
+    margin: 0.5px;
+    float: left;
+    position: relative;
+    padding: 14px 5px;
+    background-color: #005eaa;
+    background-color: rgba(0, 94, 170, 0.4);
+}
+
+.rule_checkbox {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: -4px;
+    margin-right: 10px;
+}
+
+    .rule_checkbox > input {
+        width: 20px;
+        height: 20px;
+    }
+
+.rule_name {
+    float: left;
+}
+
+@media (max-width : 1400px) {
+    .rule_container {
+        width: calc(25% - 1px);
+    }
+}
+
+@media (max-width : 1200px) {
+    .rule_container {
+        width: calc(33.33% - 10px);
+    }
+}
+
+@media (max-width :992px) {
+    .rule_container {
+        width: calc(50% - 10px);
+    }
+}

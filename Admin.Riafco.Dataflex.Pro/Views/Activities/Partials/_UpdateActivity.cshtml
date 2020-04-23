@@ -1,0 +1,106 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Activities.FormData.UpdateActivityFormData
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/Editeur/editor.js"></script>
+
+@{
+    string action = ViewBag.Action;
+    string formId = action + "Form";
+}
+
+@using (Html.BeginForm(action, "Activities", FormMethod.Post, new { id = formId, enctype = "multipart/form-data", @class = "modal-body" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(d => d.ActivityId)
+
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active" data-navigation="0"><a>Activité</a></li>
+        @for (var i = 0; i < Model.TranslationsList.Count; i++)
+        {
+            var tabs = i + 1;
+            <li data-navigation="@tabs"><a>@Model.TranslationsList[i].LanguagePrefix</a></li>
+        }
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" data-navigation="0">
+            <div class="row ligne_input">
+                @Html.LabelFor(d => d.ActivityIcon)
+                <span class="erreur">@Html.ValidationMessageFor(d => d.ActivityIcon)</span>
+                @Html.TextBoxFor(d => d.ActivityIcon, new { @class = "champ", type = "file" })
+            </div>
+
+            <div class="row ligne_input">
+                @Html.LabelFor(d => d.ActivityImage)
+                <span class="erreur">@Html.ValidationMessageFor(d => d.ActivityImage)</span>
+                @Html.TextBoxFor(d => d.ActivityImage, new { @class = "champ", type = "file" })
+            </div>
+
+            <hr class="ligne_separ" />
+
+            <div class="ligne_input">
+                <div class="text_obligatoire">
+                    <span class="obgligatoire">(*): champ obligatoire.</span>
+                </div>
+                <div class="btn_container">
+                    <span class="btn_valider next" data-navigation="1">SUIVANT</span>
+                </div>
+            </div>
+        </div>
+
+        @for (var i = 0; i < Model.TranslationsList.Count; i++)
+        {
+            var nextTab = i + 2;
+            var tab = i + 1;
+            var prevTab = i;
+
+            <div class="tab-pane fade" data-navigation="@tab">
+                @Html.HiddenFor(d => d.TranslationsList[i].TranslationId, new { @class = "champ", id = "Translation_" + (i + 1) })
+                @Html.HiddenFor(d => d.TranslationsList[i].LanguageId, new { @class = "champ", id = "Language_" + (i + 1) })
+
+                <div class="table_header">
+                    <span>Les informations en "@Model.TranslationsList[i].LanguagePrefix"</span>
+                </div>
+
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].ActivityTitle)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].ActivityTitle)</span>
+                    @Html.TextBoxFor(d => d.TranslationsList[i].ActivityTitle, new { @class = "champ", id = "Title_" + (i + 1) })
+                </div>
+
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].ActivityIntroduction)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].ActivityIntroduction)</span>
+                    @Html.TextAreaFor(d => d.TranslationsList[i].ActivityIntroduction, new { @class = "champ", id = "Intro_" + (i + 1) })
+                </div>
+
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].ActivityDescription)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].ActivityDescription)</span>
+                    @Html.TextAreaFor(d => d.TranslationsList[i].ActivityDescription, new { @class = "champ", id = "Desc_" + (i + 1) })
+                </div>
+
+                <hr class="ligne_separ" />
+
+                <div class="ligne_input">
+                    <div class="text_obligatoire">
+                        <span class="obgligatoire">(*): champ obligatoire.</span>
+                    </div>
+                    <div class="btn_container">
+                        @if (i == Model.TranslationsList.Count - 1)
+                        {
+                            <input type="submit" class="btn_valider" value="VALIDER" />
+                        }
+                        else
+                        {
+                            <span class="btn_valider next" data-navigation="@nextTab">SUIVANT</span>
+                        }
+                        <span class="btn_valider prev" data-navigation="@prevTab">PRÉCÉDENT</span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

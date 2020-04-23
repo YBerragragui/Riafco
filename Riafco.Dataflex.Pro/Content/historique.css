@@ -1,0 +1,149 @@
+﻿@font-face {
+    font-family: MyFont-histo;
+    src: url(/Content/fonts/Saira-Regular.ttf);
+}
+.orange-line {
+    width: 100%;
+    border: 1px solid #f99f3b;
+    display: inline-block;
+    position: relative;
+    top: 44px;
+    overflow: hidden;
+}
+
+
+.left-orange {
+    vertical-align: unset;
+    background: white;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    left: 4px;
+}
+
+.historique-title > h3 {
+    display: inline-block;
+    font-family: MyFontBold;
+    font-size: 21px;
+    position: relative;
+    padding: 0 7px;
+    color: #388db8;
+    background: white;
+}
+
+.right-orange {
+    vertical-align: unset;
+    background: white;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    right: 4px;
+}
+
+.historique-title {
+    text-align: center;
+}
+.historique-sec-1
+{
+    padding:0;
+    margin:0;
+    height:auto;
+    width:100%;
+}
+.historique-sec-2
+{
+    padding:0;
+    margin:0;
+    height:auto;
+    width:100%;
+}
+.historique-date {
+    width: 100%;
+    text-align: center;
+}
+
+.historique-date>a {
+    padding: 0;
+    background: #f99f3b;
+    padding: 7px 25px 7px 25px !important;
+    color: white !important;
+}
+
+@media (min-width:768px)
+{.Title {
+     margin-left: 33%; 
+}
+
+}
+@media (min-width:1024px)
+{.Title {
+     margin-left: 36%; 
+}
+    
+}
+
+.vertical-bottom-orange {
+    border-right: 1px solid #f99f3b;
+    width: 50%;
+    height: 30px;
+    border-bottom: 1px solid #f99f3b;
+}
+.historique-desc-container {
+    padding: 25px;
+    border-left: 1px solid #f99f3b;
+}
+
+.vertical-top-orange {
+    border-right: 1px solid #f99f3b;
+    width: 50%;
+    height: 30px;
+    border-top: 1px solid #f99f3b;
+}
+.horizontal-bottom-orange {
+    width: 100%;
+    border-bottom: 1px solid #f99f3b;
+}
+.description-title {
+    display: inline-block;
+    color: #388db8;
+    font-size: 14pt;
+    font-weight: 600;
+    font-family: MyFont-histo;
+}
+@media (max-width:425px)
+{
+   .description-title {
+    display: inline-block;
+    color: #388db8;
+    font-size: 12.2pt;
+    font-weight: 600;
+    font-family: MyFont-histo;
+} 
+}
+.description-icon {
+    position: absolute;
+    left: 10px;
+    color: #388db8 !important;
+    margin-top: 10px;
+}
+.historique-desc>p {
+    font-size: 12pt;
+    font-family: MyFont-histo;
+    text-align: justify;
+}
+@media (max-width:767px)
+{
+ 
+.historique-desc>p {
+    font-size: 11pt;
+    font-family: MyFont-histo;
+    text-align: justify;
+}
+}
+
+.historique-desc {
+    text-align: left;
+}
+.historique-container {
+    margin-top: 15px;
+}

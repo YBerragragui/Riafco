@@ -1,0 +1,30 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.AuthorsViewData
+
+@{
+    ViewBag.Title = "RIAFCO | Gérer les ressources.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section Scripts {
+    <script src="~/Scripts/ressources.js"></script>
+}
+
+@section Styles {
+    <link href="~/Content/settings.css" rel="stylesheet" />
+}
+
+<div class="page_container">
+    <div class="links">
+        @Ajax.ActionLink("Les auteurs", "Authors", "Ressources", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sous_bloc", OnSuccess = "activer_lien('authors')" }, new { id = "authors", @class = "active link" })
+        @Ajax.ActionLink("Les themes", "Themes", "Ressources", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sous_bloc", OnSuccess = "activer_lien('themes')" }, new { id = "themes", @class = "link" })
+        @Ajax.ActionLink("Les zones", "Areas", "Ressources", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sous_bloc", OnSuccess = "activer_lien('areas')" }, new { id = "areas", @class = "link" })
+        @Ajax.ActionLink("Les ressources", "Publications", "Ressources", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sous_bloc", OnSuccess = "activer_lien('publications')" }, new { id = "publications", @class = "link" })
+    </div>
+
+    <div id="sous_bloc" class="sous_bloc">
+        <div class="content_container">
+            @Html.Partial("Partials/_Authors", Model)
+        </div>
+    </div>
+</div>

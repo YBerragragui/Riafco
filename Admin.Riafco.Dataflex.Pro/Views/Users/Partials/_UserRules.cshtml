@@ -1,0 +1,29 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Authorization.FormData.ManageUserRulesFormData
+
+@using (Html.BeginForm("SetUserRules", "Users", FormMethod.Post, new { id = "user_rules_form", @class = "modal-body" }))
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.HiddenFor(d => d.UserId)
+
+    for (var i = 0; i < Model.Rules.Count; i++)
+    {
+        @Html.HiddenFor(r => r.Rules[i].RuleId)
+        @Html.HiddenFor(r => r.Rules[i].UserRuleId)
+
+        <div class="rule_container">
+            <div class="rule_checkbox">@Html.CheckBoxFor(r => r.Rules[i].RuleStatus)</div>
+            <div class="rule_name">@Model.Rules[i].RuleName</div>
+        </div>
+    }
+    <hr class="ligne_separ" />
+
+    <div class="ligne_input">
+        <div class="text_obligatoire">
+            <span class="obgligatoire">(*): champ obligatoire.</span>
+        </div>
+        <div class="btn_container">
+            <input type="submit" class="btn_valider" value="VALIDER" />
+        </div>
+    </div>
+}

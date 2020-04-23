@@ -1,0 +1,277 @@
+﻿@font-face {
+    font-family: Light;
+    src: url("../fonts/light.ttf");
+}
+
+@font-face {
+    font-family: Regular;
+    src: url("../fonts/regular.ttf");
+}
+
+@font-face {
+    font-family: Bold;
+    src: url("../fonts/bold.ttf");
+}
+
+
+body {
+    font-family: "Regular";
+    background: #f5f5f5;
+}
+
+
+/*************************************************************/
+/*INPUTS DE L'APPLICATION */
+/*************************************************************/
+.ligne_input {
+    font-style: normal;
+    font-size: 20px;
+    color: #000;
+    padding: 0px 10px;
+    text-align: left;
+    font-family: Light;
+}
+
+    .ligne_input label {
+        font-weight: normal !important;
+    }
+
+    .ligne_input .champ {
+        border: 1px solid gray;
+        max-width: 100%;
+        min-width: 100%;
+        outline: none;
+        height: 35px;
+        width: 100%;
+    }
+
+        .ligne_input .champ:focus {
+            border-color: #258cd1;
+            box-shadow: none;
+        }
+
+    .ligne_input .erreur {
+        text-transform: uppercase;
+        font-size: 11px;
+        float: right;
+        color: red;
+        margin-top: 16px;
+    }
+
+    .ligne_input .input_file {
+        background-color: #a39161;
+        border: 1px solid #a39161;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        color: #FFF;
+        cursor: pointer;
+    }
+
+    .ligne_input .obg {
+        color: red;
+    }
+
+    .ligne_input .btn_submit {
+        background-color: #258cd1;
+        border: 1px solid #258cd1;
+        text-transform: uppercase;
+        padding-bottom: 2px;
+        padding-top: 2px;
+        float: right;
+        color: #FFF;
+    }
+
+.droit {
+}
+
+    .droit hr {
+        border-top: 2px solid #258cd1;
+        margin: 0px 0px 0px 0px;
+    }
+
+.loading_image {
+    margin: 80px 0px;
+    width: 80px;
+}
+
+.loading_image_delete {
+    margin: 0px;
+}
+
+.bloc_btn_downoald {
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+}
+
+    .bloc_btn_downoald a {
+        background-color: #258cd1;
+        border: 1px solid #258cd1;
+        text-transform: uppercase;
+        display: inline-block;
+        margin: 0px 0px 5px;
+        padding: 8px 100px;
+        font-size: 16pt;
+        color: #FFF;
+    }
+
+        .bloc_btn_downoald a:hover {
+            text-decoration: none;
+        }
+
+
+/*RESPONSIVE*/
+@media (max-width: 380px) {
+    .form-container {
+        padding: 60px 15px;
+    }
+
+    .modal-body {
+        padding: 0px;
+    }
+
+    /*INPUTS  DE L'APPLICATION */
+    .ligne_input {
+        padding: 3px 5px;
+        font-size: 16px;
+    }
+
+        .ligne_input .erreur {
+            line-height: 0px;
+        }
+
+        .ligne_input .btn_submit {
+            margin-top: 5px;
+            width: 100%;
+        }
+
+
+    .bloc_btn_downoald a {
+        margin: 0px 0px 10px;
+        padding: 2px 0px;
+        font-size: 12pt;
+        width: 90%;
+    }
+}
+
+@media (min-width: 380px) and (max-width: 768px) {
+    .form-container {
+        padding: 90px 0px;
+    }
+
+    /*INPUTS  DE L'APPLICATION */
+    .ligne_input {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+        .ligne_input .input_file {
+            font-size: 16px;
+        }
+
+        .ligne_input .erreur {
+            line-height: 1px;
+        }
+
+        .ligne_input .btn_submit {
+            width: 130px;
+        }
+
+    .bloc_btn_downoald a {
+        margin: 0px 0px 10px;
+        padding: 2px 0px;
+        font-size: 14pt;
+        width: 70%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .form-container {
+        padding: 90px 0px;
+    }
+
+    .ligne_input {
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+        .ligne_input .btn_submit {
+            width: 150px;
+        }
+
+    .bloc_btn_downoald a {
+        margin: 0px 0px 10px;
+        padding: 6px 10px;
+        font-size: 14pt;
+        width: 300px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+    .form-container {
+        padding: 170px 0px;
+    }
+
+    .ligne_input {
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+        .ligne_input .btn_submit {
+            width: 150px;
+        }
+
+    .bloc_btn_downoald a {
+        margin: 0px 0px 10px;
+        padding: 6px 10px;
+        font-size: 12pt;
+        width: 300px;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1800px) {
+    .form-container {
+        padding: 150px 0px;
+    }
+
+    .ligne_input {
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+        .ligne_input .btn_submit {
+            width: 140px;
+        }
+
+    .bloc_btn_downoald a {
+        margin: 0px 0px 10px;
+        padding: 6px 10px;
+        font-size: 12pt;
+        width: 300px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .form-container {
+        padding: 300px 0px;
+    }
+    /*INPUTS  DE L'APPLICATION */
+    .ligne_input {
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+        .ligne_input .btn_submit {
+            width: 140px;
+        }
+
+    .bloc_btn_downoald a {
+        margin: 0px 0px 10px;
+        padding: 6px 10px;
+        font-size: 14pt;
+        width: 300px;
+    }
+}

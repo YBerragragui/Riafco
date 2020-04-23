@@ -1,0 +1,12 @@
+﻿<serviceActivation>
+  <services>
+    <service name="Riafco.Service.Dataflex.Pro" description="riafco service" force = "true" />
+    <!--<service name="Service2" description="Service 2">
+      <provider name="SiteTargeting" exclude="true">
+        <Sites>
+          <Site siteId="100" />
+        </Sites>
+      </provider>
+    </service>-->
+  </services>
+</serviceActivation>

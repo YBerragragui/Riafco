@@ -1,0 +1,45 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Newsletters.FormData.SubscriberFormData
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/Editeur/editor.js"></script>
+
+@{
+    string action = ViewBag.Action;
+    string formId = action + "Form";
+}
+
+@using (Html.BeginForm(action, "Newsletters", FormMethod.Post, new { id = formId, enctype = "multipart/form-data", @class = "modal-body" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(d => d.SubscriberId)
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.SubscriberFirstName)<span class="obgligatoire">*</span>
+        <span class="erreur">@Html.ValidationMessageFor(d => d.SubscriberFirstName)</span>
+        @Html.TextBoxFor(d => d.SubscriberFirstName, new { @class = "champ"})
+    </div>
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.SubscriberLastName)<span class="obgligatoire">*</span>
+        <span class="erreur">@Html.ValidationMessageFor(d => d.SubscriberLastName)</span>
+        @Html.TextBoxFor(d => d.SubscriberLastName, new { @class = "champ" })
+    </div>
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.SubscriberEmail)<span class="obgligatoire">*</span>
+        <span class="erreur">@Html.ValidationMessageFor(d => d.SubscriberEmail)</span>
+        @Html.TextBoxFor(d => d.SubscriberEmail, new { @class = "champ" })
+    </div>
+
+    <hr class="ligne_separ" />
+
+    <div class="ligne_input">
+        <div class="text_obligatoire">
+            <span class="obgligatoire">(*): champ obligatoire.</span>
+        </div>
+        <div class="btn_container">
+            <input type="submit" class="btn_valider" value="VALIDER" />
+        </div>
+    </div>
+}

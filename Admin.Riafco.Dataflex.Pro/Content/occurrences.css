@@ -1,0 +1,19 @@
+﻿.date_occurrence{
+    width:150px;
+}
+
+.title_occurrence{
+    width:calc(100% - 270px);
+}
+
+@media (max-width: 500px) {
+    .date_occurrence{
+        width:0px;
+        height: 1px;
+    }
+
+    .title_occurrence{
+        width:calc(100% - 120px);
+    }
+
+}

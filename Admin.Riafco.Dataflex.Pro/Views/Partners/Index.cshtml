@@ -1,0 +1,64 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Partners.ViewData.PartnersViewData
+
+@{
+    ViewBag.Title = "RIAFCO | Gérer les partenaires.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section Scripts {
+    <script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/partners.js"></script>
+}
+
+@section Styles {
+
+}
+
+<div class="page_container">
+    <div class="content_container">
+        <div class="header_container">
+            <div class="titre_header">Gérer les Partenaires : </div>
+            <span id="add_partner_btn" class="btn_ajouter">
+                <input type="image" src="/Images/add.png" class="icon_ajouter" />
+                <span class="valeur_btn">Ajouter</span>
+            </span>
+        </div>
+
+        <div id="content_partners" class="content_container">
+            @Html.Partial("Partials/_PartnersList", Model)
+        </div>
+
+        <div id="add_partner_pop_up" class="cd-popup" role="alert">
+            <div class="cd-popup-container">
+                <div class="modal-header">
+                    <h4>
+                        <span>ajouter un Partenaire: </span>
+                        <a class="cd-popup-close img-replace"></a>
+                    </h4>
+                </div>
+                <div id="add_partner_input"></div>
+            </div>
+        </div>
+
+        <div id="update_partner_pop_up" class="cd-popup" role="alert">
+            <div class="cd-popup-container">
+                <div class="modal-header">
+                    <h4>
+                        <span>modifier un Partenaire: </span>
+                        <a class="cd-popup-close img-replace"></a>
+                    </h4>
+                </div>
+                <div id="update_partner_input"></div>
+            </div>
+        </div>
+
+        <div id="delete_partner_pop_up" class="cd-popup" role="alert">
+            <div id="delete_partner_input" class="cd-popup-container cd-popup-container-confirm">
+
+            </div>
+        </div>
+
+    </div>
+</div>

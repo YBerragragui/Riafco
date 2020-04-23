@@ -1,0 +1,19 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.About.ViewData.ParagraphsViewData
+
+<div class="line_header">
+    <div class="paragraph_title">THEME</div>
+    <div class="operation">
+        <div>OPERATIONS</div>
+    </div>
+</div>
+
+@foreach (var paragraph in Model.Paragraphs)
+{
+    <div class="line_container">
+        <div class="paragraph_title">@paragraph.TranslationsList.First().ParagraphTitle</div>
+        <div class="operation">
+            <input type="image" id="update_section_paragraph_btn" data="@paragraph.Paragraph.ParagraphId" class="icon_crud" src="~/Images/edit.png" />
+            <input type="image" id="delete_section_paragraph_btn" data="@paragraph.Paragraph.ParagraphId" data-section="@paragraph.Paragraph.SectionId" class="icon_crud" src="~/Images/delete.png" />
+        </div>
+    </div>
+}

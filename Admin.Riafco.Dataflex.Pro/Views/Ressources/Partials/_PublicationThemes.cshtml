@@ -1,0 +1,12 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.PublicationsThemeViewData
+
+<div class="header_container">
+    <span id="add_publication_theme_btn" class="btn_ajouter" data="@Model.PublicationId">
+        <input type="image" src="/Images/add.png" class="icon_ajouter" />
+        <span class="valeur_btn">Ajouter</span>
+    </span>
+</div>
+
+<div id="content_publication_themes" class="content_container">
+    @Html.Partial("Partials/_PublicationThemesList", Model)
+</div>

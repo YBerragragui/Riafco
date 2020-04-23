@@ -1,0 +1,27 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Settings.ViewData.LanguageViewData
+
+@{
+    ViewBag.Title = "RIAFCO | Paramètres du site.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section Scripts {
+    <script src="~/Scripts/settings.js"></script>
+}
+
+@section Styles {
+}
+
+<div class="page_container">
+    <div class="links">
+        @Ajax.ActionLink("Langues", "Languages", "Settings", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sous_bloc", OnSuccess = "activer_lien('langues')" }, new { id = "langues", @class = "active link" })
+        @Ajax.ActionLink("Les droits", "Rules", "Settings", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sous_bloc", OnSuccess = "activer_lien('rules')" }, new { id = "rules", @class = "link" })
+    </div>
+
+    <div id="sous_bloc" class="sous_bloc">
+        <div class="content_container">
+            @Html.Partial("Partials/_Languages", Model)
+        </div>
+    </div>
+</div>

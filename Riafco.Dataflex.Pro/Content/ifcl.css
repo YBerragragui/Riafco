@@ -1,0 +1,90 @@
+﻿@font-face {
+    font-family: MyFont-ifcl;
+    src: url(/Content/fonts/Saira-Regular.ttf);
+}
+
+.ifcl-container {
+    padding-top: 80px;
+}
+
+@media (max-width:768px) {
+    .ifcl-container {
+        margin-top: 0;
+        padding-top: 40px;
+    }
+}
+
+.ifcl-row {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+.country-img {
+    width: 100%;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.country-img-container {
+    border: 1px solid #f99f3b;
+    text-align: center;
+    padding: 15px 0 0;
+}
+
+@media (max-width:768px) {
+    .ifcl-row {
+        margin: auto;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+
+.country-img-container > h3 {
+    color: #f99f3b;
+    margin-bottom: 15px;
+    font-family: MyFont-ifcl;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 0pc;
+}
+
+.ifcl-table > tbody > tr > td {
+    width: 50%;
+    border: 1px solid #f99f3b;
+    height: 70px;
+    padding: 15px 10px 15px 10px;
+    font-family: MyFont-ifcl;
+    font-weight: 600;
+}
+
+    .ifcl-table > tbody > tr > td:first-child {
+        color: #388db8;
+    }
+
+table.ifcl-table {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.ifcl-col-2 > div {
+    padding: 50px 30px 50px 30px;
+    border: 1px solid #388db8;
+    margin-bottom: 20px;
+}
+
+    .ifcl-col-2 > div > img {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+
+.ifcl-col-2 > p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: MyFont-ifcl;
+    text-align: justify;
+    font-weight: normal;
+}

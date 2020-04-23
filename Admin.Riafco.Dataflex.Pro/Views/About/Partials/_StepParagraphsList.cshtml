@@ -1,0 +1,17 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.About.ViewData.StepParagraphsViewData
+
+<div class="line_header">
+    <div class="paragraph_title">TITRE</div>
+    <div class="operation"><div>OPERATIONS</div></div>
+</div>
+
+@foreach (var paragraph in Model.StepParagraphViewDataList)
+{
+    <div class="line_container">
+        <div class="paragraph_title">@paragraph.Translations.First().ParagraphTitle</div>
+        <div class="operation">
+            <input type="image" id="update_step_paragraph_btn" data="@paragraph.Paragraph.ParagraphId" class="icon_crud" src="~/Images/edit.png" />
+            <input type="image" id="delete_step_paragraph_btn" data="@paragraph.Paragraph.ParagraphId" data-step="@paragraph.Paragraph.StepId" class="icon_crud" src="~/Images/delete.png" />
+        </div>
+    </div>
+}

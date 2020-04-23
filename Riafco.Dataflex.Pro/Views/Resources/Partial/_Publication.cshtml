@@ -1,0 +1,42 @@
+﻿@model Riafco.Dataflex.Pro.Models.Ressources.ViewData.PublicationsViewData
+@using Riafco.Dataflex.Pro.GlobalResources.Publications;
+
+@{
+    Layout = null;
+}
+
+<ul id="publications_items" class="publications-items">
+    @foreach (var publicationViewData in Model.Publications)
+    {
+        var fileSource = Constant.ImagesUrl + @"Images\Ressources\Pulication\" + publicationViewData.Publication.PublicationId + @"\" + publicationViewData.TranslationsList.First().PublicationFile;
+        var imgSrc = Constant.ImagesUrl + @"Images\Ressources\Pulication\" + publicationViewData.Publication.PublicationId + @"\" + publicationViewData.Publication.PublicationImage;
+
+        <li class="resources-bloc">
+            <div class="resources-bloc-img">
+                <img src="@imgSrc" class="img-responsive" alt="image de la publications RIAFCO.">
+                <div class="resources-img-overlay">
+                    <img class="img-responsive" src="~/Images/voir.png" alt="" />
+                    <a href="@fileSource" download="download" target="_blank">@PublicationResources.ReadMoreBtn</a>
+                </div>
+            </div>
+
+            <h3>@publicationViewData.TranslationsList.First().PublicationTitle</h3>
+            <p>@Html.Raw(publicationViewData.TranslationsList.First().PublicationSummary)</p>
+            <div class="resources-bloc-details">
+                <h6>@publicationViewData.Publication.PublicationDate.ToString("dd/MM/yyyy")</h6>
+                @foreach (var theme in publicationViewData.ThemesViewData.Themes)
+                {
+                    <a>@theme.TranslationsList.First().ThemeName</a>
+                }
+            </div>
+        </li>
+    }
+</ul>
+
+<div class="text-center items-pagination">
+    <span class="items-pager" id="first"><i class="fa fa-step-backward" aria-hidden="true"></i></span>
+    <span class="items-pager" id="previous"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+    <span class="items-pager pagination" id="holder"></span>
+    <span class="items-pager" id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+    <span class="items-pager" id="last"><i class="fa fa-step-forward" aria-hidden="true"></i></span>
+</div>

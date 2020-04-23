@@ -1,0 +1,43 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Newsletters.ViewData.SubscribersViewData
+
+<div class="header_container">
+    <div class="titre_header">Gérer les abonnés : </div>
+    <span id="add_subscriber_btn" class="btn_ajouter">
+        <input type="image" src="/Images/add.png" class="icon_ajouter" />
+        <span class="valeur_btn">Ajouter</span>
+    </span>
+</div>
+
+<div id="content_subscribers" class="content_container">
+    @Html.Partial("Partials/_SubscribersList", Model)
+</div>
+
+<div id="add_subscriber_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un abonné: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_subscriber_input"></div>
+    </div>
+</div>
+
+<div id="update_subscriber_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un abonné: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_subscriber_input"></div>
+    </div>
+</div>
+
+<div id="delete_subscriber_pop_up" class="cd-popup" role="alert">
+    <div id="delete_subscriber_input" class="cd-popup-container cd-popup-container-confirm">
+
+    </div>
+</div>

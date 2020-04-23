@@ -1,0 +1,128 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.About.ViewData.SectionsViewData
+
+@{
+    Layout = null;
+}
+
+<div class="page_container">
+    <div class="header_container">
+        <div class="titre_header">Gérer les pages à propos : </div>
+        <span id="add_section_btn" class="btn_ajouter">
+            <input type="image" src="/Images/add.png" class="icon_ajouter" />
+            <span class="valeur_btn">Ajouter</span>
+        </span>
+    </div>
+
+    <div id="content_sections" class="content_container">
+        @Html.Partial("Partials/_SectionsList", Model)
+    </div>
+</div>
+
+<div id="add_section_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter une page: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_section_input"></div>
+    </div>
+</div>
+
+<div id="update_section_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier une page: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_section_input"></div>
+    </div>
+</div>
+
+<div id="delete_section_pop_up" class="cd-popup" role="alert">
+    <div id="delete_section_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>
+
+<div id="paragraph_section_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>les paragraphes de la page: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="paragraph_section_input"></div>
+    </div>
+</div>
+
+<div id="add_paragraph_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un paragraphe: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_paragraph_input"></div>
+    </div>
+</div>
+
+<div id="update_paragraph_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un paragraphe: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_paragraph_input"></div>
+    </div>
+</div>
+
+<div id="delete_paragraph_pop_up" class="cd-popup" role="alert">
+    <div id="delete_paragraph_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>
+
+<div id="file_section_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>les fichiers de la page: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="file_section_input"></div>
+    </div>
+</div>
+
+<div id="add_file_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un fichier: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_file_input"></div>
+    </div>
+</div>
+
+<div id="update_file_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un fichier: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_file_input"></div>
+    </div>
+</div>
+
+<div id="delete_file_pop_up" class="cd-popup" role="alert">
+    <div id="delete_file_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>
+

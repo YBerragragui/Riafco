@@ -1,0 +1,23 @@
+﻿@model Riafco.Dataflex.Pro.Models.Offices.ViewData.CountryViewData
+
+@{
+    Layout = null;
+}
+
+
+<div class="container-afric-map">
+    <div class="Description-country">
+        <div class="contezr">
+            <h4>@Model.TranslationsList.First().CountryName</h4>
+            <p>@Model.TranslationsList.First().CountryTitle</p>
+            <div class="aspacemembre">
+                <a href="/Home/Ifcl/@Model.Country.CountryId" class="btn ifcl float-right">IFCL</a>
+            </div>
+        </div>
+        <div class="oth">
+            <i onclick="closeme()" class="fa fa-times float-right close-div" aria-hidden="true"></i>
+        </div>
+    </div>
+
+</div>
+

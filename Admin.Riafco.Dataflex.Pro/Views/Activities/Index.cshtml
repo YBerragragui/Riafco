@@ -1,0 +1,141 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Activities.ViewData.ActivitiesViewData
+
+@{
+    ViewBag.Title = "RIAFCO | Gérer les activites.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section Scripts {
+    <script src="~/Scripts/activities.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@section Styles {
+
+}
+
+<div class="page_container">
+    <div class="header_container">
+        <div class="titre_header">Gérer les activites : </div>
+        <span id="add_activity_btn" class="btn_ajouter">
+            <input type="image" src="/Images/add.png" class="icon_ajouter" />
+            <span class="valeur_btn">Ajouter</span>
+        </span>
+    </div>
+
+    <div id="content_activities" class="content_container">
+        @Html.Partial("Partials/_ActivitiesList", Model)
+    </div>
+</div>
+
+<div id="add_activity_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter une activité: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_activity_input"></div>
+    </div>
+</div>
+
+<div id="update_activity_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier une activité: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_activity_input"></div>
+    </div>
+</div>
+
+<div id="delete_activity_pop_up" class="cd-popup" role="alert">
+    <div id="delete_activity_input" class="cd-popup-container cd-popup-container-confirm">
+
+    </div>
+</div>
+
+<div id="paragraph_activity_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>les paragraphes de l'activité: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="paragraph_activity_input"></div>
+    </div>
+</div>
+
+<div id="add_paragraph_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un paragraphe: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_paragraph_input"></div>
+    </div>
+</div>
+
+<div id="update_paragraph_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un paragraphe: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_paragraph_input"></div>
+    </div>
+</div>
+
+<div id="delete_paragraph_pop_up" class="cd-popup" role="alert">
+    <div id="delete_paragraph_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>
+
+<div id="file_activity_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>les fichiers de l'activité: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="file_activity_input"></div>
+    </div>
+</div>
+
+<div id="add_file_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un fichier: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_file_input"></div>
+    </div>
+</div>
+
+<div id="update_file_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un fichier: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_file_input"></div>
+    </div>
+</div>
+
+<div id="delete_file_pop_up" class="cd-popup" role="alert">
+    <div id="delete_file_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>

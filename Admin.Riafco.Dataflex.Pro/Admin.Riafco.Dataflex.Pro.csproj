@@ -1,0 +1,1018 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BAD2FE36-C294-45C2-B7AC-B2971F4E1F94}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Admin.Riafco.Dataflex.Pro</RootNamespace>
+    <AssemblyName>Admin.Riafco.Dataflex.Pro</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AttributeRouting, Version=3.5.6.0, Culture=neutral, PublicKeyToken=c10f85d521a011a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AttributeRouting.Core.3.5.6\lib\net40\AttributeRouting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AttributeRouting.Web, Version=3.5.6.0, Culture=neutral, PublicKeyToken=c10f85d521a011a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AttributeRouting.Core.Web.3.5.6\lib\net40\AttributeRouting.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Mvc, Version=3.5.6.0, Culture=neutral, PublicKeyToken=c10f85d521a011a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AttributeRouting.3.5.6\lib\net40\AttributeRouting.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivator.1.0.0.0\lib\WebActivator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\Bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\Bootstrap\bootstrap.css" />
+    <Content Include="Content\connexion.css" />
+    <Content Include="Content\DataTable\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTable\css\datatables.css" />
+    <Content Include="Content\DataTable\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTable\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTable\images\sort_asc.png" />
+    <Content Include="Content\DataTable\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTable\images\sort_both.png" />
+    <Content Include="Content\DataTable\images\sort_desc.png" />
+    <Content Include="Content\DataTable\images\sort_desc_disabled.png" />
+    <Content Include="Content\datepicker.css" />
+    <Content Include="Content\Editeur\font-awesome.min.css" />
+    <Content Include="Content\Editeur\froala_editor.css" />
+    <Content Include="Content\Editeur\froala_style.css" />
+    <Content Include="Content\Editeur\Plugins\char_counter.css" />
+    <Content Include="Content\Editeur\Plugins\code_view.css" />
+    <Content Include="Content\Editeur\Plugins\colors.css" />
+    <Content Include="Content\Editeur\Plugins\draggable.css" />
+    <Content Include="Content\Editeur\Plugins\emoticons.css" />
+    <Content Include="Content\Editeur\Plugins\file.css" />
+    <Content Include="Content\Editeur\Plugins\fullscreen.css" />
+    <Content Include="Content\Editeur\Plugins\help.css" />
+    <Content Include="Content\Editeur\Plugins\image.css" />
+    <Content Include="Content\Editeur\Plugins\image_manager.css" />
+    <Content Include="Content\Editeur\Plugins\line_breaker.css" />
+    <Content Include="Content\Editeur\Plugins\quick_insert.css" />
+    <Content Include="Content\Editeur\Plugins\special_characters.css" />
+    <Content Include="Content\Editeur\Plugins\table.css" />
+    <Content Include="Content\Editeur\Plugins\video.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\occurrences.css" />
+    <Content Include="Images\africa.png" />
+    <Content Include="Images\cut_icon.png" />
+    <Content Include="Images\Default\default-image-partner.jpg" />
+    <Content Include="Images\Default\default-image-publication.jpg" />
+    <Content Include="Images\Default\default-image-news.jpg" />
+    <Content Include="Images\Default\default-image-country.jpg" />
+    <Content Include="Images\dowload_icon.png" />
+    <Content Include="Images\file_icon.png" />
+    <Content Include="Images\Languages\17\france.png" />
+    <Content Include="Images\Languages\17\united-states.png" />
+    <Content Include="Images\Languages\18\united-states.png" />
+    <Content Include="Images\Languages\1\48969790.jpg" />
+    <Content Include="Images\Languages\2\image-w856.jpg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\paragrapg_icon.png" />
+    <Content Include="Images\square_country.png" />
+    <Content Include="Images\square_news.png" />
+    <Content Include="Images\square_activity.png" />
+    <Content Include="Content\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\images\ui-icons_dcdbdb_256x240.png" />
+    <Content Include="Content\images\ui-icons_f8f7f7_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jcrop\cropper.css" />
+    <Content Include="Content\Jquery\jquery-ui.css" />
+    <Content Include="Content\Jquery\jquery-ui.structure.css" />
+    <Content Include="Content\Jquery\jquery-ui.theme.css" />
+    <Content Include="Content\Jquery\jquery.m.toast.css" />
+    <Content Include="Content\model.css" />
+    <Content Include="Content\settings.css" />
+    <Content Include="Content\rules.css" />
+    <Content Include="Content\shared.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\active.png" />
+    <Content Include="Images\Default\default-icon-activity.png" />
+    <Content Include="Images\Default\default-image-activity.jpg" />
+    <Content Include="Images\Users\default-user.png" />
+    <Content Include="Images\event.png" />
+    <Content Include="Images\book.png" />
+    <Content Include="Images\not_active.png" />
+    <Content Include="Images\partners.png" />
+    <Content Include="Images\users_icon.png" />
+    <Content Include="Images\warning-icon.png" />
+    <Content Include="Images\white_event.png" />
+    <Content Include="Images\news.png" />
+    <Content Include="Images\white_about.png" />
+    <Content Include="Images\about.png" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\blank_video.png" />
+    <Content Include="Images\candidat.png" />
+    <Content Include="Images\activities.png" />
+    <Content Include="Images\deconnexion.png" />
+    <Content Include="Images\default.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\film.png" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\list.png" />
+    <Content Include="Images\lock.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\mail.png" />
+    <Content Include="Images\profil.png" />
+    <Content Include="Images\settings.png" />
+    <Content Include="Images\square.png" />
+    <Content Include="Images\stop.png" />
+    <Content Include="Images\vertical_blank.png" />
+    <Content Include="Images\vote.png" />
+    <Content Include="Scripts\sections.js" />
+    <Content Include="Scripts\offices.js" />
+    <Content Include="Scripts\DataTable\data-table-demo.js" />
+    <Content Include="Scripts\DataTable\datatables.js" />
+    <Content Include="Scripts\ressources.js" />
+    <Content Include="Scripts\steps.js" />
+    <Content Include="Templates\NewUserMail.html" />
+    <Content Include="Scripts\Bootstrap\bootstrap-datepicker.js" />
+    <Content Include="Scripts\partners.js" />
+    <Content Include="Scripts\newsletters.js" />
+    <Content Include="Scripts\rules.js" />
+    <Content Include="Scripts\users.js" />
+    <Content Include="Scripts\occurrences.js" />
+    <Content Include="Scripts\news.js" />
+    <Content Include="Scripts\Bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\Editeur\editor.js" />
+    <Content Include="Scripts\Editeur\froala_editor.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\align.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\char_counter.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\code_beautifier.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\code_view.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\colors.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\draggable.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\emoticons.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\entities.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\file.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\font_family.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\font_size.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\forms.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\fullscreen.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\help.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\image.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\image_manager.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\inline_style.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\line_breaker.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\link.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\lists.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\paragraph_format.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\paragraph_style.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\print.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\quick_insert.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\quote.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\save.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\special_characters.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\table.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\url.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\video.min.js" />
+    <Content Include="Scripts\Editeur\Plugins\word_paste.min.js" />
+    <Content Include="Scripts\DataTable\French.json" />
+    <None Include="Properties\PublishProfiles\admin.riafco.dataflex.pro.pubxml" />
+    <None Include="Scripts\Jquery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jcrop\cropper.js" />
+    <Content Include="Scripts\jcrop\image_serie_cropper.js" />
+    <Content Include="Scripts\Jquery\jquery-3.1.1.js" />
+    <Content Include="Scripts\Jquery\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\Jquery\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\Toast\jquery.m.toast.js" />
+    <Content Include="Scripts\Jquery\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\Jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Jquery\jquery.validate.min.js" />
+    <Content Include="Scripts\Jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\activities.js" />
+    <Content Include="Scripts\settings.js" />
+    <Content Include="Scripts\profil.js" />
+    <Content Include="Scripts\shared.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AttributeRoutingConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authorization\AuthorizeUserAttribute.cs" />
+    <Compile Include="Constant.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\NewslettersController.cs" />
+    <Compile Include="Controllers\OccurrencesController.cs" />
+    <Compile Include="Controllers\ActivitiesController.cs" />
+    <Compile Include="Controllers\OfficesController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\PartnersController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RessourcesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\NewsletterMailResources.Designer.cs">
+      <DependentUpon>NewsletterMailResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\PartnerResources.Designer.cs">
+      <DependentUpon>PartnerResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\StepResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StepResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\SubscriberResources.Designer.cs">
+      <DependentUpon>SubscriberResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\SectionFileResources.Designer.cs">
+      <DependentUpon>SectionFileResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\SectionParagraphResources.Designer.cs">
+      <DependentUpon>SectionParagraphResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\ActivityParagraphResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActivityParagraphResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\ActivityResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActivityResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\AuthorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\ConnectionResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConnectionResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\CountryResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\FileResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\LanguageResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\NewsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\SectionResources.Designer.cs">
+      <DependentUpon>SectionResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\OccurrenceResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OccurrenceResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\PublicationThemeResources.Designer.cs">
+      <DependentUpon>PublicationThemeResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\RuleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RuleResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\SharedResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\AreaResources.Designer.cs">
+      <DependentUpon>AreaResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\PublicationResources.Designer.cs">
+      <DependentUpon>PublicationResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalResources\ThemeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThemeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\UserResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResources\UserRuleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserRuleResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Models\About\Assembler\SectionFileAssembler.cs" />
+    <Compile Include="Models\About\Assembler\StepAssembler.cs" />
+    <Compile Include="Models\About\FormData\CreateSectionFileFormData.cs" />
+    <Compile Include="Models\About\FormData\ManageStepFormData.cs" />
+    <Compile Include="Models\About\FormData\StepParagraphFormData.cs" />
+    <Compile Include="Models\About\FormData\StepParagraphTranslationFormData.cs" />
+    <Compile Include="Models\About\FormData\UpdateSectionFileFormData.cs" />
+    <Compile Include="Models\About\FormData\CreateSectionFileTranslationFormData.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindStepItemData.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindStepParagraphItemData.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindStepParagraphTranslationItemData.cs" />
+    <Compile Include="Models\About\ItemData\SectionFileItemData.cs" />
+    <Compile Include="Models\About\ItemData\StepParagraphItemData.cs" />
+    <Compile Include="Models\About\ItemData\StepParagraphTranslationItemData.cs" />
+    <Compile Include="Models\About\ItemData\StepItemData.cs" />
+    <Compile Include="Models\About\RequestData\SectionFileRequestData.cs" />
+    <Compile Include="Models\About\RequestData\StepParagraphRequestData.cs" />
+    <Compile Include="Models\About\RequestData\StepParagraphTranslationRequestData.cs" />
+    <Compile Include="Models\About\RequestData\StepRequestData.cs" />
+    <Compile Include="Models\About\ResultData\SectionFileResultData.cs" />
+    <Compile Include="Models\About\FormData\UpdateSectionFileTranslationFormData.cs" />
+    <Compile Include="Models\About\ItemData\SectionFileTranslationItemData.cs" />
+    <Compile Include="Models\About\RequestData\SectionFileTranslationRequestData.cs" />
+    <Compile Include="Models\About\ResultData\SectionFileTranslationResultData.cs" />
+    <Compile Include="Models\About\Assembler\SectionAssembler.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindSectionFileItemData.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindSectionFileTranslationItemData.cs" />
+    <Compile Include="Models\About\FormData\SectionFormData.cs" />
+    <Compile Include="Models\About\FormData\SectionTranslationFormData.cs" />
+    <Compile Include="Models\About\ItemData\SectionItemData.cs" />
+    <Compile Include="Models\About\ItemData\SectionTranslationItemData.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindSectionItemData.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindSectionTranslationItemData.cs" />
+    <Compile Include="Models\About\RequestData\SectionRequestData.cs" />
+    <Compile Include="Models\About\RequestData\SectionTranslationRequestData.cs" />
+    <Compile Include="Models\About\ResultData\StepParagraphTranslationResultData.cs" />
+    <Compile Include="Models\About\ResultData\StepParagraphResultData.cs" />
+    <Compile Include="Models\About\ResultData\StepResultData.cs" />
+    <Compile Include="Models\About\ResultData\SectionResultData.cs" />
+    <Compile Include="Models\About\ResultData\SectionTranslationResultData.cs" />
+    <Compile Include="Models\About\ViewData\FilesViewData.cs" />
+    <Compile Include="Models\About\ViewData\FileViewData.cs" />
+    <Compile Include="Models\About\ViewData\StepParagraphsViewData.cs" />
+    <Compile Include="Models\About\ViewData\StepParagraphViewData.cs" />
+    <Compile Include="Models\About\ViewData\StepsViewData.cs" />
+    <Compile Include="Models\About\ViewData\SectionsViewData.cs" />
+    <Compile Include="Models\About\ViewData\StepViewData.cs" />
+    <Compile Include="Models\About\ViewData\SectionViewData.cs" />
+    <Compile Include="Models\Activities\Assembler\ActivityParagraphAssembler.cs" />
+    <Compile Include="Models\Activities\FormData\ActivityParagraphFormData.cs" />
+    <Compile Include="Models\Activities\FormData\ActivityParagraphTranslationFormData.cs" />
+    <Compile Include="Models\Activities\FormData\CreateActivityFileFormData.cs" />
+    <Compile Include="Models\Activities\FormData\CreateActivityFileTranslationFormData.cs" />
+    <Compile Include="Models\Activities\FormData\CreateActivityFormData.cs" />
+    <Compile Include="Models\Activities\ItemData\ActivityParagraphItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\ActivityParagraphTranslationItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\Enum\FindActivityParagraphItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\Enum\FindActivityParagraphTranslationItemData.cs" />
+    <Compile Include="Models\Activities\RequestData\ActivityParagraphRequestData.cs" />
+    <Compile Include="Models\Activities\RequestData\ActivityParagraphTranslationRequestData.cs" />
+    <Compile Include="Models\Activities\ResultData\ActivityParagraphResultData.cs" />
+    <Compile Include="Models\Activities\ResultData\ActivityParagraphTranslationResultData.cs" />
+    <Compile Include="Models\Activities\ViewData\ParagraphsViewData.cs" />
+    <Compile Include="Models\Activities\ViewData\ParagraphViewData.cs" />
+    <Compile Include="Models\CropModel.cs" />
+    <Compile Include="Models\Offices\FormData\UpdateCountryFormData.cs" />
+    <Compile Include="Models\Partners\Assembler\PartnerAssembler.cs" />
+    <Compile Include="Models\Partners\FormData\PartnerFormData.cs" />
+    <Compile Include="Models\Partners\ItemData\Enum\FindPartnerItemData.cs" />
+    <Compile Include="Models\Partners\ItemData\PartnerItemData.cs" />
+    <Compile Include="Models\Partners\RequestData\PartnerRequestData.cs" />
+    <Compile Include="Models\Partners\ResultData\PartnerResultData.cs" />
+    <Compile Include="Models\Partners\ViewData\PartnersViewData.cs" />
+    <Compile Include="Models\Newsletters\Assembler\NewsletterMailAssembler.cs" />
+    <Compile Include="Models\Newsletters\FormData\NewsletterMailFormData.cs" />
+    <Compile Include="Models\Newsletters\ItemData\NewsletterMailItemData.cs" />
+    <Compile Include="Models\Newsletters\RequestData\NewsletterMailRequestData.cs" />
+    <Compile Include="Models\Newsletters\ResultData\NewsletterMailResultData.cs" />
+    <Compile Include="Models\Newsletters\FormData\NewsletterMailTranslationFormData.cs" />
+    <Compile Include="Models\Newsletters\ItemData\NewsletterMailTranslationItemData.cs" />
+    <Compile Include="Models\Newsletters\RequestData\NewsletterMailTranslationRequestData.cs" />
+    <Compile Include="Models\Newsletters\ResultData\NewsletterMailTranslationResultData.cs" />
+    <Compile Include="Models\Newsletters\Assembler\SubscriberAssembler.cs" />
+    <Compile Include="Models\Newsletters\ViewData\NewsletterMailsViewData.cs" />
+    <Compile Include="Models\Newsletters\ViewData\NewsletterMailViewData.cs" />
+    <Compile Include="Models\Newsletters\ItemData\Enum\FindNewsletterMailItemData.cs" />
+    <Compile Include="Models\Newsletters\ItemData\Enum\FindNewsletterMailTranslationItemData.cs" />
+    <Compile Include="Models\Newsletters\FormData\SubscriberFormData.cs" />
+    <Compile Include="Models\Newsletters\ItemData\Enum\FindSubscriberItemData.cs" />
+    <Compile Include="Models\Newsletters\ItemData\SubscriberItemData.cs" />
+    <Compile Include="Models\Newsletters\RequestData\SubscriberRequestData.cs" />
+    <Compile Include="Models\Newsletters\ResultData\SubscriberResultData.cs" />
+    <Compile Include="Models\Newsletters\ViewData\SubscribersViewData.cs" />
+    <Compile Include="Models\Offices\Assembler\SheetAssembler.cs" />
+    <Compile Include="Models\Offices\Assembler\CountryAssembler.cs" />
+    <Compile Include="Models\Offices\FormData\SheetFormData.cs" />
+    <Compile Include="Models\Offices\FormData\SheetTranslationFormData.cs" />
+    <Compile Include="Models\Offices\FormData\CreateCountryFormData.cs" />
+    <Compile Include="Models\Offices\FormData\CountryTranslationFormData.cs" />
+    <Compile Include="Models\Offices\ItemData\Enum\FindSheetItemData.cs" />
+    <Compile Include="Models\Offices\ItemData\Enum\FindSheetTranslationItemData.cs" />
+    <Compile Include="Models\Offices\ItemData\SheetItemData.cs" />
+    <Compile Include="Models\Offices\ItemData\SheetTranslationItemData.cs" />
+    <Compile Include="Models\Offices\ItemData\CountryItemData.cs" />
+    <Compile Include="Models\Offices\ItemData\CountryTranslationItemData.cs" />
+    <Compile Include="Models\Offices\ItemData\Enum\FindCountryItemData.cs" />
+    <Compile Include="Models\Offices\ItemData\Enum\FindCountryTranslationItemData.cs" />
+    <Compile Include="Models\Offices\RequestData\SheetRequestData.cs" />
+    <Compile Include="Models\Offices\RequestData\SheetTranslationRequestData.cs" />
+    <Compile Include="Models\Offices\RequestData\CountryRequestData.cs" />
+    <Compile Include="Models\Offices\RequestData\CountryTranslationRequestData.cs" />
+    <Compile Include="Models\Offices\ResultData\SheetResultData.cs" />
+    <Compile Include="Models\Offices\ResultData\SheetTranslationResultData.cs" />
+    <Compile Include="Models\Offices\ResultData\CountryResultData.cs" />
+    <Compile Include="Models\Offices\ResultData\CountryTranslationResultData.cs" />
+    <Compile Include="Models\Offices\ViewData\CountriesViewData.cs" />
+    <Compile Include="Models\Offices\ViewData\CountryViewData.cs" />
+    <Compile Include="Models\Activities\Assembler\ActivityAssembler.cs" />
+    <Compile Include="Models\Activities\Assembler\ActivityFileAssembler.cs" />
+    <Compile Include="Models\About\Assembler\SectionParagraphAssembler.cs" />
+    <Compile Include="Models\Activities\FormData\UpdateActivityFileFormData.cs" />
+    <Compile Include="Models\Activities\FormData\UpdateActivityFileTranslationFormData.cs" />
+    <Compile Include="Models\About\FormData\SectionParagraphFormData.cs" />
+    <Compile Include="Models\About\FormData\SectionParagraphTranslationFormData.cs" />
+    <Compile Include="Models\Activities\ItemData\ActivityFileItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\ActivityFileTranslationItemData.cs" />
+    <Compile Include="Models\About\ItemData\SectionParagraphItemData.cs" />
+    <Compile Include="Models\About\ItemData\SectionParagraphTranslationItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\Enum\FindActivityFileItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\Enum\FindActivityFileTranslationItemData.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindSectionParagraphItemData.cs" />
+    <Compile Include="Models\About\ItemData\Enum\FindSectionParagraphTranslationItemData.cs" />
+    <Compile Include="Models\Activities\RequestData\ActivityFileRequestData.cs" />
+    <Compile Include="Models\Activities\RequestData\ActivityFileTranslationRequestData.cs" />
+    <Compile Include="Models\About\RequestData\SectionParagraphRequestData.cs" />
+    <Compile Include="Models\About\RequestData\SectionParagraphTranslationRequestData.cs" />
+    <Compile Include="Models\Activities\ResultData\ActivityFileResultData.cs" />
+    <Compile Include="Models\Activities\ResultData\ActivityFileTranslationResultData.cs" />
+    <Compile Include="Models\About\ResultData\SectionParagraphResultData.cs" />
+    <Compile Include="Models\About\ResultData\SectionParagraphTranslationResultData.cs" />
+    <Compile Include="Models\Activities\ViewData\ActivitiesViewData.cs" />
+    <Compile Include="Models\Activities\ViewData\ActivityViewData.cs" />
+    <Compile Include="Models\Activities\ViewData\FilesViewData.cs" />
+    <Compile Include="Models\Activities\ViewData\FileViewData.cs" />
+    <Compile Include="Models\About\ViewData\ParagraphsViewData.cs" />
+    <Compile Include="Models\About\ViewData\ParagraphViewData.cs" />
+    <Compile Include="Models\Authorization\FormData\ManageUserRulesFormData.cs" />
+    <Compile Include="Models\Authorization\FormData\ManageUserRuleFormData.cs" />
+    <Compile Include="Models\Authorization\ItemData\Enum\FindUserRuleItemData.cs" />
+    <Compile Include="Models\Authorization\ItemData\UserRuleItemData.cs" />
+    <Compile Include="Models\Authorization\RequestData\UserRuleRequestData.cs" />
+    <Compile Include="Models\Authorization\ResultData\UserRuleResultData.cs" />
+    <Compile Include="Models\Authorization\ViewData\UserViewData.cs" />
+    <Compile Include="Models\News\Assembler\NewsAssembler.cs" />
+    <Compile Include="Models\News\FormData\NewsFormData.cs" />
+    <Compile Include="Models\News\ItemData\NewsItemData.cs" />
+    <Compile Include="Models\News\ItemData\NewsTranslationItemData.cs" />
+    <Compile Include="Models\News\ItemData\Enum\FindNewsItemData.cs" />
+    <Compile Include="Models\News\ItemData\Enum\FindNewsTranslationItemData.cs" />
+    <Compile Include="Models\News\RequestData\NewsRequestData.cs" />
+    <Compile Include="Models\News\RequestData\NewsTranslationRequestData.cs" />
+    <Compile Include="Models\News\ResultData\NewsResultData.cs" />
+    <Compile Include="Models\News\ResultData\NewsTranslationResultData.cs" />
+    <Compile Include="Models\Activities\FormData\UpdateActivityFormData.cs" />
+    <Compile Include="Models\Activities\FormData\ActivityTranslationFormData.cs" />
+    <Compile Include="Models\Activities\ItemData\ActivityItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\ActivityTranslationItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\Enum\FindActivityItemData.cs" />
+    <Compile Include="Models\Activities\ItemData\Enum\FindActivityTranslationItemData.cs" />
+    <Compile Include="Models\Activities\RequestData\ActivityRequestData.cs" />
+    <Compile Include="Models\Activities\RequestData\ActivityTranslationRequestData.cs" />
+    <Compile Include="Models\Activities\ResultData\ActivityTranslationResultData.cs" />
+    <Compile Include="Models\Activities\ResultData\ActivityResultData.cs" />
+    <Compile Include="Models\News\ViewData\NewsViewDatas.cs" />
+    <Compile Include="Models\News\ViewData\NewsViewData.cs" />
+    <Compile Include="Models\Occurrences\Assembler\OccurrenceAssembler.cs" />
+    <Compile Include="Models\Occurrences\FormData\OccurrenceFormData.cs" />
+    <Compile Include="Models\Occurrences\FormData\OccurrenceTranslationFormData.cs" />
+    <Compile Include="Models\Occurrences\ItemData\OccurrenceItemData.cs" />
+    <Compile Include="Models\Occurrences\ItemData\OccurrenceTranslationItemData.cs" />
+    <Compile Include="Models\Occurrences\ItemData\Enum\FindOccurrenceItemData.cs" />
+    <Compile Include="Models\Occurrences\ItemData\Enum\FindOccurrenceTranslationItemData.cs" />
+    <Compile Include="Models\Occurrences\RequestData\OccurrenceRequestData.cs" />
+    <Compile Include="Models\Occurrences\RequestData\OccurrenceTranslationRequestData.cs" />
+    <Compile Include="Models\Occurrences\ResultData\OccurrenceResultData.cs" />
+    <Compile Include="Models\Occurrences\ResultData\OccurrenceTranslationResultData.cs" />
+    <Compile Include="Models\Occurrences\ViewData\OccurrencesViewData.cs" />
+    <Compile Include="Models\Occurrences\ViewData\OccurrenceViewData.cs" />
+    <Compile Include="Models\Ressources\Assembler\AreaAssembler.cs" />
+    <Compile Include="Models\Ressources\Assembler\PublicationThemeAssembler.cs" />
+    <Compile Include="Models\Ressources\Assembler\PublicationAssembler.cs" />
+    <Compile Include="Models\Ressources\Assembler\ThemeAssembler.cs" />
+    <Compile Include="Models\Ressources\Assembler\AuthorAssembler.cs" />
+    <Compile Include="Models\Ressources\FormData\AuthorFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\AreaFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\UpdatePublicationFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\UpdatePublicationTranslationFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\CreatePublicationFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\PublicationThemeFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\CreatePublicationTranslationFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\ThemeFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\AreaTranslationFormData.cs" />
+    <Compile Include="Models\Ressources\FormData\ThemeTranslationFormData.cs" />
+    <Compile Include="Models\Ressources\ItemData\AuthorItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\Enum\FindAuthorItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\Enum\FindAreaItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\Enum\FindPublicationItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\Enum\FindPublicationThemeItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\Enum\FindPublicationTranslationItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\Enum\FindThemeItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\Enum\FindAreaTranslationItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\Enum\FindThemeTranslationItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\AreaItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\PublicationItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\PublicationTranslationItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\PublicationThemeItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\ThemeItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\AreaTranslationItemData.cs" />
+    <Compile Include="Models\Ressources\ItemData\ThemeTranslationItemData.cs" />
+    <Compile Include="Models\Ressources\RequestData\AreaRequestData.cs" />
+    <Compile Include="Models\Ressources\RequestData\AreaTranslationRequestData.cs" />
+    <Compile Include="Models\Ressources\RequestData\PublicationThemeRequestData.cs" />
+    <Compile Include="Models\Ressources\RequestData\PublicationRequestData.cs" />
+    <Compile Include="Models\Ressources\RequestData\PublicationTranslationRequestData.cs" />
+    <Compile Include="Models\Ressources\RequestData\ThemeTranslationRequestData.cs" />
+    <Compile Include="Models\Ressources\RequestData\ThemeRequestData.cs" />
+    <Compile Include="Models\Ressources\RequestData\AuthorRequestData.cs" />
+    <Compile Include="Models\Ressources\ResultData\AreaResultData.cs" />
+    <Compile Include="Models\Ressources\ResultData\AreaTranslationResultData.cs" />
+    <Compile Include="Models\Ressources\ResultData\PublicationThemeResultData.cs" />
+    <Compile Include="Models\Ressources\ResultData\PublicationResultData.cs" />
+    <Compile Include="Models\Ressources\ResultData\PublicationTranslationResultData.cs" />
+    <Compile Include="Models\Ressources\ResultData\ThemeTranslationResultData.cs" />
+    <Compile Include="Models\Ressources\ResultData\ThemeResultData.cs" />
+    <Compile Include="Models\Ressources\ResultData\AuthorResultData.cs" />
+    <Compile Include="Models\Ressources\ViewData\AuthorsViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\AreasViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\PublicationThemesViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\PublicationsViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\PublicationThemeViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\ThemesViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\AreaViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\PublicationViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\ThemeViewData.cs" />
+    <Compile Include="Models\Ressources\ViewData\AuthorViewData.cs" />
+    <Compile Include="Models\Offices\ViewData\SheetsViewData.cs" />
+    <Compile Include="Models\Offices\ViewData\SheetViewData.cs" />
+    <Compile Include="Models\Settings\Assembler\LanguageAssembler.cs" />
+    <Compile Include="Models\Settings\Assembler\RuleAssembler.cs" />
+    <Compile Include="Models\Settings\FormData\ManageRuleFormData.cs" />
+    <Compile Include="Models\Settings\FormData\UpdateLanguageFormData.cs" />
+    <Compile Include="Models\Settings\ItemData\Enum\FindLanguageItemData.cs" />
+    <Compile Include="Models\Authorization\Assembler\ConnectionAssembler.cs" />
+    <Compile Include="Models\Authorization\Assembler\UserAssembler.cs" />
+    <Compile Include="Models\Authorization\FormData\ConnectionFormData.cs" />
+    <Compile Include="Models\Authorization\ItemData\Enum\FindUserItemData.cs" />
+    <Compile Include="Models\Authorization\ItemData\UserItemData.cs" />
+    <Compile Include="Models\Authorization\RequestData\UserRequestData.cs" />
+    <Compile Include="Models\Authorization\ResultData\UserResultData.cs" />
+    <Compile Include="Models\Settings\ItemData\Enum\FindRuleItemData.cs" />
+    <Compile Include="Models\Settings\ItemData\LanguageItemData.cs" />
+    <Compile Include="Models\Settings\ItemData\RuleItemData.cs" />
+    <Compile Include="Models\Settings\RequestData\LanguageRequestData.cs" />
+    <Compile Include="Models\Settings\RequestData\RuleRequestData.cs" />
+    <Compile Include="Models\Settings\ResultData\LanguageResultData.cs" />
+    <Compile Include="Models\Settings\ResultData\RuleResultData.cs" />
+    <Compile Include="Models\Settings\ViewData\LanguageViewData.cs" />
+    <Compile Include="Models\Settings\ViewData\RuleViewData.cs" />
+    <Compile Include="Models\Settings\FormData\AddLanguageFormData.cs" />
+    <Compile Include="Models\News\FormData\NewsTranslationFormData.cs" />
+    <Compile Include="Models\Authorization\FormData\ManageUserFormData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\Bold.ttf" />
+    <Content Include="fonts\fontellov2.ttf" />
+    <Content Include="fonts\Light.ttf" />
+    <Content Include="fonts\Medium.ttf" />
+    <Content Include="fonts\Regular.ttf" />
+    <Content Include="fonts\SemiBold.ttf" />
+    <Content Include="fonts\Thin.ttf" />
+    <Content Include="Scripts\Jquery\jquery-3.1.1.min.map" />
+    <Content Include="Views\Error\_error.cshtml" />
+    <Content Include="Views\Shared\_layout.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Activities\Index.cshtml" />
+    <Content Include="Views\Activities\Partials\_CreateActivity.cshtml" />
+    <Content Include="Views\Activities\Partials\_ActivitiesList.cshtml" />
+    <Content Include="Views\Users\Partials\_UserRules.cshtml" />
+    <Content Include="Views\Users\Partials\_UsersList.cshtml" />
+    <Content Include="Views\Users\Partials\_ManageUser.cshtml" />
+    <Content Include="Views\Activities\Partials\_ParagraphsList.cshtml" />
+    <Content Include="Views\Activities\Partials\_Paragraphs.cshtml" />
+    <Content Include="Views\Activities\Partials\_ManageActivityParagraph.cshtml" />
+    <Content Include="Views\Activities\Partials\_Files.cshtml" />
+    <Content Include="Views\Activities\Partials\_FilesList.cshtml" />
+    <Content Include="Views\Activities\Partials\_CreateActivityFile.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Partials\_NewsList.cshtml" />
+    <Content Include="Views\News\Partials\_ManageNews.cshtml" />
+    <Content Include="Views\Occurrences\Partials\_OccurrencesList.cshtml" />
+    <Content Include="Views\Occurrences\Partials\_ManageOccurrence.cshtml" />
+    <Content Include="Views\Occurrences\Index.cshtml" />
+    <Content Include="Views\Activities\Partials\_DeleteActivity.cshtml" />
+    <Content Include="Views\Activities\Partials\_DeleteActivityFile.cshtml" />
+    <Content Include="Views\Activities\Partials\_DeleteActivityParagraph.cshtml" />
+    <Content Include="Views\Ressources\Index.cshtml" />
+    <Content Include="Views\Ressources\Partials\_Authors.cshtml" />
+    <Content Include="Views\Ressources\Partials\_AuthorsList.cshtml" />
+    <Content Include="Views\Ressources\Partials\_ManageAuthor.cshtml" />
+    <Content Include="Views\Ressources\Partials\_DeleteAuthor.cshtml" />
+    <Content Include="Views\Offices\Index.cshtml" />
+    <Content Include="Views\Offices\Partials\_CountriesList.cshtml" />
+    <Content Include="Views\Offices\Partials\_CreateCountry.cshtml" />
+    <Content Include="Views\Offices\Partials\_ManageSheet.cshtml" />
+    <Content Include="Views\Offices\Partials\_Sheets.cshtml" />
+    <Content Include="Views\Offices\Partials\_SheetsList.cshtml" />
+    <Content Include="Views\Offices\Partials\_DeleteSheet.cshtml" />
+    <Content Include="Views\Offices\Partials\_DeleteCountry.cshtml" />
+    <Content Include="Views\News\Partials\_DeleteNews.cshtml" />
+    <Content Include="Views\Occurrences\Partials\_DeleteOccurrence.cshtml" />
+    <Content Include="Views\About\Partials\_SectionsList.cshtml" />
+    <Content Include="Views\About\Partials\_DeleteSection.cshtml" />
+    <Content Include="Views\About\Partials\_DeleteSectionFile.cshtml" />
+    <Content Include="Views\About\Partials\_DeleteSectionParagraph.cshtml" />
+    <Content Include="Views\About\Partials\_Files.cshtml" />
+    <Content Include="Views\About\Partials\_FilesList.cshtml" />
+    <Content Include="Views\About\Partials\_ManageSection.cshtml" />
+    <Content Include="Views\About\Partials\_UpdateSectionFile.cshtml" />
+    <Content Include="Views\About\Partials\_ManageSectionParagraph.cshtml" />
+    <Content Include="Views\About\Partials\_Paragraphs.cshtml" />
+    <Content Include="Views\About\Partials\_ParagraphsList.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Settings\Partials\_CreateLanguage.cshtml" />
+    <Content Include="Views\Settings\Partials\_Languages.cshtml" />
+    <Content Include="Views\Settings\Partials\_LanguagesList.cshtml" />
+    <Content Include="Views\Settings\Partials\_ManageRule.cshtml" />
+    <Content Include="Views\Settings\Partials\_Rules.cshtml" />
+    <Content Include="Views\Settings\Partials\_RulesList.cshtml" />
+    <Content Include="Views\Settings\Partials\_UpdateLanguage.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Newsletters\Index.cshtml" />
+    <Content Include="Views\Newsletters\Partials\_ManageSubscriber.cshtml" />
+    <Content Include="Views\Newsletters\Partials\_SubscribersList.cshtml" />
+    <Content Include="Views\Newsletters\Partials\_Subscribers.cshtml" />
+    <Content Include="Views\Newsletters\Partials\_DeleteSubscriber.cshtml" />
+    <Content Include="Views\Newsletters\Partials\_NewsletterMailsList.cshtml" />
+    <Content Include="Views\Newsletters\Partials\_NewsletterMails.cshtml" />
+    <Content Include="Views\Newsletters\Partials\_DeleteNewsletterMail.cshtml" />
+    <Content Include="Views\Newsletters\Partials\_ManageNewsletterMail.cshtml" />
+    <Content Include="Views\Ressources\Partials\_Themes.cshtml" />
+    <Content Include="Views\Ressources\Partials\_ThemesList.cshtml" />
+    <Content Include="Views\Ressources\Partials\_ManageTheme.cshtml" />
+    <Content Include="Views\Ressources\Partials\_DeleteTheme.cshtml" />
+    <Content Include="Views\Ressources\Partials\_Areas.cshtml" />
+    <Content Include="Views\Ressources\Partials\_AreasList.cshtml" />
+    <Content Include="Views\Ressources\Partials\_ManageArea.cshtml" />
+    <Content Include="Views\Ressources\Partials\_DeleteArea.cshtml" />
+    <Content Include="Views\Ressources\Partials\_Publications.cshtml" />
+    <Content Include="Views\Ressources\Partials\_PublicationsList.cshtml" />
+    <Content Include="Views\Ressources\Partials\_UpdatePublication.cshtml" />
+    <Content Include="Views\Ressources\Partials\_DeletePublication.cshtml" />
+    <Content Include="Views\Ressources\Partials\_PublicationThemesList.cshtml" />
+    <Content Include="Views\Ressources\Partials\_ManagePublicationTheme.cshtml" />
+    <Content Include="Views\Partners\Index.cshtml" />
+    <Content Include="Views\Partners\Partials\_PartnersList.cshtml" />
+    <Content Include="Views\Partners\Partials\_ManagePartner.cshtml" />
+    <Content Include="Views\Partners\Partials\_DeletePartner.cshtml" />
+    <Content Include="Views\Ressources\Partials\_DeletePublicationTheme.cshtml" />
+    <Content Include="Views\Ressources\Partials\_PublicationThemes.cshtml" />
+    <Content Include="Views\Errors\NoAccess.cshtml" />
+    <Content Include="Views\Activities\Partials\_UpdateActivityFile.cshtml" />
+    <Content Include="Views\About\Partials\_CreateSectionFile.cshtml" />
+    <Content Include="Views\Offices\Partials\_UpdateCountry.cshtml" />
+    <Content Include="Views\Activities\Partials\_UpdateActivity.cshtml" />
+    <Content Include="Views\About\Partials\_About.cshtml" />
+    <Content Include="Views\About\Partials\_Historique.cshtml" />
+    <Content Include="Views\About\Partials\_Steps.cshtml" />
+    <Content Include="Views\About\Partials\_StepList.cshtml" />
+    <Content Include="Views\About\Partials\_ManageStep.cshtml" />
+    <Content Include="Views\About\Partials\_DeleteStep.cshtml" />
+    <Content Include="Views\About\Partials\_StepParagraphs.cshtml" />
+    <Content Include="Views\About\Partials\_StepParagraphsList.cshtml" />
+    <Content Include="Views\About\Partials\_ManageStepParagraph.cshtml" />
+    <Content Include="Views\About\Partials\_DeleteStepParagraph.cshtml" />
+    <None Include="Views\Ressources\Partials\_CreatePublication.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Images\Activities\" />
+    <Folder Include="Images\Countries\" />
+    <Folder Include="Images\News\" />
+    <Folder Include="Images\Partners\" />
+    <Folder Include="Images\Ressources\Pulication\" />
+    <Folder Include="Images\Sections\" />
+    <Folder Include="Images\Section\Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Riafco.Framework.Dataflex.pro\Riafco.Framework.Dataflex.pro.csproj">
+      <Project>{2D70A3B5-76E9-4DF8-BF28-CA80D7F95DEE}</Project>
+      <Name>Riafco.Framework.Dataflex.pro</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GlobalResources\NewsletterMailResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NewsletterMailResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\PartnerResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PartnerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\StepResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StepResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\SubscriberResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SubscriberResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\SectionFileResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SectionFileResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\SectionParagraphResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SectionParagraphResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\ActivityParagraphResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ActivityParagraphResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\ActivityResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ActivityResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\AuthorResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AuthorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\ConnectionResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConnectionResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\CountryResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\FileResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FileResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\LanguageResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\NewsResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NewsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\SectionResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SectionResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\OccurrenceResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OccurrenceResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\PublicationThemeResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PublicationThemeResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\RuleResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RuleResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\SharedResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\AreaResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\PublicationResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PublicationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\ThemeResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ThemeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\UserResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResources\UserRuleResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserRuleResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2566</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2566/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

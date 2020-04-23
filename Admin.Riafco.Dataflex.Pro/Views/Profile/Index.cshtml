@@ -1,0 +1,66 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Authorization.FormData.ManageUserFormData
+@{
+    ViewBag.Title = "RIAFCO | Votre rofile.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section Scripts {
+    <script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/profil.js"></script>
+}
+<div class="page_container">
+
+    @using (Html.BeginForm("UpdateProfile", "Profile", FormMethod.Post, new { id = "update_Profile", @class = "modal-body", enctype = "multipart/form-data", }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(u => u.UserId)
+
+        <div class="bloc_form">
+            <div class="header_container">
+                <div class="titre_header">VOTRE PROFILE : </div>
+            </div>
+            <div class="bloc_info">
+                <div class="table_line">
+                    <div class="ligne_input">
+                        @Html.LabelFor(p => p.UserPicture)
+                        <span class="erreur">@Html.ValidationMessageFor(p => p.UserPicture)</span>
+                        @Html.TextBoxFor(p => p.UserPicture, new { @class = "champ", type = "file" })
+                    </div>
+                </div>
+                <div class="table_line">
+                    <div class="ligne_input">
+                        @Html.LabelFor(p => p.UserName)<span class="obgligatoire">*</span>
+                        <span class="erreur">@Html.ValidationMessageFor(p => p.UserName)</span>
+                        @Html.TextBoxFor(p => p.UserName, new { @class = "champ"})
+                    </div>
+                </div>
+                <div class="table_line">
+                    <div class="ligne_input">
+                        @Html.LabelFor(p => p.UserMail)<span class="obgligatoire">*</span>
+                        <span class="erreur">@Html.ValidationMessageFor(p => p.UserMail)</span>
+                        @Html.TextBoxFor(p => p.UserMail, new { @class = "champ" })
+                    </div>
+                </div>
+                <div class="table_line">
+                    <div class="ligne_input">
+                        @Html.LabelFor(p => p.UserPassword)<span class="obgligatoire">*</span>
+                        <span class="erreur">@Html.ValidationMessageFor(p => p.UserPassword)</span>
+                        @Html.PasswordFor(p => p.UserPassword, new { @class = "champ"})
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bloc_info">
+            <div class="ligne_input">
+                <div class="text_obligatoire">
+                </div>
+                <div class="btn_container">
+                    <input type="submit" class="btn_valider" value="VALIDER" />
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

@@ -1,0 +1,44 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.About.ViewData.SectionsViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center hidden-xs">IMAGE</th>
+                <th class="text-center">TITRE</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Sections)
+            {
+                var imgSrc = "";
+                if (item.Section.SectionImage != null)
+                {
+                    imgSrc = Constant.DefaultBackUrl + "/Images/Sections/" + item.Section.SectionId + @"/" + item.Section.SectionImage;
+                }
+                <tr>
+                    <td class="hidden-xs">
+                        <div class="text-center">
+                            @if (imgSrc == "")
+                            { <span>PAS D'IMAGE.</span> }
+                            else
+                            { <img alt="image de la page" src="@imgSrc" class="img-responsive image_item" /> }
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">@item.TranslationsList.First().SectionTitle</div>
+                    </td>
+                    <td>
+                        <input type="image" id="paragraph_section_btn" data="@item.Section.SectionId" class="icon_crud" src="~/Images/paragrapg_icon.png" />
+                        <input type="image" id="file_section_btn" data="@item.Section.SectionId" class="icon_crud" src="~/Images/file_icon.png" />
+                        <input type="image" id="update_section_btn" data="@item.Section.SectionId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_section_btn" data="@item.Section.SectionId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

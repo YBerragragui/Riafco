@@ -1,0 +1,52 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Partners.FormData.PartnerFormData
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/Editeur/editor.js"></script>
+
+@{
+    string action = ViewBag.Action;
+    string formId = action + "Form";
+}
+
+@using (Html.BeginForm(action, "Partners", FormMethod.Post, new { id = formId, enctype = "multipart/form-data", @class = "modal-body" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(d => d.PartnerId)
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.PartnerImage)
+        <span class="erreur">@Html.ValidationMessageFor(d => d.PartnerImage)</span>
+        @Html.TextBoxFor(d => d.PartnerImage, new { @class = "champ", type="file"})
+    </div>
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.PartnerName)<span class="obgligatoire">*</span>
+        <span class="erreur">@Html.ValidationMessageFor(d => d.PartnerName)</span>
+        @Html.TextBoxFor(d => d.PartnerName, new { @class = "champ" })
+    </div>
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.PartnerLink)<span class="obgligatoire">*</span>
+        <span class="erreur">@Html.ValidationMessageFor(d => d.PartnerLink)</span>
+        @Html.TextBoxFor(d => d.PartnerLink, new { @class = "champ" })
+    </div>
+    if (ViewBag.positionList != null)
+    {
+        <div class="ligne_input">
+            @Html.LabelFor(d => d.PartnerPosition)
+            <span class="erreur">@Html.ValidationMessageFor(d => d.PartnerPosition)</span>
+            @Html.DropDownListFor(d => d.PartnerPosition, (List<SelectListItem>)ViewBag.positionList, new { @class = "champ"})
+        </div>
+    }
+    <hr class="ligne_separ" />
+
+    <div class="ligne_input">
+        <div class="text_obligatoire">
+            <span class="obgligatoire">(*): champ obligatoire.</span>
+        </div>
+        <div class="btn_container">
+            <input type="submit" class="btn_valider" value="VALIDER" />
+        </div>
+    </div>
+}

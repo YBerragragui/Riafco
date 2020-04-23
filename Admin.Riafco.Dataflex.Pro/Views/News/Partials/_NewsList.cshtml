@@ -1,0 +1,46 @@
+﻿@using System.Linq.Expressions
+@model Admin.Riafco.Dataflex.Pro.Models.News.ViewData.NewsViewDatas
+
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center hidden-xs">IMAGE</th>
+                <th class="text-center">DATE</th>
+                <th class="text-center">TITRE</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var news in Model.News)
+            {
+                
+                var imgSrc = @"\Images\News\" + news.News.NewsId + @"\" + news.News.NewsImage;
+
+
+                <tr>
+                    <td class="hidden-xs">
+                        <div class="text-center">
+                            <img alt="image de l'actu" src="@imgSrc" class="img-responsive image_item" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">@news.News.NewsDate.ToString("dd/MM/yyyy")</div>
+                    </td>
+                    <td>
+                        <div class="text-center">@news.TranslationsList.First().NewsTitle</div>
+                    </td>
+                    <td>
+                        <input type="image" id="crop_news_btn" class="icon_crud" src="~/Images/cut_icon.png" />
+                        <input type="image" id="update_news_btn" data="@news.News.NewsId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_news_btn" data="@news.News.NewsId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

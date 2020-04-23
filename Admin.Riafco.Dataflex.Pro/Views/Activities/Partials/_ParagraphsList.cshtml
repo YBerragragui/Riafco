@@ -1,0 +1,18 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Activities.ViewData.ParagraphsViewData
+
+@foreach (var paragraph in Model.Paragraphs)
+{
+    
+    var imgSrc = @"\Images\Activities\Paragraph\" + paragraph.Paragraph.ParagraphId + @"\" + paragraph.Paragraph.ParagraphImage;
+
+    <div class="line_container">
+        <div class="image_langue">
+            <img alt="image de paragraphe" src="@imgSrc" class="img-responsive image_item" />
+        </div>
+        <div class="prefix_langue">@paragraph.TranslationsList.First().ParagraphTitle</div>
+        <div class="operation">
+            <input type="image" id="update_activity_paragraph_btn" data="@paragraph.Paragraph.ParagraphId" class="icon_crud" src="~/Images/edit.png" />
+            <input type="image" id="delete_activity_paragraph_btn" data="@paragraph.Paragraph.ParagraphId" data-section="@paragraph.Paragraph.ActivityId" class="icon_crud" src="~/Images/delete.png" />
+        </div>
+    </div>
+}

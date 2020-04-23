@@ -1,0 +1,295 @@
+﻿@font-face {
+    font-family: MyFont;
+    src: url(/Content/fonts/Saira-Regular.ttf);
+}
+
+@font-face {
+    font-family: MyFont2;
+    src: url(/Content/fonts/Saira-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: MyFontBold;
+    src: url(/Content/fonts/Saira-Bold.ttf);
+}
+
+.glob-container {
+    margin-top: 180px;
+    position: relative;
+    height: auto;
+    padding: 0;
+}
+
+@media (max-width:991px) {
+    .glob-container {
+        margin-top: 90px;
+        position: relative;
+    }
+}
+
+.main-desc > div > h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: MyFontBold;
+    padding: 8px 10px;
+}
+
+.main-desc {
+    background: #FFF;
+    height: 100%;
+}
+
+.main-row {
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.gray-line {
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    display: inline-block;
+    position: relative;
+    top: 44px;
+    overflow: hidden;
+}
+
+
+img.left-gray {
+    vertical-align: unset;
+    background: white;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    left: 4px;
+}
+
+.tweeter-title > h3 {
+    display: inline-block;
+    font-family: MyFontBold;
+    font-size: 21px;
+    padding: 0 7px;
+    color: #f99f3b;
+    background: white;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 2px;
+}
+
+img.right-gray {
+    vertical-align: unset;
+    background: white;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    right: 4px;
+}
+
+.tweeter-title {
+    text-align: center;
+}
+
+.tweeter-container {
+    border: 1px solid #f99f3b;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.tweets {
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.newsletter-container {
+    border: 1px solid #f99f3b;
+    padding: 15px;
+}
+
+.newsletter {
+}
+
+    .newsletter > h4 {
+        font-family: MyFont;
+        font-size: 18px;
+    }
+
+        .newsletter > h4 > span {
+            font-family: MyFontBold;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+    .newsletter > input[type="text"] {
+        display: block;
+        width: 100%;
+        height: 35px;
+        padding: 5px;
+        border: 1px solid #f99f3b;
+        margin-bottom: 15px;
+        font-family: MyFont;
+    }
+
+    .newsletter > input[type="submit"] {
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 5px;
+        border: 1px solid #f99f3b;
+        margin-bottom: 0px;
+        background: #f99f3b;
+        color: white;
+        font-family: MyFont;
+        text-transform: uppercase;
+    }
+
+.footer-glob {
+    background: #3f3f3f;
+    padding-top: 30px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-footer.container {
+    margin-bottom: 10px;
+}
+
+.sec-footer.container > p {
+    display: inline-block;
+    font-family: MyFont;
+    margin: 0;
+    font-size: 10px;
+}
+
+.sec-footer.container > a {
+    display: inline-block;
+    font-family: MyFont;
+    float: right;
+    font-size: 10px;
+    color: #f99f3b;
+    margin: 3px 0;
+}
+
+.sec-footer.container {
+    text-align: center;
+    padding: 0;
+    background: white;
+    width: 100%;
+}
+
+.foot1 {
+    padding: 0px 30px 0px 30px;
+}
+
+.foot > h4 {
+    font-family: MyFont;
+    color: #f99f3b;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.foot > a {
+    display: block;
+    font-family: MyFont;
+    color: #c8b7b0;
+    font-size: 12.5px;
+}
+
+.foot4 > h4 {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.foot {
+    margin-bottom: 20px;
+}
+
+.partenaire-item {
+    border: 1px solid white;
+    height: 40px;
+}
+
+.partenaire-items-nav {
+    text-align: center;
+    margin-top: 0px;
+    color: white;
+    display: inline-block;
+    float: right;
+}
+
+.part-nav-left {
+    font-size: 18px;
+    padding-right: 7px;
+}
+
+.part-nav-right {
+    font-size: 18px;
+    padding-left: 7px;
+}
+
+.part-nav-left:hover,
+.part-nav-left:focus {
+    color: #f99f3b;
+}
+
+.part-nav-right:hover,
+.part-nav-right:focus {
+    color: #f99f3b;
+}
+
+@media (max-width:425px) {
+    .main-desc > div > h4 {
+        font-size: 16px;
+    }
+}
+
+.foot1 > img {
+    margin: 0 auto;
+}
+
+.foot4 > a {
+    font-family: MyFont;
+    color: #f99f3b;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+@media (max-width:355px) {
+    .foot4 {
+        position: relative;
+        margin-top: -85px;
+    }
+
+    .foot5 {
+        width: 100%;
+    }
+}
+
+.input-ligne-newletter {
+    position: relative;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+    .input-ligne-newletter input {
+        height: 35px !important;
+        width: 100%;
+    }
+
+.alert-erreur {
+    position: absolute;
+    display: block;
+    color: #f99f3b;
+    padding: 12px;
+    height: 35px;
+    width: 30px;
+    right: 0;
+    top: 0;
+}
+
+
+/*PAGINATION*/
+.items-pager {
+    padding: 0 5px;
+    cursor: pointer;
+}

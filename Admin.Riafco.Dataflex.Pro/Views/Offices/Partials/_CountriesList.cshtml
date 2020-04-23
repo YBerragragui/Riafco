@@ -1,0 +1,39 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Offices.ViewData.CountriesViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center hidden-xs">IMAGE</th>
+                <th class="text-center">NOM</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var country in Model.Countries)
+            {
+
+                var imgSrc = @"Images/Countries/" + country.Country.CountryId + @"\" + country.Country.CountryImage;
+
+                <tr>
+                    <td class="hidden-xs">
+                        <div class="text-center">
+                            <img alt="image du pays" Width="40" src="@imgSrc" class="img-responsive image_item_country" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">@country.TranslationsList.First().CountryName</div>
+                    </td>
+                    <td>
+                        <input type="image" id="sheet_btn" data="@country.Country.CountryId" class="icon_crud" src="~/Images/paragrapg_icon.png" />
+                        <input type="image" id="update_country_btn" data="@country.Country.CountryId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_country_btn" data="@country.Country.CountryId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

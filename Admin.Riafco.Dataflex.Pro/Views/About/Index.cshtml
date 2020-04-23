@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "RIAFCO | Espace a propos.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section Scripts {
+    <script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/sections.js"></script>
+    <script src="~/Scripts/steps.js"></script>
+}
+
+@section Styles {
+
+}
+
+<div class="page_container">
+    <div class="links">
+        @Ajax.ActionLink("RIAFCO", "About", "About", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sous_bloc", OnSuccess = "activer_lien('about')" }, new { id = "about", @class = "active link" })
+        @Ajax.ActionLink("Historique", "Steps", "About", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sous_bloc", OnSuccess = "activer_lien('Steps')" }, new { id = "Steps", @class = "link" })
+    </div>
+
+    <div id="sous_bloc" class="sous_bloc">
+        <div class="content_container">
+            @Html.Partial("Partials/_About")
+        </div>
+    </div>
+</div>
+
+

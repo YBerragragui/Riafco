@@ -1,0 +1,67 @@
+﻿@model Riafco.Dataflex.Pro.Models.ActivityModel
+
+@{
+    var imgSrc = Constant.ImagesUrl + @"Images/Activities/" + Model.ActivityViewData.Activity.ActivityId + @"/" + Model.ActivityViewData.Activity.ActivityImage;
+    ViewBag.Title = "RIAFCO | " + Model.ActivityViewData.TranslationsList.First().ActivityTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Activities = "active";
+}
+
+@section Styles {
+    <link href="~/Content/activite.css" rel="stylesheet" />
+}
+
+@section Scripts {
+
+}
+
+<div class="container-fluid main-activité-details parallax-1" style="background: url('@imgSrc') no-repeat;">
+    <div class="activité-details activité-details-container-2">
+        <div>
+            <h3>@Html.Raw(Model.ActivityViewData.TranslationsList.First().ActivityTitle)</h3>
+            <p>@Html.Raw(Model.ActivityViewData.TranslationsList.First().ActivityIntroduction)</p>
+        </div>
+    </div>
+</div>
+
+<div class="container main-container">
+    <div class="row main-row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <div class="activitises-intro">
+                <p>@Html.Raw(Model.ActivityViewData.TranslationsList.First().ActivityDescription)</p>
+            </div>
+            <div class="white-line-activitises"></div>
+            <div class="activite-details-container">
+                @foreach (var paragraph in Model.ParagraphsViewData.Paragraphs)
+                {
+                    <div>
+                        <h3>@paragraph.TranslationsList.First().ParagraphTitle</h3>
+                        <p>@paragraph.TranslationsList.First().ParagraphDescription</p>
+                    </div>
+                }
+            </div>
+            <div class="download-btn-container">
+                @foreach (var file in Model.FilesViewData.Files)
+                {
+                    var link = Constant.ImagesUrl + @"/Images/Activities/Files/" + file.TranslationsList.First().ActivityFileId + @"/" + file.TranslationsList.First().ActivityFileSource;
+                    <button type="button" class="btn-download btn-labeled">
+                        <span class="btn-label-2"><i class="fa fa-download"></i></span>
+                        <a href="@link" class="btn-text activite-download-text" download>@file.TranslationsList.First().ActivityFileText</a>
+                    </button>
+                }
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 tweet-col">
+            @Html.Partial("_Twitter")
+            @Html.Partial("_Newsletter", Model.SubscriberFormData)
+        </div>
+    </div>
+</div>
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}

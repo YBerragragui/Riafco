@@ -1,0 +1,34 @@
+<serviceSettings>
+  <services>
+    <service serviceAssembly="OMS.Socle.Service" entityAssembly="OMS.Socle.Entity">
+      <dependencies>
+
+
+        <dependency classLibrary="Riafco.Entity.Dataflex.Pro.About.StepParagraph" />
+
+
+      </dependencies>
+      <adapters>
+        <adapter assemblyType="Service" assembly="OMS.Socle.Service">
+          <types>
+            <type classLibrary="OMS.Socle.Service.UnitOfWork.UnitOfWork" interface="OMS.Socle.Service.UnitOfWork.IUnitOfWork" />
+
+
+            <type classLibrary="Riafco.Service.Dataflex.Pro.About.ServiceStepParagraph" interface="Riafco.Service.Dataflex.Pro.About.Interface.IServiceStepParagraph" />
+
+
+          </types>
+        </adapter>
+        <adapter assemblyType="WebApiService" assembly="OMS.Socle.WebApi.Service">
+          <types>
+
+
+            <type classLibrary="Riafco.WebApi.Service.Dataflex.pro.About.ServiceStepParagraphClient" interface="Riafco.WebApi.Service.Dataflex.pro.About.Interface.IServiceStepParagraphClient" />
+
+
+          </types>
+        </adapter>
+      </adapters>
+    </service>
+  </services>
+</serviceSettings>

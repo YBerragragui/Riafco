@@ -1,0 +1,46 @@
+﻿@model Riafco.Dataflex.Pro.Models.NewsModel
+@using Riafco.Dataflex.Pro.GlobalResources.News;
+@{
+    ViewBag.Title = "RAFCO | NOS ACTUALITES.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.News = "active";
+}
+
+@section Styles {
+    <link href="~/Content/news.css" rel="stylesheet" />
+}
+
+@section Scripts {
+    <script src="~/Scripts/pagination/jPages.min.js"></script>
+    <script src="~/Scripts/news.js"></script>
+}
+
+<div class="container">
+    <div class="row main-row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <div class="homenews-title">
+                <div class="gray-line"></div>
+                <img src="~/Images/title-icon-left.png" class="left-gray" />
+                <h3>@NewsResources.PageTitle</h3>
+                <img src="~/Images/title-icon-right.png" class="right-gray" />
+            </div>
+            <div id="news-id">
+                @Html.Partial("Partial/_News", Model.NewsViewDatas)
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+            @Html.Partial("_Twitter")
+            @Html.Partial("_Newsletter", Model.SubscriberFormData)
+        </div>
+    </div>
+</div>
+@Html.Partial("Partial/_Agenda", Model.OccurrencesViewData)
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}
+

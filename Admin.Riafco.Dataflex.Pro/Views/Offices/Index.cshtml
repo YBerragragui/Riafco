@@ -1,0 +1,100 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Offices.ViewData.CountriesViewData
+
+@{
+    ViewBag.Title = "RIAFCO | Gérer les bureaux.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section Scripts {
+    <script src="~/Scripts/offices.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@section Styles {
+
+}
+
+<div class="page_container">
+    <div class="header_container">
+        <div class="titre_header">Gérer les fiches IFCL : </div>
+        <span id="add_country_btn" class="btn_ajouter">
+            <input type="image" src="/Images/add.png" class="icon_ajouter" />
+            <span class="valeur_btn">Ajouter</span>
+        </span>
+    </div>
+
+    <div id="content_countries" class="content_container">
+        @Html.Partial("Partials/_CountriesList", Model)
+    </div>
+</div>
+<div id="add_country_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un pays: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_country_input"></div>
+    </div>
+</div>
+
+<div id="update_country_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un pays: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_country_input"></div>
+    </div>
+</div>
+
+<div id="delete_country_pop_up" class="cd-popup" role="alert">
+    <div id="delete_country_input" class="cd-popup-container cd-popup-container-confirm">
+    </div>
+</div>
+
+<div id="sheet_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>La fiche IFCL: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="sheet_input"></div>
+    </div>
+</div>
+
+<div id="add_sheet_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un chiffre IFCL: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_sheet_input"></div>
+    </div>
+</div>
+
+<div id="update_sheet_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un chiffre IFCL: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_sheet_input"></div>
+    </div>
+</div>
+
+<div id="delete_sheet_pop_up" class="cd-popup" role="alert">
+    <div id="delete_sheet_input" class="cd-popup-container cd-popup-container-confirm">
+    </div>
+</div>

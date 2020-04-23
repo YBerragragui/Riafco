@@ -1,0 +1,15 @@
+﻿@model Riafco.Dataflex.Pro.Models.Partners.ViewData.PartnersViewData
+
+@{
+    Layout = null;
+}
+
+<div class="owl-carousel owl-carousel1">
+    @foreach (var partener in Model.Partners)
+    {
+        var imgsrc = Constant.ImagesUrl + @"\Images\Partners\" + partener.PartnerId + @"\" + partener.PartnerImage;
+        <div class="item partenaire-item">
+            <a href="@partener.PartnerLink" target="_blank"><img class="img-responsive" src="@imgsrc" alt="" /></a>
+        </div>
+    }
+</div>

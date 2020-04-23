@@ -1,0 +1,26 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.ThemesViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center">NOM DU THEME</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var theme in Model.Themes)
+            {
+                <tr>
+                    <td class="text-center">@theme.TranslationsList.FirstOrDefault().ThemeName</td>
+                    <td>
+                        <input type="image" id="update_theme_btn" data="@theme.Theme.ThemeId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_theme_btn" data="@theme.Theme.ThemeId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

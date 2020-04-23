@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69B957BA-FD8A-494D-BD6D-E39B058B83DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Riafco.Entity.Dataflex.Pro</RootNamespace>
+    <AssemblyName>Riafco.Entity.Dataflex.Pro</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About\SectionFile.cs" />
+    <Compile Include="About\SectionFileTranslation.cs" />
+    <Compile Include="About\StepParagraphTranslation.cs" />
+    <Compile Include="About\StepParagraph.cs" />
+    <Compile Include="About\SectionParagraph.cs" />
+    <Compile Include="About\SectionParagraphTranslation.cs" />
+    <Compile Include="About\SectionTranslation.cs" />
+    <Compile Include="About\Step.cs" />
+    <Compile Include="Activites\Activity.cs" />
+    <Compile Include="Activites\ActivityFile.cs" />
+    <Compile Include="Activites\ActivityFileTranslation.cs" />
+    <Compile Include="Activites\ActivityParagraph.cs" />
+    <Compile Include="Activites\ActivityParagraphTranslation.cs" />
+    <Compile Include="Activites\ActivityTranslation.cs" />
+    <Compile Include="Authorizarion\Rule.cs" />
+    <Compile Include="Authorizarion\User.cs" />
+    <Compile Include="Authorizarion\UserRule.cs" />
+    <Compile Include="Contact\ContactMessage.cs" />
+    <Compile Include="Newsletters\NewsletterMailTranslation.cs" />
+    <Compile Include="Newsletters\NewsletterMail.cs" />
+    <Compile Include="Newsletters\Subscriber.cs" />
+    <Compile Include="Offices\Sheet.cs" />
+    <Compile Include="Offices\SheetTranslation.cs" />
+    <Compile Include="Offices\Country.cs" />
+    <Compile Include="Offices\CountryTranslation.cs" />
+    <Compile Include="Occurrences\Occurrence.cs" />
+    <Compile Include="Occurrences\OccurrenceTranslation.cs" />
+    <Compile Include="Languages\Language.cs" />
+    <Compile Include="News\News.cs" />
+    <Compile Include="News\NewsTranslation.cs" />
+    <Compile Include="Partners\Partner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ressources\Area.cs" />
+    <Compile Include="Ressources\AreaTranslation.cs" />
+    <Compile Include="Ressources\Author.cs" />
+    <Compile Include="Ressources\Publication.cs" />
+    <Compile Include="Ressources\PublicationTheme.cs" />
+    <Compile Include="Ressources\PublicationTranslation.cs" />
+    <Compile Include="Ressources\Theme.cs" />
+    <Compile Include="Ressources\ThemeTranslation.cs" />
+    <Compile Include="About\Section.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

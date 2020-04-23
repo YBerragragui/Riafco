@@ -1,0 +1,69 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.PublicationsViewData
+
+<div class="header_container">
+    <div class="titre_header">les publications : </div>
+    <span id="add_publication_btn" class="btn_ajouter">
+        <input type="image" src="/Images/add.png" class="icon_ajouter" />
+        <span class="valeur_btn">Ajouter</span>
+    </span>
+</div>
+
+<div id="content_publications" class="content_container">
+    @Html.Partial("Partials/_PublicationsList", Model)
+</div>
+
+<div id="add_publication_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un publication: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_publication_input"></div>
+    </div>
+</div>
+
+<div id="update_publication_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>modifier un publication: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="update_publication_input"></div>
+    </div>
+</div>
+
+<div id="delete_publication_pop_up" class="cd-popup" role="alert">
+    <div id="delete_publication_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>
+
+<div id="publication_themes_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>les themes de la publication: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="themes_publication_input"></div>
+    </div>
+</div>
+
+<div id="add_publication_theme_pop_up" class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <div class="modal-header">
+            <h4>
+                <span>ajouter un tag: </span>
+                <a class="cd-popup-close img-replace"></a>
+            </h4>
+        </div>
+        <div id="add_publication_theme_input"></div>
+    </div>
+</div>
+
+<div id="delete_publication_theme_pop_up" class="cd-popup" role="alert">
+    <div id="delete_publication_theme_input" class="cd-popup-container cd-popup-container-confirm"></div>
+</div>

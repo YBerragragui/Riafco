@@ -1,0 +1,38 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.FormData.AuthorFormData
+
+@{
+    string action = ViewBag.action;
+    string formId = action + "Form";
+}
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm(action, "Ressources", FormMethod.Post, new { id = formId, enctype = "multipart/form-data", @class = "modal-body" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(r => r.AuthorId)
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.AuthorFirstName)<span class="obgligatoire">*</span>
+        <span class="erreur">@Html.ValidationMessageFor(d => d.AuthorFirstName)</span>
+        @Html.TextBoxFor(d => d.AuthorFirstName, new { @class = "champ" })
+    </div>
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.AuthorLastName)<span class="obgligatoire">*</span>
+        <span class="erreur">@Html.ValidationMessageFor(d => d.AuthorLastName)</span>
+        @Html.TextBoxFor(d => d.AuthorLastName, new { @class = "champ" })
+    </div>
+
+    <hr class="ligne_separ" />
+
+    <div class="ligne_input">
+        <div class="text_obligatoire">
+            <span class="obgligatoire">(*): champ obligatoire.</span>
+        </div>
+        <div class="btn_container">
+            <input type="submit" class="btn_valider" value="VALIDER" />
+        </div>
+    </div>
+}

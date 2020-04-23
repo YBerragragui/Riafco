@@ -1,0 +1,61 @@
+﻿@model Riafco.Dataflex.Pro.Models.ContactModel
+@using Riafco.Dataflex.Pro.GlobalResources.Contact;
+
+@{
+    ViewBag.Title = "RIAFCO | CONTACTEZ-NOUS.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Contact = "active";
+}
+
+@section Scripts {
+    <script src="~/Scripts/contact.js"></script>
+}
+
+@section Styles{
+    <link href="~/Content/contact.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row main-row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <div class="contact-title">
+                <div class="gray-line"></div>
+                <img src="~/Images/title-icon-left.png" class="left-gray" alt="" />
+                <h3>@ContactResources.PageTitle</h3>
+                <img src="~/Images/title-icon-right.png" class="right-gray" alt="" />
+            </div>
+            <div class="contact-container">
+                <div class="contact-bloc">
+                    <div class="contact-bloc-img">
+                        <div class="contact-img">
+                            <div class="contact-details">
+                                <h3>@ContactResources.ContactTitle</h3>
+                                <h4>@ContactResources.ContactSubTitle</h4>
+                                <div class="white-line-contact"></div>
+                                <div class="contact-adress"><i class="fa fa-map-marker"></i><h5>@ContactResources.ContactDescription</h5></div>
+                                <div class="contact-phone"><i class="fa fa-phone"></i><h5>@ContactResources.ContactPhone</h5></div>
+                                <div class="contact-mail"><i class="fa fa-envelope"></i><h5>@ContactResources.ContactMail</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gray-line-contact"></div>
+            <div class="contact-container">
+                @Html.Partial("Partial/_Contact", Model.ContactFormData)
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 tweet-col">
+            @Html.Partial("_Twitter")
+            @Html.Partial("_Newsletter", Model.SubscriberFormData)
+        </div>
+    </div>
+</div>
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}

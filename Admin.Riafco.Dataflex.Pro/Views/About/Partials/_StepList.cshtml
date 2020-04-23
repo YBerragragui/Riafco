@@ -1,0 +1,31 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.About.ViewData.StepsViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center">DATE</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stepViewData in Model.Steps)
+            {
+                string date = stepViewData.Step.StepDate.ToString("dd/MM/yyyy");
+
+                <tr>
+                    <td>
+                        <div class="text-center">@date</div>
+                    </td>
+                    <td>
+                        <input type="image" id="paragraph_step_btn" data="@stepViewData.Step.StepId" class="icon_crud" src="~/Images/paragrapg_icon.png" />
+                        <input type="image" id="update_step_btn" data="@stepViewData.Step.StepId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_step_btn" data="@stepViewData.Step.StepId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

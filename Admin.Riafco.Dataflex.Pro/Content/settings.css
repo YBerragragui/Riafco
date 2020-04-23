@@ -1,0 +1,8 @@
+﻿.image_langue{
+    width: 154px;
+    margin: auto;
+}
+
+.prefix_langue{
+    width:calc(100% - 220px);
+}

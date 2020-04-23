@@ -1,0 +1,31 @@
+﻿@model Riafco.Dataflex.Pro.Models.Ressources.FormData.FilterFormData
+@using Riafco.Dataflex.Pro.GlobalResources.Publications;
+
+@using (Html.BeginForm("SortPublications", "Resources", FormMethod.Post, new { id = "filter-form" }))
+{
+    <div class="resources-filter">
+        <div class="form-group">
+            @Html.LabelFor(f => f.ThemeId)
+            @Html.DropDownListFor(n => n.ThemeId, (List<SelectListItem>)ViewBag.Themes, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(f => f.AuthorId)
+            @Html.DropDownListFor(n => n.AuthorId, (List<SelectListItem>)ViewBag.Authors, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(f => f.AreaId)
+            @Html.DropDownListFor(n => n.AreaId, (List<SelectListItem>)ViewBag.Authors, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(f => f.PublicationDate)
+            <div class='input-group date' id='resourceDate'>
+                @Html.TextBoxFor(f => f.PublicationDate, new { @class = "form-control" })
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <input type="submit" value="@PublicationResources.FilterBtn" />
+    </div>
+}
+

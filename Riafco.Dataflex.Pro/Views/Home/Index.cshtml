@@ -1,0 +1,59 @@
+﻿@model Riafco.Dataflex.Pro.Models.HomeModel
+@using Riafco.Dataflex.Pro.GlobalResources.Home;
+
+@{
+    ViewBag.Title = "RIAFCO | Réseau des institutions africaines de financement des collectivités locales.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Home = "active";
+}
+
+@section Scripts {
+    <script src="~/Scripts/pagination/jPages.min.js"></script>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+    <script src="~/Scripts/map/africa.js"></script>
+    <script src="~/Scripts/home.js"></script>
+}
+
+@section Styles{
+    <link href="~/Content/map/mapSetting.css" rel="stylesheet" />
+    <link href="~/Content/home.css" rel="stylesheet" />
+}
+
+<div class="container-fluid main-map">
+    <div id="container"></div>
+    <div id="countryIfcl"></div>
+</div>
+
+<div class="container">
+    <div class="row main-row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 news-col">
+            <div class="homenews-title">
+                <div class="gray-line"></div>
+                <img src="~/Images/title-icon-left.png" class="left-gray" alt="" />
+                <h3>@HomeResources.PageTitle</h3>
+                <img src="~/Images/title-icon-right.png" class="right-gray" alt="" />
+            </div>
+            <div id="news-id">
+                @Html.Partial("Partial/_News", Model.NewsViewDatas)
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 tweet-col">
+            @Html.Partial("_Twitter")
+            @Html.Partial("_Newsletter", Model.SubscriberFormData)
+        </div>
+    </div>
+</div>
+<div class="container-fluid main-agenda">
+    @Html.Partial("Partial/_Agenda", Model.OccurrencesViewData)
+</div>
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}

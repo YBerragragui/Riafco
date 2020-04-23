@@ -1,0 +1,32 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Settings.FormData.UpdateLanguageFormData
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/Editeur/editor.js"></script>
+
+@using (Html.BeginForm("UpdateLanguage", "Settings", FormMethod.Post, new { id = "update_language_form", enctype = "multipart/form-data", @class = "modal-body" }))
+{
+    @Html.HiddenFor(d => d.LanguageId)
+    @Html.AntiForgeryToken()
+
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.LanguagePicture)
+        <span class="erreur">@Html.ValidationMessageFor(d => d.LanguagePicture)</span>
+        @Html.TextBoxFor(d => d.LanguagePicture, new { @class = "champ", type = "file" })
+    </div>
+    <div class="ligne_input">
+        @Html.LabelFor(d => d.LanguagePrefix)<span class="obgligatoire">*</span>
+        <span class="erreur">@Html.ValidationMessageFor(d => d.LanguagePrefix)</span>
+        @Html.TextBoxFor(d => d.LanguagePrefix, new { @class = "champ" })
+    </div>
+    <hr class="ligne_separ" />
+
+    <div class="ligne_input">
+        <div class="text_obligatoire">
+            <span class="obgligatoire">(*): champ obligatoire.</span>
+        </div>
+        <div class="btn_container">
+            <input type="submit" class="btn_valider" value="VALIDER" />
+        </div>
+    </div>
+}

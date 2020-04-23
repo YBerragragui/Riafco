@@ -1,0 +1,390 @@
+﻿@font-face {
+    font-family: MyFont;
+    src: url(/Content/fonts/Saira-Regular.ttf);
+}
+
+@font-face {
+    font-family: MyFont2;
+    src: url(/Content/fonts/Saira-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: MyFontBold;
+    src: url(/Content/fonts/Saira-Bold.ttf);
+}
+
+.orange-line {
+    width: 100%;
+    border: 1px solid #f99f3b;
+    display: inline-block;
+    position: relative;
+    top: 44px;
+    overflow: hidden;
+}
+
+
+.left-orange {
+    vertical-align: unset;
+    background: white;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    left: 4px;
+}
+
+.contact-title h3 {
+    display: inline-block;
+    font-family: MyFontBold;
+    font-size: 21px;
+    position: relative;
+    padding: 0 7px;
+    color: #388db8;
+    background: white;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    bottom: 2px;
+}
+
+.right-orange {
+    vertical-align: unset;
+    background: white;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    right: 4px;
+}
+
+.contact-title {
+    text-align: center;
+}
+
+.contact-bloc {
+    width: 97%;
+    background: #cdcdcd;
+    margin: 0;
+}
+
+.contact-container {
+    margin-top: 10px;
+    height: auto;
+    padding-bottom: 30px;
+}
+
+.contact-bloc-img .contact-img {
+    height: 100%;
+    width: auto;
+    position: relative;
+    background: #ffffffa6;
+    text-align: center;
+    padding: 55px 35px;
+}
+
+.erreur {
+    color: #f99f3b;
+    float: right;
+}
+
+.btn-submit {
+    float: right;
+    font-family: MyFont;
+    background: #f99f3b;
+    border: none;
+    color: white;
+    padding: 5px 30px;
+}
+
+@media (max-width:950px) {
+    .contact-bloc-img .contact-img {
+        padding: 20px 20px;
+    }
+}
+
+@media (max-width:425px) {
+    .contact-bloc-img .contact-img {
+        padding: 5px 5px;
+    }
+}
+
+@media (max-width:375px) {
+    .contact-bloc-img .contact-img {
+        padding: 7px 3px;
+    }
+}
+
+.contact-bloc-img {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: auto;
+    background: url(/Images/contact.jpg) no-repeat;
+    background-size: cover;
+}
+
+@media (max-width:375px) {
+    .contact-bloc-img {
+        top: 8px;
+        left: 8px;
+    }
+}
+
+.contact-details h3 {
+    font-family: MyFont2;
+    color: #388db8;
+}
+
+.contact-details h4 {
+    font-family: MyFont2;
+    color: #3f3f3f;
+}
+
+.white-line-contact {
+    width: 30%;
+    border: 1px solid white;
+    margin: 35px auto;
+}
+
+@media (max-width:375px) {
+    .white-line-contact {
+        width: 60%;
+        border: 1px solid white;
+        margin: 15px auto;
+    }
+}
+
+.contact-adress i {
+    display: inline-block;
+    margin-right: 10px;
+    color: #f99f3b;
+    font-size: 20px;
+}
+
+.contact-adress h5 {
+    font-family: MyFont2;
+    display: inline-block;
+}
+
+.contact-phone i {
+    display: inline-block;
+    margin-right: 10px;
+    color: #f99f3b;
+    font-size: 20px;
+}
+
+.contact-phone h5 {
+    font-family: MyFont2;
+    display: inline-block;
+}
+
+.contact-mail i {
+    display: inline-block;
+    margin-right: 10px;
+    color: #f99f3b;
+    font-size: 20px;
+}
+
+.contact-mail h5 {
+    font-family: MyFont2;
+    display: inline-block;
+}
+
+@media (max-width:375px) {
+    .contact-details h3 {
+        font-family: MyFont2;
+        font-size: 19px;
+        color: #388db8;
+    }
+
+    .contact-details h4 {
+        font-family: MyFont2;
+        font-size: 16px;
+        color: #3f3f3f;
+    }
+
+    .contact-adress i {
+        display: inline;
+        margin-right: 10px;
+        color: #f99f3b;
+        font-size: 18px;
+    }
+
+    .contact-adress h5 {
+        font-family: MyFont2;
+        display: inline;
+        font-size: 13px;
+    }
+
+    .contact-phone i {
+        display: inline-block;
+        margin-right: 10px;
+        color: #f99f3b;
+        font-size: 18px;
+    }
+
+    .contact-phone h5 {
+        font-family: MyFont2;
+        display: inline;
+        font-size: 13px;
+    }
+
+    .contact-mail i {
+        display: inline-block;
+        margin-right: 10px;
+        color: #f99f3b;
+        font-size: 18px;
+    }
+
+    .contact-mail h5 {
+        font-family: MyFont2;
+        display: inline;
+        font-size: 13px;
+    }
+}
+
+.gray-line-contact {
+    width: 90%;
+    border-bottom: 1px solid #cdcdcd;
+    margin: 40px auto;
+}
+
+.contact-form {
+    padding: 0px 60px;
+}
+
+    .contact-form h5 {
+        font-family: MyFont;
+        color: #388db8;
+        display: block;
+        margin: 0px;
+    }
+
+    .contact-form input[type="text"] {
+        width: 100%;
+        height: 30px;
+    }
+
+    .contact-form textarea {
+        float: right;
+        width: 80%;
+        resize: vertical;
+    }
+
+.contact-form-send {
+    float: right;
+    width: 75%;
+}
+
+    .contact-form-send a {
+        float: left;
+        width: 40%;
+        color: #3f3f3f;
+        font-family: MyFont;
+    }
+
+    .contact-form-send input {
+        float: right;
+        font-family: MyFont;
+        background: #f99f3b;
+        border: none;
+        color: white;
+        padding: 0px 20px;
+    }
+
+@media (max-width:1000px) {
+    .contact-form {
+        padding: 0px 30px;
+    }
+
+        .contact-form input[type="text"] {
+            width: auto;
+            float: right;
+            width: 70%;
+        }
+
+        .contact-form textarea {
+            float: right;
+            width: 70%;
+        }
+
+    .contact-form-send {
+        float: right;
+        width: 65%;
+    }
+}
+
+.contact-form div {
+    margin: 15px;
+}
+
+@media (max-width:768px) {
+    .contact-form {
+        padding: 0px 30px;
+    }
+
+        .contact-form input[type="text"] {
+            width: auto;
+            float: right;
+            width: 73%;
+        }
+
+        .contact-form textarea {
+            float: right;
+            width: 73%;
+        }
+
+    .contact-form-send {
+        float: right;
+        width: 68%;
+    }
+}
+
+@media (max-width:500px) {
+    .contact-form {
+        padding: 0px 20px;
+    }
+
+        .contact-form input[type="text"] {
+            width: auto;
+            float: right;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .contact-form textarea {
+            float: right;
+            width: 100%;
+        }
+
+    .contact-form-send {
+        float: right;
+        width: 90%;
+    }
+}
+
+@media (max-width:320px) {
+    .contact-form {
+        padding: 0px 5px;
+    }
+
+        .contact-form input[type="text"] {
+            width: auto;
+            float: right;
+            width: 100%;
+        }
+
+        .contact-form textarea {
+            float: right;
+            width: 100%;
+        }
+}
+
+.contact-form div {
+    margin: 15px;
+    overflow: hidden;
+}
+
+@media (max-width:425px) {
+    .contact-form h5 {
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,73 @@
+﻿@using Riafco.Dataflex.Pro.GlobalResources.About
+@model Riafco.Dataflex.Pro.Models.AboutModel
+
+@{
+    ViewBag.Title = "RAIFCO | " + Model.SectionViewData.SectionTranslationsList.First().SectionTitle;
+    var imageSrc = Constant.ImagesUrl + @"Images/Sections/" + Model.SectionViewData.Section.SectionId + @"/" + Model.SectionViewData.Section.SectionImage;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.About = "active";
+}
+
+@section Styles {
+    <link href="~/Content/gouvernance.css" rel="stylesheet" />
+}
+
+@section Scripts {
+
+}
+
+<div class="container">
+    <div class="row main-row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <div class="gouvernance-title">
+                <div class="gray-line"></div>
+                <img src="~/Images/title-icon-left.png" class="left-gray" alt="" />
+                <h3>@AboutResources.AboutTitle</h3>
+                <img src="~/Images/title-icon-right.png" class="right-gray" alt="" />
+            </div>
+            <div class="gouvernance-container-1">
+                <h3>@Model.SectionViewData.SectionTranslationsList.First().SectionTitle</h3>
+                <p>@Model.SectionViewData.SectionTranslationsList.First().SectionDesciption</p>
+            </div>
+            <div class="gouvernance-container-img-1">
+                <div class="img-1">
+                    <img src="@imageSrc" class="img-responsive" alt="" />
+                </div>
+            </div>
+            <div class="gouvernance-container-2">
+                @foreach (var paragraph in Model.ParagraphsViewData.Paragraphs)
+                {
+                    <h3>@paragraph.TranslationsList.First().ParagraphTitle</h3>
+                    <p>@paragraph.TranslationsList.First().ParagraphDescription</p>
+                }
+            </div>
+            <div class="gouvernance-container-3">
+                @foreach (var file in Model.FilesViewData.Files)
+                {
+                    var link = Constant.ImagesUrl + @"Images/Section/Files/" + file.File.SectionFileId + @"/" + file.TranslationsList.First().SectionFileSource;
+
+                    <a href="@link" download class="btn btn-labeled btn-gouvernance">
+                        <span class="btn-label"><i class="fa fa-download"></i></span>
+                        <div class="btn-text">
+                            <span class="btn-text">@file.TranslationsList.First().SectionFileText</span>
+                        </div>
+                    </a>
+                }
+
+            </div>
+            <div class="bottom-border-g"></div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 tweet-col">
+            @Html.Partial("_Twitter")
+            @Html.Partial("_Newsletter", Model.SubscriberFormData)
+        </div>
+    </div>
+</div>
+
+@section Partners {
+    @Html.Partial("_Partners", Model.PartnersViewData)
+}
+
+@section News {
+    @Html.Partial("_News", Model.NewsViewDatas)
+}

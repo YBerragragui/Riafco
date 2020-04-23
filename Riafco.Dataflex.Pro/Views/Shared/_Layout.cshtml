@@ -1,0 +1,181 @@
+﻿@using Riafco.Dataflex.Pro.GlobalResources.About
+@using Riafco.Dataflex.Pro.GlobalResources.Shared;
+@using Riafco.Dataflex.Pro.GlobalResources.Shared.footer;
+@using Riafco.Dataflex.Pro.GlobalResources.Shared.menu;
+@using Riafco.Dataflex.Pro.Helpers;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="favicon.ico" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Shared/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/Jquery/jquery.m.toast.css" rel="stylesheet" />
+    <link href="~/Content/carousel/owl.theme.default.css" rel="stylesheet" />
+    <link href="~/Content/carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/Shared/navbar.css" rel="stylesheet" />
+    <link href="~/Content/Shared/site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/bootstrap-datetimepicker.css" rel="stylesheet" />
+    @RenderSection("Styles", false)
+
+    <script src="~/Scripts/jquery/jquery-3.2.1.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/bootstrap/bootstrap.js"></script>
+    <script src="~/Scripts/Toast/jquery.m.toast.js"></script>
+    <script src="~/Scripts/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/carousel/owl.carousel.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="~/Scripts/shared/navbar.js"></script>
+    <script src="~/Scripts/shared/site.js"></script>
+    @RenderSection("Scripts", false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-1">
+        <div class="container">
+            <div class="navbar-1-content">
+                <div class="header-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control search-input" placeholder="@MenuResources.Shearch" id="inputGroup" />
+                        <span class="input-group-addon"> <input type="submit" value="OK" /> </span>
+                    </div>
+                </div>
+                <div class="header-espace">
+                    <input value="@MenuResources.MemberSpace" type="button" />
+                    <button type="button" class="btn btn-labeled">
+                        <span class="btn-label">
+                            <img src="~/Images/user-image.png" alt="" />
+                        </span>
+                        <div class="login-text">@MenuResources.Login</div>
+                    </button>
+                </div>
+
+                <div class="header-lang">
+                    <div class="header-social">
+                        <a href="/"><span class="fa fa-linkedin"></span></a>
+                        <a href="/"><span class="fa fa-twitter"></span></a>
+                    </div>
+                    <ul>
+                        @Url.LangSwitcher("FR", ViewContext.RouteData, "fr")
+                        @Url.LangSwitcher("EN", ViewContext.RouteData, "en")
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar navbar-inverse navbar-fixed-top navbar-2">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="~/Images/logo.png" alt="" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li class="@ViewBag.Home">
+                        <a href="/">@MenuResources.Home</a>
+                        <div class="tri-down"></div>
+                        <div class="vertical-line"></div>
+                    </li>
+
+                    <li class="dropdown drop @ViewBag.About">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            @MenuResources.About
+                            <i class="fa fa-caret-down drop-down" aria-hidden="true"></i>
+                            <i class="fa fa-caret-up drop-up" aria-hidden="true"></i>
+                        </a>
+                        <div class="tri-down"></div>
+                        <ul class="dropdown-menu sub-menu">
+                            <li><a href="/Apropos">@MenuResources.AboutUs</a></li>
+                            <li><a href="/Apropos/Historique">@MenuResources.History</a></li>
+                            <li><a href="/Apropos/Gouvernance">@MenuResources.Gouvernance</a></li>
+                        </ul>
+                        <div class="vertical-line"></div>
+                    </li>
+
+                    <li class="@ViewBag.News">
+                        <a href="/News">@MenuResources.News</a>
+                        <div class="tri-down"></div>
+                        <div class="vertical-line"></div>
+                    </li>
+
+                    <li class="@ViewBag.Ressources">
+                        <a href="/Resources">@MenuResources.Ressources</a>
+                        <div class="tri-down"></div>
+                        <div class="vertical-line"></div>
+                    </li>
+
+                    <li class="@ViewBag.Activities">
+                        <a href="/Activities">@MenuResources.Activites</a>
+                        <div class="tri-down"></div>
+                        <div class="vertical-line"></div>
+                    </li>
+
+                    <li class="@ViewBag.Contact">
+                        <a href="/Contact">@MenuResources.Contact</a>
+                        <div class="tri-down"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid glob-container">
+        <div class="main-desc">
+            <div class="container">
+                <h4>Réseau des institutions africaines de financement des collectivités locales.</h4>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+    <div class="footer-glob">
+        <div class="main-footer container">
+            <div class="row footer-row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 foot foot1">
+                    <img class="img-responsive" src="~/Images/logo-footer.png" alt="" />
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 foot foot2">
+                    <h4>@MenuResources.About</h4>
+                    <a href="/Apropos">- @AboutResources.AboutTitle</a>
+                    <a href="/Apropos/Historique">- @MenuResources.History</a>
+                    <a href="/Apropos/Gouvernance">- @MenuResources.Gouvernance</a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 foot foot3">
+                    <h4>@MenuResources.News</h4>
+                    @RenderSection("News", true)
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 foot foot4">
+                    <a>PUBLICATIONS</a>
+                    <a href="/Activities">@MenuResources.Activites</a>
+                    <a href="/Contact">@MenuResources.Contact</a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 foot foot5">
+                    <h4>
+                        <span>@FooterResources.PartenersTitle</span>
+                        <span class="partenaire-items-nav">
+                            <span class="fa fa-caret-left part-nav-left prev_carousel"></span>
+                            <span class="fa fa-caret-right part-nav-right next_carousel"></span>
+                        </span>
+                    </h4>
+                    @RenderSection("Partners", true)
+                </div>
+            </div>
+        </div>
+        <div class="sec-footer container">
+            <p>copyright © RIAFCO - ALL RIGHT RESERVED</p>
+            <a href="http://dataflex.pro/" target="_blank">CREATED BY DATAFLEX</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Offices.FormData.CreateCountryFormData
+
+<script src="~/Scripts/Jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/Jquery/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/Editeur/editor.js"></script>
+
+@{
+    string action = ViewBag.Action;
+    string formId = action + "Form";
+}
+
+@using (Html.BeginForm(action, "Offices", FormMethod.Post, new { id = formId, enctype = "multipart/form-data", @class = "modal-body" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(d => d.CountryId)
+
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active" data-navigation="0"><a>Pays</a></li>
+        @for (var i = 0; i < Model.TranslationsList.Count; i++)
+        {
+            var tabs = i + 1;
+            <li data-navigation="@tabs"><a>@Model.TranslationsList[i].LanguagePrefix</a></li>
+        }
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" data-navigation="0">
+            @Html.HiddenFor(d => d.CountryCode)
+            @Html.HiddenFor(d => d.CountryShortName)
+
+            <div class="row ligne_input">
+                @Html.LabelFor(d => d.CountryImage)<span class="obgligatoire">*</span>
+                <span class="erreur">@Html.ValidationMessageFor(d => d.CountryImage)</span>
+                @Html.TextBoxFor(d => d.CountryImage, new { @class = "champ", type = "file" })
+            </div>
+            
+            <div class="row ligne_input">
+                @Html.LabelFor(d => d.CountryCode)<span class="obgligatoire">*</span>
+                <span class="erreur">@Html.ValidationMessageFor(d => d.CountryCode)</span>
+                <span class="erreur">@Html.ValidationMessageFor(d => d.CountryShortName)</span>
+                <select id="countrises" class="champ">
+                    <option value="-1">Choisir le code ....</option>
+                    <option value="0">Ug</option>
+                    <option value="1">Ng</option>
+                    <option value="2">St</option>
+                    <option value="3">Tz</option>
+                    <option value="4">Sl</option>
+                    <option value="5">Gw</option>
+                    <option value="6">Cv</option>
+                    <option value="7">Sc</option>
+                    <option value="8">Tn</option>
+                    <option value="9">Mg</option>
+                    <option value="10">Ke</option>
+                    <option value="11">Cd</option>
+                    <option value="12">Fr</option>
+                    <option value="13">Mr</option>
+                    <option value="14">Dz</option>
+                    <option value="15">Er</option>
+                    <option value="16">Gq</option>
+                    <option value="17">Mu</option>
+                    <option value="18">Sn</option>
+                    <option value="19">Km</option>
+                    <option value="20">Et</option>
+                    <option value="21">Ci</option>
+                    <option value="22">Gh</option>
+                    <option value="23">Zm</option>
+                    <option value="24">Na</option>
+                    <option value="25">Rw</option>
+                    <option value="26">Sx</option>
+                    <option value="27">So</option>
+                    <option value="28">Cm</option>
+                    <option value="29">Cg</option>
+                    <option value="30">Eh</option>
+                    <option value="31">Bj</option>
+                    <option value="32">Bf</option>
+                    <option value="33">Tg</option>
+                    <option value="34">Ne</option>
+                    <option value="35">Ly</option>
+                    <option value="36">Lr</option>
+                    <option value="37">Mw</option>
+                    <option value="38">Gm</option>
+                    <option value="39">Td</option>
+                    <option value="40">Ga</option>
+                    <option value="41">Dj</option>
+                    <option value="42">Bi</option>
+                    <option value="43">Ao</option>
+                    <option value="44">Gn</option>
+                    <option value="45">Zw</option>
+                    <option value="46">Za</option>
+                    <option value="47">Mz</option>
+                    <option value="48">Sz</option>
+                    <option value="49">Ml</option>
+                    <option value="50">Bw</option>
+                    <option value="51">Sd</option>
+                    <option value="52">Ma</option>
+                    <option value="53">Eg</option>
+                    <option value="54">Ls</option>
+                    <option value="55">Ss</option>
+                    <option value="56">Cf</option>  
+                </select>
+            </div>
+
+            <hr class="ligne_separ" />
+
+            <div class="ligne_input">
+                <div class="text_obligatoire">
+                    <span class="obgligatoire">(*): champ obligatoire.</span>
+                </div>
+                <div class="btn_container">
+                    <span class="btn_valider next" data-navigation="1">SUIVANT</span>
+                </div>
+            </div>
+        </div>
+
+        @for (var i = 0; i < Model.TranslationsList.Count; i++)
+        {
+            var nextTab = i + 2;
+            var tab = i + 1;
+            var prevTab = i;
+
+            <div class="tab-pane fade" data-navigation="@tab">
+                @Html.HiddenFor(d => d.TranslationsList[i].TranslationId, new { @class = "champ", id = "Translation_" + (i + 1) })
+                @Html.HiddenFor(d => d.TranslationsList[i].LanguageId, new {@class = "champ", id = "Language_" + (i + 1)})
+
+                <div class="table_header">
+                    <span>Les informations en "@Model.TranslationsList[i].LanguagePrefix"</span>
+                </div>
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].CountryName)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].CountryName)</span>
+                    @Html.TextBoxFor(d => d.TranslationsList[i].CountryName, new { @class = "champ", id = "Name_" + (i + 1) })
+                </div>
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].CountryTitle)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].CountryTitle)</span>
+                    @Html.TextBoxFor(d => d.TranslationsList[i].CountryTitle, new {@class = "champ", id = "Title_" + (i + 1)})
+                </div>
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].CountrySummary)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].CountrySummary)</span>
+                    @Html.TextBoxFor(d => d.TranslationsList[i].CountrySummary, new {@class = "champ", id = "Sum_" + (i + 1)})
+                </div>
+                <div class="ligne_input">
+                    @Html.LabelFor(d => d.TranslationsList[i].CountryDescription)<span class="obgligatoire">*</span>
+                    <span class="erreur">@Html.ValidationMessageFor(d => d.TranslationsList[i].CountryDescription)</span>
+                    @Html.TextAreaFor(d => d.TranslationsList[i].CountryDescription, new {@class = "champ", id = "Desc_" + (i + 1)})
+                </div>
+
+                <hr class="ligne_separ"/>
+
+                <div class="ligne_input">
+                    <div class="text_obligatoire">
+                        <span class="obgligatoire">(*): champ obligatoire.</span>
+                    </div>
+                    <div class="btn_container">
+                        @if (i == Model.TranslationsList.Count - 1)
+                        {
+                            <input type="submit" class="btn_valider" value="VALIDER"/>
+                        }
+                        else
+                        {
+                            <span class="btn_valider next" data-navigation="@nextTab">SUIVANT</span>
+                        }
+                        <span class="btn_valider prev" data-navigation="@prevTab">PRÉCÉDENT</span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

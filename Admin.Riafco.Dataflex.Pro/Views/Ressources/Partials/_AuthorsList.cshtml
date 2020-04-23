@@ -1,0 +1,28 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Ressources.ViewData.AuthorsViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center">NOM</th>
+                <th class="text-center">PRENOM</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model.Authors)
+            {
+                <tr>
+                    <td class="text-center">@author.Author.AuthorFirstName</td>
+                    <td class="text-center">@author.Author.AuthorLastName</td>
+                    <td>
+                        <input type="image" id="update_author_btn"  data="@author.Author.AuthorId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_author_btn"  data="@author.Author.AuthorId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

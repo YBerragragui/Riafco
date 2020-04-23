@@ -1,0 +1,25 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Settings.ViewData.LanguageViewData
+
+<div class="line_header">
+    <div class="image_langue">Image</div>
+    <div class="prefix_langue">Préfix</div>
+    <div class="operation">M/S</div>
+</div>
+
+@foreach (var langue in Model.Languages)
+{
+
+  
+    var imgSrc = @"\Images\Languages\" + langue.LanguageId + @"\" + langue.LanguagePicture;
+
+    <div class="line_container">
+        <div class="image_langue">
+            <img alt="drappeau de la langue." src="@imgSrc" />
+        </div>
+        <div class="prefix_langue">@langue.LanguagePrefix</div>
+        <div class="operation">
+            <input id="update_language_btn" type="image" data="@langue.LanguageId" class="icon_crud" src="~/Images/edit.png" />
+            <input id="delete_language_btn" type="image" data="@langue.LanguageId" class="icon_crud" src="~/Images/delete.png" />
+        </div>
+    </div>
+}

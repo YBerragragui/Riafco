@@ -1,0 +1,37 @@
+﻿@model Admin.Riafco.Dataflex.Pro.Models.Partners.ViewData.PartnersViewData
+
+<script src="~/Scripts/DataTable/data-table-demo.js"></script>
+
+<div class="col-xs-12">
+
+    <table id="pager-data-table" class="hover" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="text-center hidden-xs">IMAGE</th>
+                <th class="text-center">NOM</th>
+                <th class="text-center">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model?.Partners.OrderBy(p => p.PartnerPosition))
+            {
+                var imgSrc = @"Images\Partners\" + item.PartnerId + @"\" + item.PartnerImage;
+
+                <tr>
+                    <td class="hidden-xs">
+                        <div class="text-center">
+                            <img alt="image du partenaire" src="@imgSrc" class="img-responsive image_item" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">@item.PartnerName</div>
+                    </td>
+                    <td>
+                        <input type="image" id="update_partner_btn" data="@item.PartnerId" class="icon_crud" src="~/Images/edit.png" />
+                        <input type="image" id="delete_partner_btn" data="@item.PartnerId" class="icon_crud" src="~/Images/delete.png" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
